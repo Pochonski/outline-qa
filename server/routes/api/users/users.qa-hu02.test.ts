@@ -48,7 +48,7 @@ describe("HU-02 Administrar miembros del equipo (OL-8)", () => {
   it("CP-HU02-03: invitar a un correo que ya es miembro no crea invitacion", async () => {
     const member = await buildUser({ teamId: team.id });
     const res = await server.post("/api/users.invite", admin, {
-      body: invitacion(member.email),
+      body: invitacion(member.email as string),
     });
     const body = await res.json();
     expect({
