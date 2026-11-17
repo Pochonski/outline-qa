@@ -4,6 +4,8 @@
 
 La entrega reúne el proyecto Outline y las pruebas de HU-04 Crear documento, HU-05 Autoguardado y HU-06 Resolver y editar comentarios. La base es el commit `0e19c7d89ae2f4924af98d022675bd1e9275a239` del repositorio oficial de Outline.
 
+El plan del equipo comprende sesenta casos, distribuidos entre Joseph Fonseca, Rachel Monterrey y Yendri Obando. Esta guía describe la ejecución de los veinte casos de Joseph. La distribución completa del equipo y los CSV de los sesenta casos se incluyen en el plan. [Consultar el alcance del equipo](planes_HU_04_05_06.md).
+
 | Ciclo | Modalidad | Aprobados | Fallidos | Total |
 |---|---|---|---|---|
 | C1 | 18 casos con Vitest y 2 manuales | 17 | 3 | 20 |
@@ -41,7 +43,7 @@ corepack yarn qa:playwright
 
 Cada ronda genera `.qa/runs/<id>/results.xml`, un manifiesto y adjuntos. El reporte HTML de Playwright se guarda en `playwright-report/`. Los casos que detectan las diferencias documentadas pueden terminar fallidos.
 
-Para publicar una nueva ronda, definir `QATLAS_TOKEN` con un token autorizado para el proyecto OL y ejecutar el comando de ingesta.
+Para publicar una nueva ronda, definir `QATLAS_TOKEN` con un token de la cuenta de Joseph Fonseca y autorización para el proyecto OL. El reporter comprueba el identificador de usuario 11 y consulta sus casos en el proyecto 7. Ejecutar el comando de ingesta una vez configurado ese token.
 
 ```sh
 corepack yarn qa:playwright:qatlas

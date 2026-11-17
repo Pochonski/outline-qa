@@ -2,6 +2,21 @@
 
 Este documento conserva la planificación inicial de C1. Las fechas sugeridas, el estado Borrador y la distribución de 18 automatizados con Vitest y 2 manuales por integrante pertenecen a esa etapa. El cierre de Joseph incorpora veinte casos con Playwright en C2 y declara cumplimiento parcial de los criterios de salida. [Consultar la entrega y los resultados](ejecuciones_HU_04_05_06.md).
 
+## Distribución del equipo comprobada en C1
+
+La exportación de casos registra la siguiente distribución. Los casos manuales forman parte de sus respectivas categorías de prueba. [Consultar los sesenta casos](casos_de_prueba.csv).
+
+| Responsable | Historias | Requisitos QAtlas | Funcionales | Seguridad | Integración | Total |
+|---|---|---|---|---|---|---|
+| Rachel Monterrey | HU-01 a HU-03 | OL-7, OL-8 y OL-9 | 8 | 10 | 2 | 20 |
+| Joseph Fonseca | HU-04 a HU-06 | OL-4, OL-5 y OL-6 | 12 | 5 | 3 | 20 |
+| Yendri Obando | HU-07 a HU-09 | OL-10, OL-11 y OL-12 | 18 | 2 | 0 | 20 |
+| **Total** | **9 historias** | **9 requisitos** | **38** | **17** | **5** | **60** |
+
+La exportación de C1 registra 54 casos automatizados y 6 manuales, con 18 automatizados y 2 manuales por integrante. Los resultados y las herramientas utilizados en cada ciclo se interpretan junto con el informe final.
+
+## Registro original del plan en QAtlas
+
 **QAtlas:** Planes de Prueba → Nuevo (un solo plan para todo el proyecto, según indicación del profesor).
 **Proyecto:** Outline — aseguramiento de calidad (Fase 2, plan de pruebas).
 **Alcance total:** 9 requisitos (OL-4…OL-12) · **60 casos** (máximo 6 manuales = 10%).
@@ -24,10 +39,9 @@ durante la gestión colaborativa de información (objetivo general
 Fase 1, semestre II 2026).
 
 El plan cubre los 9 requisitos del equipo (OL-4…OL-12) con 60 casos:
-54 automatizados + 6 manuales con evidencia en navegador
-(tope 10%; supuesto a confirmar por A y C con sus 20 c/u). Tipos de prueba: funcional caja negra API (Tipo 1),
-seguridad y control de acceso (Tipo 2) y UX manual estructurado
-(Tipo 3); rendimiento como criterio transversal (benchmark opcional).
+54 automatizados + 6 manuales con evidencia en navegador.
+Los tipos de prueba son funcional, seguridad e integración.
+La modalidad de ejecución puede ser automatizada o manual.
 
 Distribución por responsable (20 casos c/u: 18 auto + 2 manuales):
 - Joseph Fonseca: OL-4 (HU-04 Crear documento), OL-5 (HU-05
@@ -80,8 +94,8 @@ defectos) + evidencias JUnit/XML y capturas.
 
 ```
 1. Asserts exactos (400/403, textos, backoff) difieren del CA →
-verificar contra schemas Zod e implementación, ajustar el esperado
-sin cambiar el CA.
+revisar el criterio, las entradas y los schemas Zod, registrar la
+diferencia como hallazgo y documentar su seguimiento en el informe.
 2. Casos de colaboración/tiempo real requieren 2 clientes → fallback
 manual con 2 navegadores si no se automatizan a tiempo.
 3. Timers/red inestables → mocks (vi.advanceTimersByTime) en auto y
@@ -130,4 +144,4 @@ Detalle de mis 20: `casos_OL_04_05_06.md`.
 | Suites Rachel (OL-7/8/9) | OL-TC-7, 9, 12, 20, 23–38 |
 | Suites Yendri (OL-10/11/12) | OL-TC-42–61 |
 
-Pre-requisito: corregir tag `CA-O5.1` del OL-TC-10 → `CA-05.1`.
+La exportación de C1 registra la etiqueta `CA-05.1` en OL-TC-10.

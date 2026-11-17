@@ -2,6 +2,8 @@
 
 Este repositorio reúne el proyecto Outline y las pruebas de HU-04 Crear documento, HU-05 Autoguardado y HU-06 Resolver y editar comentarios. La entrega conserva el código de Vitest de C1 y los veinte casos de Playwright de C2, con su reporter de ingesta para QAtlas.
 
+El plan del equipo abarca sesenta casos, veinte por integrante. Rachel Monterrey cubre HU-01 a HU-03, Joseph Fonseca HU-04 a HU-06 y Yendri Obando HU-07 a HU-09. Los CSV incluidos reúnen los sesenta casos y los nueve requisitos del equipo. [Consultar el plan y su distribución](docs/proyecto/planes_HU_04_05_06.md).
+
 La base del proyecto es Outline en el commit `0e19c7d89ae2f4924af98d022675bd1e9275a239`.
 
 | Revisión | Archivo |

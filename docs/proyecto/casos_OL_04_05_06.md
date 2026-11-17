@@ -4,7 +4,7 @@ Este documento conserva el diseño inicial de los veinte casos y sus campos de p
 
 **Propietario:** Joseph Andres Fonseca Nuñez
 **Mapeo:** OL-4 = HU-04 Crear documento · OL-5 = HU-05 Auto-save en editor · OL-6 = HU-06 Resolver y editar comentarios
-**Regla:** 18 automatizados + 2 manuales (10%). Estado inicial en QAtlas: Borrador.
+**Distribución de C1** con 18 automatizados y 2 manuales (10%). El estado consignado en el diseño inicial es Borrador.
 **Convención:** `CP-HUxx-NN`. Tipo de Prueba: Funcional / Seguridad / Integración. Tipo de ejecución: Automatizada / Manual.
 **Formato de pasos QAtlas:** cada paso lleva Acción + Resultado esperado + Datos de prueba (opcional).
 
@@ -278,5 +278,5 @@ Este documento conserva el diseño inicial de los veinte casos y sus campos de p
 
 - Total: 20 (6 + 7 + 7). Auto: 18. Manual: 2 (CP-HU04-06, CP-HU05-02).
 - Válidos + inválidos: sí (vacío, sin collectionId, 401/403, 400).
-- Trazabilidad: cada caso tiene HU + CA en etiquetas y código OL vinculado (OL-4/OL-5/OL-6).
+- Los veinte casos se vinculan con HU-04, HU-05 o HU-06 y con OL-4, OL-5 u OL-6. Las etiquetas CA consignadas pertenecen al diseño inicial. La relación con los archivos actuales y las comprobaciones pendientes se detalla en la guía de ejecución.
 - Técnicas 6.1: equivalencia (roles, vacío/ausente), límite (2 s, 2,5 s, 3 intentos), decisión (autor/no-autor × acción → 200/403/400).

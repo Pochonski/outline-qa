@@ -7,7 +7,9 @@ Este documento conserva las definiciones y los campos utilizados para registrar 
 **Uso:** pegar campo por campo en QAtlas → Nuevo requisito. Formato: Historia de usuario. Estado: Borrador.
 **QAtlas:** https://geotorotur.tail052473.ts.net/qatlas/requirements
 
-## Mapeo OL (equipo: requisitos del 1 al 9, los míos son 4-5-6)
+## Mapeo de HU-04, HU-05 y HU-06
+
+El equipo trabaja con nueve historias, de HU-01 a HU-09, y nueve requisitos de QAtlas, de OL-4 a OL-12. El alcance de Joseph corresponde a los tres vínculos siguientes. [Consultar los nueve requisitos del equipo](requisitos.csv).
 
 - **OL-4 = HU-04 — Crear documento (mío)**
 - **OL-5 = HU-05 — Auto-save en editor (mío)**
@@ -104,11 +106,11 @@ Este documento conserva las definiciones y los campos utilizados para registrar 
 
 ---
 
-## Orden de carga en QAtlas (ya definido)
+## Orden de carga inicial en QAtlas
 
 1. OL-4 con título `HU-04 — Crear documento`.
 2. OL-5 con título `HU-05 — Auto-save en editor`.
 3. OL-6 con título `HU-06 — Resolver y editar comentarios`.
 4. Requisito padre: vacío. Dueño: vos.
 
-Siguiente paso: crear los 20 casos (18 automatizados + 2 manuales) vinculados a OL-4/OL-5/OL-6.
+La carga inicial vinculó veinte casos a OL-4, OL-5 y OL-6, con dieciocho automatizados y dos manuales en C1. La ejecución de C2 automatiza los veinte casos con Playwright. [Consultar las ejecuciones y la trazabilidad](ejecuciones_HU_04_05_06.md).
