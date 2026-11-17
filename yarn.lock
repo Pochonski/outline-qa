@@ -4208,6 +4208,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@playwright/test@npm:^1.65.0":
+  version: 1.65.0
+  resolution: "@playwright/test@npm:1.65.0"
+  dependencies:
+    playwright: "npm:1.65.0"
+  bin:
+    playwright: cli.js
+  checksum: 10c0/137a641e1be8035686a165e69d86d242ee7ed5cbe71e5230f9195cb6e65be37a66ba697f16919b508d04c4d682fd4e167d1a755b64ceb545afac780de72b594b
+  languageName: node
+  linkType: hard
+
 "@polka/url@npm:^1.0.0-next.24":
   version: 1.0.0-next.29
   resolution: "@polka/url@npm:1.0.0-next.29"
@@ -7037,6 +7048,17 @@ __metadata:
   dependencies:
     "@types/express": "npm:*"
   checksum: 10c0/09039429a9178117a80880c4e7d437abc83216eac5e0c97bc6f14a03a59193386cff484931dc880693f8b13a512c366ef7a51ecd8cc1a63f17366be68161f633
+  languageName: node
+  linkType: hard
+
+"@types/pg@npm:^8.23.1":
+  version: 8.23.1
+  resolution: "@types/pg@npm:8.23.1"
+  dependencies:
+    "@types/node": "npm:*"
+    pg-protocol: "npm:*"
+    pg-types: "npm:^2.2.0"
+  checksum: 10c0/0e39ff7dbe233e1e50b172d87fe84cca086a52e255adb104ef1d60619cded356c4414427ffbea58e70a5a985c3036603c8e544ca2937fc1cf4050185109973be
   languageName: node
   linkType: hard
 
@@ -15495,6 +15517,7 @@ __metadata:
     "@octokit/webhooks-types": "npm:^7.6.1"
     "@outlinewiki/koa-passport": "npm:^4.2.1"
     "@outlinewiki/passport-azure-ad-oauth2": "npm:^0.1.0"
+    "@playwright/test": "npm:^1.65.0"
     "@radix-ui/react-collapsible": "npm:^1.1.20"
     "@radix-ui/react-context-menu": "npm:^2.3.7"
     "@radix-ui/react-dialog": "npm:^1.1.23"
@@ -15557,6 +15580,7 @@ __metadata:
     "@types/node-fetch": "npm:^2.6.13"
     "@types/pako": "npm:^2.0.4"
     "@types/passport-oauth2": "npm:^1.8.0"
+    "@types/pg": "npm:^8.23.1"
     "@types/pluralize": "npm:^0.0.33"
     "@types/png-chunks-extract": "npm:^1.0.2"
     "@types/proxy-from-env": "npm:^1.0.4"
@@ -16495,6 +16519,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"pg-protocol@npm:*":
+  version: 1.16.1
+  resolution: "pg-protocol@npm:1.16.1"
+  checksum: 10c0/84e8bf05c3548c8ffcad29247c075f8f1cf477600c92a7eb0ab27c6c4cbdbe1280433582bfba91f629b1f68bcaf4ae26436a898f430e884d7887543931e8ade6
+  languageName: node
+  linkType: hard
+
 "pg-protocol@npm:^1.16.0":
   version: 1.16.0
   resolution: "pg-protocol@npm:1.16.0"
@@ -16509,7 +16540,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"pg-types@npm:2.2.0":
+"pg-types@npm:2.2.0, pg-types@npm:^2.2.0":
   version: 2.2.0
   resolution: "pg-types@npm:2.2.0"
   dependencies:
@@ -16624,6 +16655,26 @@ __metadata:
   dependencies:
     find-up: "npm:^3.0.0"
   checksum: 10c0/ecb60e1f8e1f611c0bdf1a0b6a474d6dfb51185567dc6f29cdef37c8d480ecba5362e006606bb290519bbb6f49526c403fabea93c3090c20368d98bb90c999ab
+  languageName: node
+  linkType: hard
+
+"playwright-core@npm:1.65.0":
+  version: 1.65.0
+  resolution: "playwright-core@npm:1.65.0"
+  bin:
+    playwright-core: cli.js
+  checksum: 10c0/ed905c6fc2457a725c3fdb3ad4500f43c7a1bb2c6e4e8c708e1e314930c7dce446a5756ad073425bf3c6e3ca975e5a35fb0221118e2d51ef7b4b6c6d13d0644c
+  languageName: node
+  linkType: hard
+
+"playwright@npm:1.65.0":
+  version: 1.65.0
+  resolution: "playwright@npm:1.65.0"
+  dependencies:
+    playwright-core: "npm:1.65.0"
+  bin:
+    playwright: cli.js
+  checksum: 10c0/a7d71f3ca5bcad0531b5f3c39ae1a9be0da8e74be6fee8510d99b9f5fc07fd5b3d889aa4ca487c70ca29aba8625f74e3c2c7473b4c8a784dc14fefff80474ac3
   languageName: node
   linkType: hard
 

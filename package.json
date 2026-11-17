@@ -4,6 +4,10 @@
   "license": "Business Source License 1.1",
   "main": "index.js",
   "scripts": {
+    "qa:prepare": "node docs/proyecto/tools/playwright-run.mjs prepare",
+    "qa:playwright": "node docs/proyecto/tools/playwright-run.mjs test",
+    "qa:playwright:qatlas": "node docs/proyecto/tools/playwright-run.mjs report",
+    "qa:qatlas:retry": "node docs/proyecto/tools/playwright-run.mjs retry",
     "clean": "rimraf build",
     "copy:i18n": "mkdir -p ./build/shared/i18n && cp -R ./shared/i18n/locales ./build/shared/i18n",
     "build:i18n": "i18next --silent '{shared,app,server,plugins}/**/*.{ts,tsx}' && yarn copy:i18n",
@@ -282,6 +286,7 @@
   },
   "devDependencies": {
     "@faker-js/faker": "^10.5.0",
+    "@playwright/test": "^1.65.0",
     "@relative-ci/agent": "^4.3.1",
     "@swc/cli": "^0.8.1",
     "@swc/core": "^1.15.32",
@@ -320,6 +325,7 @@
     "@types/node": "20.19.43",
     "@types/node-fetch": "^2.6.13",
     "@types/passport-oauth2": "^1.8.0",
+    "@types/pg": "^8.23.1",
     "@types/pluralize": "^0.0.33",
     "@types/png-chunks-extract": "^1.0.2",
     "@types/proxy-from-env": "^1.0.4",

@@ -1,0 +1,17 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "strict": true,
+    "incremental": false,
+    "types": ["node"],
+    "noImplicitReturns": true
+  },
+  "include": [
+    "playwright.config.ts",
+    "docs/proyecto/tools/playwright-*.ts",
+    "docs/proyecto/tools/qatlas-*.ts",
+    "app/**/*.playwright.spec.ts",
+    "server/**/*.playwright.spec.ts"
+  ],
+  "exclude": ["node_modules", "build"]
+}

@@ -1,0 +1,318 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: app\scenes\Document\components\Document.playwright.spec.ts >> CP-HU05-02 Cerrar pestaña envía beacon
+- Location: app\scenes\Document\components\Document.playwright.spec.ts:75:1
+
+# Error details
+
+```
+Error: expect(received).toBe(expected) // Object.is equality
+
+Expected: true
+Received: false
+
+Call Log:
+- Timeout 2500ms exceeded while waiting on the predicate
+```
+
+# Page snapshot
+
+```yaml
+- generic [ref=f2e3]:
+  - generic [ref=f2e4]:
+    - link "Skip navigation" [ref=f2e5] [cursor=pointer]:
+      - /url: "#skip-nav"
+    - generic [ref=f2e6]:
+      - generic [ref=f2e7]:
+        - generic [ref=f2e8]:
+          - button "Cuenta" [ref=f2e9] [cursor=pointer]:
+            - generic [ref=f2e10]:
+              - generic "Logo" [ref=f2e12]: O
+              - generic [ref=f2e13]: Outline Playwright QA
+          - button "Contraer barra lateral" [ref=f2e15] [cursor=pointer]
+        - generic [ref=f2e21]:
+          - link "Inicio" [ref=f2e22] [cursor=pointer]:
+            - /url: /home
+          - link "Buscar" [ref=f2e28] [cursor=pointer]:
+            - /url: /search
+          - link "Borradores 1" [ref=f2e35] [cursor=pointer]:
+            - /url: /drafts
+            - generic [ref=f2e42]:
+              - text: Borradores
+              - generic [ref=f2e43]: "1"
+        - generic [ref=f2e44]:
+          - generic [ref=f2e47]:
+            - heading [level=3] [ref=f2e48]:
+              - button "Colecciones" [ref=f2e49] [cursor=pointer]
+            - generic [ref=f2e52]:
+              - generic "Colecciones" [ref=f2e53]:
+                - generic [ref=f2e54]:
+                  - link "Playwright QA" [ref=f2e56] [cursor=pointer]:
+                    - /url: /collection/playwright-qa-4cwyJuQGTl
+                  - link "QA 665f5d4a-97b8-4df2-aacb-32e84c0651c8" [ref=f2e67] [cursor=pointer]:
+                    - /url: /doc/qa-665f5d4a-97b8-4df2-aacb-32e84c0651c8-pWwbkKeO7G
+              - button "Nueva colección" [ref=f2e72] [cursor=pointer]
+          - link "Archivar" [ref=f2e81] [cursor=pointer]:
+            - /url: /archive
+          - generic [ref=f2e87]:
+            - link "Papelera" [ref=f2e89] [cursor=pointer]:
+              - /url: /trash
+            - button "Invitar personas…" [ref=f2e95] [cursor=pointer]
+        - generic [ref=f2e101]:
+          - button "Cuenta" [ref=f2e102] [cursor=pointer]:
+            - generic [ref=f2e103]:
+              - generic "Avatar de QA editor" [ref=f2e105]: Q
+              - generic [ref=f2e106]: QA editor
+          - button "Notificaciones" [ref=f2e110] [cursor=pointer]
+      - main [ref=f2e116]:
+        - generic [ref=f2e118]:
+          - generic [ref=f2e119]:
+            - button
+            - generic [ref=f2e121]:
+              - link "Playwright QA" [ref=f2e122] [cursor=pointer]:
+                - /url: /collection/playwright-qa-4cwyJuQGTl
+              - button "Mostrar contenidos" [ref=f2e130] [cursor=pointer]
+              - button "Marcar como favorito" [ref=f2e135] [cursor=pointer]
+            - generic [ref=f2e138]:
+              - button "Avatar de QA editor" [ref=f2e139] [cursor=pointer]:
+                - generic "Avatar de QA editor" [ref=f2e143]: Q
+              - button "Compartir" [ref=f2e147] [cursor=pointer]
+              - button "Nuevo documento anidado" [ref=f2e151] [cursor=pointer]:
+                - generic [ref=f2e152]: Nuevo doc
+              - button "Opciones del documento" [ref=f2e157] [cursor=pointer]
+          - generic [ref=f2e163]:
+            - generic [ref=f2e164]:
+              - button "Mostrar menú" [ref=f2e166] [cursor=pointer]
+              - textbox "Título del documento" [ref=f2e169]
+            - generic [ref=f2e170]:
+              - button [ref=f2e171] [cursor=pointer]:
+                - generic [ref=f2e172]:
+                  - text: Has actualizado
+                  - time [ref=f2e174]: hace menos de un minuto
+              - generic [ref=f2e175]: •
+              - button "Comentar" [ref=f2e176] [cursor=pointer]
+              - generic [ref=f2e179]:
+                - generic [ref=f2e180]: •
+                - button "Estadísticas" [ref=f2e181] [cursor=pointer]: Visto por solo tú
+            - generic [ref=f2e182]:
+              - textbox "Editor content" [ref=f2e184]:
+                - paragraph [ref=f2e185]: Párrafo inicial de QA. BEACON-PENDIENTE-QA
+              - generic [ref=f2e187]:
+                - text: Subir archivo
+                - button "Subir archivo" [ref=f2e188]
+              - button "Buscar y reemplazar"
+  - region "Notifications alt+T"
+```
+
+# Test source
+
+```ts
+  19  |   await input.press("Control+End");
+  20  |   await input.pressSequentially(text);
+  21  | }
+  22  | 
+  23  | test(
+  24  |   "CP-HU04-06 Indicador guardando visible",
+  25  |   { annotation: { type: "qatlas", description: "OL-TC-6" } },
+  26  |   async ({ qa }) => {
+  27  |     const page = await qa.openDocument(await qa.createDocument());
+  28  |     let lastKeystroke = 0;
+  29  |     await test.step("Escribir y observar guardando…", async () => {
+  30  |       await insert(page, " Indicador QA");
+  31  |       lastKeystroke = Date.now();
+  32  |       await expect
+  33  |         .soft(page.getByText(/^guardando…$/i))
+  34  |         .toBeVisible({ timeout: 2500 });
+  35  |     });
+  36  |     await test.step("Observar Guardado hh:mm:ss dentro del límite", async () => {
+  37  |       await expect(page.getByText(/^Guardado \d{2}:\d{2}:\d{2}$/)).toBeVisible({
+  38  |         timeout: Math.max(1, 2500 - (Date.now() - lastKeystroke)),
+  39  |       });
+  40  |       expect(Date.now() - lastKeystroke).toBeLessThanOrEqual(2500);
+  41  |     });
+  42  |   }
+  43  | );
+  44  | 
+  45  | test(
+  46  |   "CP-HU05-01 Debounce 2 segundos dispara guardado",
+  47  |   { annotation: { type: "qatlas", description: "OL-TC-10" } },
+  48  |   async ({ qa }) => {
+  49  |     const page = await qa.openDocument(await qa.createDocument());
+  50  |     await test.step("Comprobar debounce 2000 ms y una solicitud PATCH documents.update", async () => {
+  51  |       await page.clock.install();
+  52  |       await insert(page, " Debounce QA");
+  53  |       const start = qa.calls.length;
+  54  |       await page.clock.runFor(1999);
+  55  |       expect(
+  56  |         qa.calls
+  57  |           .slice(start)
+  58  |           .filter((call) => call.path === "/api/documents.update")
+  59  |       ).toHaveLength(0);
+  60  |       await page.clock.runFor(1);
+  61  |       await expect
+  62  |         .poll(
+  63  |           () =>
+  64  |             qa.calls
+  65  |               .slice(start)
+  66  |               .filter((call) => call.path === "/api/documents.update")
+  67  |               .map((call) => call.method),
+  68  |           { timeout: 1500 }
+  69  |         )
+  70  |         .toEqual(["PATCH"]);
+  71  |     });
+  72  |   }
+  73  | );
+  74  | 
+  75  | test(
+  76  |   "CP-HU05-02 Cerrar pestaña envía beacon",
+  77  |   { annotation: { type: "qatlas", description: "OL-TC-11" } },
+  78  |   async ({ qa }) => {
+  79  |     const page = await qa.openDocument(await qa.createDocument());
+  80  |     const beacons: Array<{ url: string; body: string }> = [];
+  81  |     await page.exposeFunction(
+  82  |       "qaCaptureBeacon",
+  83  |       (url: string, body: string) => {
+  84  |         beacons.push({ url, body });
+  85  |       }
+  86  |     );
+  87  |     await page.addInitScript(() => {
+  88  |       const original = navigator.sendBeacon.bind(navigator);
+  89  |       navigator.sendBeacon = (url, data) => {
+  90  |         const capture = Reflect.get(window, "qaCaptureBeacon");
+  91  |         if (typeof capture === "function") {
+  92  |           if (data instanceof Blob) {
+  93  |             void data.text().then((text) => capture(String(url), text));
+  94  |           } else {
+  95  |             void capture(
+  96  |               String(url),
+  97  |               typeof data === "string" ? data : "[binary beacon]"
+  98  |             );
+  99  |           }
+  100 |         }
+  101 |         return original(url, data);
+  102 |       };
+  103 |     });
+  104 |     await page.reload();
+  105 |     await test.step("Crear cambios pendientes sin esperar al autoguardado", async () => {
+  106 |       await insert(page, " BEACON-PENDIENTE-QA");
+  107 |       await expect(editor(page)).toContainText("BEACON-PENDIENTE-QA");
+  108 |     });
+  109 |     await test.step("Recargar y comprobar un beacon con el último estado pendiente", async () => {
+  110 |       await page.reload();
+  111 |       await expect
+  112 |         .poll(
+  113 |           () =>
+  114 |             beacons.some((beacon) =>
+  115 |               beacon.body.includes("BEACON-PENDIENTE-QA")
+  116 |             ),
+  117 |           { timeout: 2500 }
+  118 |         )
+> 119 |         .toBe(true);
+      |          ^ Error: expect(received).toBe(expected) // Object.is equality
+  120 |     });
+  121 |   }
+  122 | );
+  123 | 
+  124 | test(
+  125 |   "CP-HU05-03 Reintento con backoff al recuperar red",
+  126 |   { annotation: { type: "qatlas", description: "OL-TC-13" } },
+  127 |   async ({ qa }, info) => {
+  128 |     const page = await qa.openDocument(await qa.createDocument());
+  129 |     await test.step("Provocar fallo de red y medir reintentos de 1, 3 y 9 segundos", async () => {
+  130 |       const attempts: number[] = [];
+  131 |       await page.route("**/api/documents.update", async (route) => {
+  132 |         attempts.push(Date.now());
+  133 |         if (attempts.length <= 3) {
+  134 |           await route.abort("internetdisconnected");
+  135 |           return;
+  136 |         }
+  137 |         await route.continue();
+  138 |       });
+  139 |       const failedRequest = page.waitForEvent("requestfailed", (request) =>
+  140 |         request.url().includes("/api/documents.update")
+  141 |       );
+  142 |       await page.getByLabel("Título del documento").fill("Backoff QA");
+  143 |       await failedRequest;
+  144 |       await page.evaluate(() => window.dispatchEvent(new Event("online")));
+  145 |       try {
+  146 |         await expect.poll(() => attempts.length, { timeout: 18000 }).toBe(4);
+  147 |         const intervals = attempts
+  148 |           .slice(1)
+  149 |           .map((time, index) => time - attempts[index]);
+  150 |         for (const [index, expectedDelay] of [1000, 3000, 9000].entries()) {
+  151 |           expect(
+  152 |             Math.abs(intervals[index] - expectedDelay),
+  153 |             `Intervalos reales ${JSON.stringify(intervals)} ms`
+  154 |           ).toBeLessThanOrEqual(250);
+  155 |         }
+  156 |       } finally {
+  157 |         await info.attach("backoff-timing.json", {
+  158 |           body: Buffer.from(
+  159 |             JSON.stringify({
+  160 |               attempts,
+  161 |               intervals: attempts
+  162 |                 .slice(1)
+  163 |                 .map((time, index) => time - attempts[index]),
+  164 |             })
+  165 |           ),
+  166 |           contentType: "application/json",
+  167 |         });
+  168 |       }
+  169 |     });
+  170 |   }
+  171 | );
+  172 | 
+  173 | test(
+  174 |   "CP-HU05-04 Merge CRDT sin pérdida",
+  175 |   { annotation: { type: "qatlas", description: "OL-TC-14" } },
+  176 |   async ({ qa }) => {
+  177 |     const document = await qa.createDocument("Párrafo compartido.");
+  178 |     const sockets: WebSocketRoute[] = [];
+  179 |     let offline = false;
+  180 |     const configure = async (context: BrowserContext) => {
+  181 |       await context.routeWebSocket("**/collaboration/**", (socket) => {
+  182 |         if (offline) {
+  183 |           void socket.close();
+  184 |           return;
+  185 |         }
+  186 |         sockets.push(socket);
+  187 |         socket.connectToServer();
+  188 |       });
+  189 |     };
+  190 |     const a = await qa.openDocument(document, "editor", configure);
+  191 |     const b = await qa.openDocument(document, "editorB", configure);
+  192 |     await test.step("Editar el mismo párrafo con ambos clientes desconectados", async () => {
+  193 |       await expect.poll(() => sockets.length).toBeGreaterThanOrEqual(2);
+  194 |       offline = true;
+  195 |       for (const socket of sockets) {
+  196 |         await socket.close();
+  197 |       }
+  198 |       await Promise.all([
+  199 |         a.context().setOffline(true),
+  200 |         b.context().setOffline(true),
+  201 |       ]);
+  202 |       await insert(a, " APORTE-ALICE");
+  203 |       await insert(b, " APORTE-BOB");
+  204 |       await expect(editor(a)).toContainText("APORTE-ALICE");
+  205 |       await expect(editor(a)).not.toContainText("APORTE-BOB");
+  206 |       await expect(editor(b)).toContainText("APORTE-BOB");
+  207 |       await expect(editor(b)).not.toContainText("APORTE-ALICE");
+  208 |     });
+  209 |     await test.step("Reconectar y comprobar convergencia sin pérdida", async () => {
+  210 |       offline = false;
+  211 |       await Promise.all([
+  212 |         a.context().setOffline(false),
+  213 |         b.context().setOffline(false),
+  214 |       ]);
+  215 |       for (const page of [a, b]) {
+  216 |         await expect(editor(page)).toContainText("APORTE-ALICE", {
+  217 |           timeout: 15000,
+  218 |         });
+  219 |         await expect(editor(page)).toContainText("APORTE-BOB");
+```

@@ -1,0 +1,718 @@
+{
+  "version": 1,
+  "scope": "reportes historicos de Joseph Fonseca",
+  "c1": {
+    "aprobados": 17,
+    "fallidos": 3
+  },
+  "c2": {
+    "aprobados": 13,
+    "fallidos": 7
+  },
+  "files": [
+    {
+      "path": "reportes/ciclo_1/HU-04.xml",
+      "bytes": 1519,
+      "sha256": "2d43ee0323b46945984540b5fe3d8840e18ef4a498b1ef3485d7b71e05118f7f"
+    },
+    {
+      "path": "reportes/ciclo_1/HU-05.xml",
+      "bytes": 1862,
+      "sha256": "d382196d858f51f3eb1ff9c80a85273c540cd2b685d7abde62bbda25a6d65f40"
+    },
+    {
+      "path": "reportes/ciclo_1/HU-06.xml",
+      "bytes": 1442,
+      "sha256": "690ee6d1752e6f531fe3e5f695be6c9972877acee05ee682e03c21127d86bf85"
+    },
+    {
+      "path": "reportes/ciclo_1/resultados.json",
+      "bytes": 4733,
+      "sha256": "e4592d10f300d84eae63a363601e954f4dd2f368e4cf843a800c98a45a9f92f8"
+    },
+    {
+      "path": "reportes/ciclo_2/evidencias/OL-TC-1/error-context.txt",
+      "bytes": 4455,
+      "sha256": "ebf3aa1d4a842f026992bc59dda282363a58e12221b781a23e9527cebb9e9d61"
+    },
+    {
+      "path": "reportes/ciclo_2/evidencias/OL-TC-1/OL-TC-1-0-api-calls.json",
+      "bytes": 2291,
+      "sha256": "9a04e9cd19ca8c73fdf7bae50fb328b53608b9b26ea051027dcd611bde69be08"
+    },
+    {
+      "path": "reportes/ciclo_2/evidencias/OL-TC-10/browser-0-0-c83e13469dd3bcad457858ffc77bb8eca18244bf.png",
+      "bytes": 60469,
+      "sha256": "4a775fa944f8eea185037ad089b0661cc527e5399ce2c153a825f54a8cb9cee3"
+    },
+    {
+      "path": "reportes/ciclo_2/evidencias/OL-TC-10/error-context.txt",
+      "bytes": 11723,
+      "sha256": "b1e7dd1b364e5a2452aa1d199f30aefac767c230738622752deee746495e8416"
+    },
+    {
+      "path": "reportes/ciclo_2/evidencias/OL-TC-10/OL-TC-10-3-api-calls.json",
+      "bytes": 2563,
+      "sha256": "aaf963c32f9c001c11df81a9689bdbbe2c2586a96443f17603cb7d0078f6c2a6"
+    },
+    {
+      "path": "reportes/ciclo_2/evidencias/OL-TC-10/trace-0-d70249cecc889b1f1b81dd16185555db6fc5b5e2.zip",
+      "bytes": 2000989,
+      "sha256": "135dc0de6815b8d63d11abffcdee382f616ef06d4c19842a262f34b6322b4c8a"
+    },
+    {
+      "path": "reportes/ciclo_2/evidencias/OL-TC-10/video-0-0-303e17ee678fc547b01dfc8e74b98dd1edb9e7be.webm",
+      "bytes": 377024,
+      "sha256": "a078383554c8967f78885a85e1f3a8cafa18c350467594d21775a21308c85e18"
+    },
+    {
+      "path": "reportes/ciclo_2/evidencias/OL-TC-11/browser-0-0-9ceefdc3d1023e88cc07fe3079bef9aaacaf24df.png",
+      "bytes": 63634,
+      "sha256": "f6e4cf9139ca4783874872a3ec463352a9c27f9b31aa8503d34547a039963f87"
+    },
+    {
+      "path": "reportes/ciclo_2/evidencias/OL-TC-11/error-context.txt",
+      "bytes": 13495,
+      "sha256": "9148f4ce3f7a2381c552face123d25f9da3f2f198df6d6c87145a0da8790da8b"
+    },
+    {
+      "path": "reportes/ciclo_2/evidencias/OL-TC-11/OL-TC-11-3-api-calls.json",
+      "bytes": 2563,
+      "sha256": "66a745b1c9a544a65d2b43d78a6a9d17c27f0c5c3451cdf6639538c236188b90"
+    },
+    {
+      "path": "reportes/ciclo_2/evidencias/OL-TC-11/trace-0-3ceab9612616ef969930c2553ca2c89f7463e444.zip",
+      "bytes": 2783023,
+      "sha256": "0df6ba268b9d7713703f9782bc988d064d1b1cb127bda8fade1df1ce665ea143"
+    },
+    {
+      "path": "reportes/ciclo_2/evidencias/OL-TC-11/video-0-0-0dc6649fa9ffc28e913509d3cafe5f1afdc870fe.webm",
+      "bytes": 636043,
+      "sha256": "5e1a1ee376dbd0e8f04178a4a21551421c0efbdc6fd391c969637304aaeb4bc6"
+    },
+    {
+      "path": "reportes/ciclo_2/evidencias/OL-TC-13/browser-0-0-2a40fffff7e999603f8f93f914f2429797920525.png",
+      "bytes": 48887,
+      "sha256": "31c5d8ee92df4180ccc0661241fcda227a1633c0a45c8e925f401690c837268d"
+    },
+    {
+      "path": "reportes/ciclo_2/evidencias/OL-TC-13/error-context.txt",
+      "bytes": 13109,
+      "sha256": "70a40699c87c21c83f56dd139205078025d5b7c295272eb433f43ab8e12a600f"
+    },
+    {
+      "path": "reportes/ciclo_2/evidencias/OL-TC-13/OL-TC-13-0-backoff-timing.json",
+      "bytes": 150,
+      "sha256": "9129d71df7716acf6e4179fcb5a56a4bd19e8d290b374c1b22ca27c9d6e9c63a"
+    },
+    {
+      "path": "reportes/ciclo_2/evidencias/OL-TC-13/OL-TC-13-4-api-calls.json",
+      "bytes": 4239,
+      "sha256": "d21fdf2171353e04383503ff7f6dd24f1fb63a4e4bd8acc9684db2450679b386"
+    },
+    {
+      "path": "reportes/ciclo_2/evidencias/OL-TC-13/trace-0-3884e20938b119045a406f4e98c3547c0dbcc789.zip",
+      "bytes": 3892995,
+      "sha256": "6c6654826885baf007d2c4a20290af662458f50835c8d64cd3caa2ca20ac29a2"
+    },
+    {
+      "path": "reportes/ciclo_2/evidencias/OL-TC-13/video-0-0-58399d9e274d9e6d23cf31d9149b80dd23d29b98.webm",
+      "bytes": 423234,
+      "sha256": "438c1abdbbe79f0fc7720e3f93797395e558c0700632ee473a04903937fab31c"
+    },
+    {
+      "path": "reportes/ciclo_2/evidencias/OL-TC-14/browser-0-0-fce8c88f2c741b9b86a2472594e7f4e4fa8414b3.png",
+      "bytes": 60661,
+      "sha256": "843ef42a21b0d33f4acc191bfd5c2dc39c00ed76afde7f3c32772b84e1b88e23"
+    },
+    {
+      "path": "reportes/ciclo_2/evidencias/OL-TC-14/browser-1-0-d415cd475f142eed18ac142da573971ce2869142.png",
+      "bytes": 62364,
+      "sha256": "47eeb54ae310024dcce6d4fa9397537f01b5278119bc70ed2933496f48826b50"
+    },
+    {
+      "path": "reportes/ciclo_2/evidencias/OL-TC-14/OL-TC-14-2-api-calls.json",
+      "bytes": 2557,
+      "sha256": "775eee041561a3befc835140d04ff35aeaf68029949745b1d167704e487813ff"
+    },
+    {
+      "path": "reportes/ciclo_2/evidencias/OL-TC-15/browser-0-0-51ec611bd2f70306820d7e796a82b01c19f996a0.png",
+      "bytes": 58898,
+      "sha256": "0b37d19c7f2f85279dcd191dad0914d23a38e0ebecdecfabfd9813a0081da928"
+    },
+    {
+      "path": "reportes/ciclo_2/evidencias/OL-TC-15/OL-TC-15-1-api-calls.json",
+      "bytes": 2563,
+      "sha256": "a68a12f9c43bc7c9c4ed4c2f895ad20be0e18cbced51c5b9ef3e567788c417ea"
+    },
+    {
+      "path": "reportes/ciclo_2/evidencias/OL-TC-16/browser-0-0-788b9b24e3f7bf70e7d8525b7245ed54c0d5841f.png",
+      "bytes": 58232,
+      "sha256": "3d61ff35a29d85b1c553dc008bae9da0a1d2d68ef7c3c265c930568b835e5751"
+    },
+    {
+      "path": "reportes/ciclo_2/evidencias/OL-TC-16/error-context.txt",
+      "bytes": 10604,
+      "sha256": "b46581b8c3790b2833dc4aa2b7fb8a5f598a47bb64ced068d45b95358881117a"
+    },
+    {
+      "path": "reportes/ciclo_2/evidencias/OL-TC-16/OL-TC-16-3-api-calls.json",
+      "bytes": 4688,
+      "sha256": "5696d924a6d77f723467542d9355f440f678895fd8b84bcacfce2c1da285c1a5"
+    },
+    {
+      "path": "reportes/ciclo_2/evidencias/OL-TC-16/trace-0-e5e6c602bb4ee3fa407506843929dedc220f8248.zip",
+      "bytes": 4184890,
+      "sha256": "70834379287070bbae55f1e5391344d014cc55be425e7b0dab1294314b8907a3"
+    },
+    {
+      "path": "reportes/ciclo_2/evidencias/OL-TC-16/video-0-0-1999e22a4bf6eac3f963d17464db7c0877034aac.webm",
+      "bytes": 445934,
+      "sha256": "e32ea63f3c85f123f914ffe703d6e1dda1608fb232e95ce42e1b10c38b02657a"
+    },
+    {
+      "path": "reportes/ciclo_2/evidencias/OL-TC-17/browser-0-0-5003a816922ea64faeed6e7f4c9337a229e32bab.png",
+      "bytes": 63759,
+      "sha256": "4baf4004e17c8243ff5d8ba3188c9fe50d1bfa9c5fba9e686294fafba935b037"
+    },
+    {
+      "path": "reportes/ciclo_2/evidencias/OL-TC-17/browser-1-0-1724487dc8dcd57636a1a411307ad0e3149ef00a.png",
+      "bytes": 65303,
+      "sha256": "1a5e18695d04692b629628ff65f77c34b8598d2909069c3507d96eb3bd7f96d5"
+    },
+    {
+      "path": "reportes/ciclo_2/evidencias/OL-TC-17/OL-TC-17-2-api-calls.json",
+      "bytes": 2654,
+      "sha256": "b7df67d25803ae6ea43e6022d99f6ff9707f2f3911a15318aaa735fb3c5ed271"
+    },
+    {
+      "path": "reportes/ciclo_2/evidencias/OL-TC-18/OL-TC-18-0-api-calls.json",
+      "bytes": 6511,
+      "sha256": "bf7c2074f90511243297f05b1d392725813eb4821de8fb96e009c47d90008bcf"
+    },
+    {
+      "path": "reportes/ciclo_2/evidencias/OL-TC-19/OL-TC-19-0-api-calls.json",
+      "bytes": 5479,
+      "sha256": "fa6aec819e4005e702d91d9e253913474f9b493da210ae9e7e005dd226ccc4e7"
+    },
+    {
+      "path": "reportes/ciclo_2/evidencias/OL-TC-2/error-context.txt",
+      "bytes": 8053,
+      "sha256": "a773085ab60e30d17d24a773c2a970f63a7d1413f0e46f66653e5722f8a34724"
+    },
+    {
+      "path": "reportes/ciclo_2/evidencias/OL-TC-2/OL-TC-2-0-api-calls.json",
+      "bytes": 2198,
+      "sha256": "fd48a3249e78478ac4564d10a2cbca12869c7e1dea438955a576dd77a28aeb38"
+    },
+    {
+      "path": "reportes/ciclo_2/evidencias/OL-TC-21/OL-TC-21-0-api-calls.json",
+      "bytes": 4665,
+      "sha256": "c74af20db537b9d6af5901f34fd7ff3c51ddf4b87941bbaa0bf92908145c0edf"
+    },
+    {
+      "path": "reportes/ciclo_2/evidencias/OL-TC-22/OL-TC-22-0-api-calls.json",
+      "bytes": 7266,
+      "sha256": "37b0e7dfb89d1b549e0a3c3a043f4590af88caa44ea4e7dc68e4ef6c25a6bd3c"
+    },
+    {
+      "path": "reportes/ciclo_2/evidencias/OL-TC-3/OL-TC-3-0-api-calls.json",
+      "bytes": 310,
+      "sha256": "bfd6f990f2b784aa3168167c0de706c3452a4e332524738eabf3b4382172c8d5"
+    },
+    {
+      "path": "reportes/ciclo_2/evidencias/OL-TC-39/OL-TC-39-0-api-calls.json",
+      "bytes": 5756,
+      "sha256": "a6711dfd875fb061778037ae084e466516fd7562c9da6be1034fcf62f1ed261d"
+    },
+    {
+      "path": "reportes/ciclo_2/evidencias/OL-TC-4/OL-TC-4-0-api-calls.json",
+      "bytes": 294,
+      "sha256": "52b9c8c14d977a8490c162c4a72233ce9762979c19f0ae95e496a0d7e9ca2139"
+    },
+    {
+      "path": "reportes/ciclo_2/evidencias/OL-TC-40/OL-TC-40-0-api-calls.json",
+      "bytes": 5482,
+      "sha256": "16506939359e43f0c25554868218954c446c71ab81c47d31437bad9a136cf56a"
+    },
+    {
+      "path": "reportes/ciclo_2/evidencias/OL-TC-41/OL-TC-41-0-api-calls.json",
+      "bytes": 8159,
+      "sha256": "295b0dbe0e0bf9e61a871d1e8e7d762466f3084a36cc0a4585561116baee0a38"
+    },
+    {
+      "path": "reportes/ciclo_2/evidencias/OL-TC-5/OL-TC-5-0-api-calls.json",
+      "bytes": 309,
+      "sha256": "8236d9f9442a1bfb233b499d23d420ab84dba8c7f139b2a1f85bcd5090edcdc7"
+    },
+    {
+      "path": "reportes/ciclo_2/evidencias/OL-TC-6/browser-0-0-69029280dba32fc1232fe92ddb2970af593311cc.png",
+      "bytes": 60890,
+      "sha256": "f6318ba3b60e6a9da5db6c30de76f3724d534c565f30ebfefecc19d7c8073481"
+    },
+    {
+      "path": "reportes/ciclo_2/evidencias/OL-TC-6/error-context.txt",
+      "bytes": 10063,
+      "sha256": "88ad9ced4662671e3deec41bb240ddd7687de54054424865cc0be96fde45fe69"
+    },
+    {
+      "path": "reportes/ciclo_2/evidencias/OL-TC-6/OL-TC-6-3-api-calls.json",
+      "bytes": 2563,
+      "sha256": "8759fe711d84736dd44c83a4d9ce54218b663bbc254b24ffbbbe1adcac30d1c5"
+    },
+    {
+      "path": "reportes/ciclo_2/evidencias/OL-TC-6/trace-0-47b36f755bfc4c472d095dcebdf22560f766ce6d.zip",
+      "bytes": 1415526,
+      "sha256": "f410fd8e974bdf4f2ee2f1e6b0c13bed0fb70eaff9af71697c65381fc6f04a11"
+    },
+    {
+      "path": "reportes/ciclo_2/evidencias/OL-TC-6/video-0-0-b031039864172a40e459be056f5adc88717de262.webm",
+      "bytes": 361453,
+      "sha256": "839d4f06510fb48e95e501a2911e852b8025da9af3a173af396a093dc2b6156c"
+    },
+    {
+      "path": "reportes/ciclo_2/manifest.json",
+      "bytes": 25098,
+      "sha256": "9505e1f7dbbc6ef2defb91f13683c8b3a64fb9a03972dce5221b1f8e65a88768"
+    },
+    {
+      "path": "reportes/ciclo_2/results.xml",
+      "bytes": 34457,
+      "sha256": "2e7a314cb2581fb176071bda46b58b579b0ebb525c65bc29251777d0354ae466"
+    }
+  ],
+  "evidence_provenance": [
+    {
+      "caso": "OL-TC-6",
+      "archivo": "reportes/ciclo_2/evidencias/OL-TC-6/browser-0-0-69029280dba32fc1232fe92ddb2970af593311cc.png",
+      "tipo_original": "image/png",
+      "paso": 1,
+      "sha256_original": "f6318ba3b60e6a9da5db6c30de76f3724d534c565f30ebfefecc19d7c8073481",
+      "sha256_entregado": "f6318ba3b60e6a9da5db6c30de76f3724d534c565f30ebfefecc19d7c8073481",
+      "copia_modificada": false
+    },
+    {
+      "caso": "OL-TC-6",
+      "archivo": "reportes/ciclo_2/evidencias/OL-TC-6/trace-0-47b36f755bfc4c472d095dcebdf22560f766ce6d.zip",
+      "tipo_original": "application/zip",
+      "paso": 1,
+      "sha256_original": "23167cb9eed77a9c31df179ca7fe0f53ea4140f585ccc33d7cfa404254be217e",
+      "sha256_entregado": "f410fd8e974bdf4f2ee2f1e6b0c13bed0fb70eaff9af71697c65381fc6f04a11",
+      "copia_modificada": true
+    },
+    {
+      "caso": "OL-TC-6",
+      "archivo": "reportes/ciclo_2/evidencias/OL-TC-6/video-0-0-b031039864172a40e459be056f5adc88717de262.webm",
+      "tipo_original": "video/webm",
+      "paso": 1,
+      "sha256_original": "839d4f06510fb48e95e501a2911e852b8025da9af3a173af396a093dc2b6156c",
+      "sha256_entregado": "839d4f06510fb48e95e501a2911e852b8025da9af3a173af396a093dc2b6156c",
+      "copia_modificada": false
+    },
+    {
+      "caso": "OL-TC-6",
+      "archivo": "reportes/ciclo_2/evidencias/OL-TC-6/OL-TC-6-3-api-calls.json",
+      "tipo_original": "application/json",
+      "paso": 1,
+      "sha256_original": "3de9d6f22a08d6a16dc02b905c2ad784222c3877322363918242b35f161f9cdc",
+      "sha256_entregado": "8759fe711d84736dd44c83a4d9ce54218b663bbc254b24ffbbbe1adcac30d1c5",
+      "copia_modificada": true
+    },
+    {
+      "caso": "OL-TC-6",
+      "archivo": "reportes/ciclo_2/evidencias/OL-TC-6/error-context.txt",
+      "tipo_original": "text/markdown",
+      "paso": 1,
+      "sha256_original": "88ad9ced4662671e3deec41bb240ddd7687de54054424865cc0be96fde45fe69",
+      "sha256_entregado": "88ad9ced4662671e3deec41bb240ddd7687de54054424865cc0be96fde45fe69",
+      "copia_modificada": false
+    },
+    {
+      "caso": "OL-TC-10",
+      "archivo": "reportes/ciclo_2/evidencias/OL-TC-10/browser-0-0-c83e13469dd3bcad457858ffc77bb8eca18244bf.png",
+      "tipo_original": "image/png",
+      "paso": 1,
+      "sha256_original": "4a775fa944f8eea185037ad089b0661cc527e5399ce2c153a825f54a8cb9cee3",
+      "sha256_entregado": "4a775fa944f8eea185037ad089b0661cc527e5399ce2c153a825f54a8cb9cee3",
+      "copia_modificada": false
+    },
+    {
+      "caso": "OL-TC-10",
+      "archivo": "reportes/ciclo_2/evidencias/OL-TC-10/trace-0-d70249cecc889b1f1b81dd16185555db6fc5b5e2.zip",
+      "tipo_original": "application/zip",
+      "paso": 1,
+      "sha256_original": "7c59906107e37bd0d164ad410fb4193b5638367cde7c6f9a3676c2ce7f219011",
+      "sha256_entregado": "135dc0de6815b8d63d11abffcdee382f616ef06d4c19842a262f34b6322b4c8a",
+      "copia_modificada": true
+    },
+    {
+      "caso": "OL-TC-10",
+      "archivo": "reportes/ciclo_2/evidencias/OL-TC-10/video-0-0-303e17ee678fc547b01dfc8e74b98dd1edb9e7be.webm",
+      "tipo_original": "video/webm",
+      "paso": 1,
+      "sha256_original": "a078383554c8967f78885a85e1f3a8cafa18c350467594d21775a21308c85e18",
+      "sha256_entregado": "a078383554c8967f78885a85e1f3a8cafa18c350467594d21775a21308c85e18",
+      "copia_modificada": false
+    },
+    {
+      "caso": "OL-TC-10",
+      "archivo": "reportes/ciclo_2/evidencias/OL-TC-10/OL-TC-10-3-api-calls.json",
+      "tipo_original": "application/json",
+      "paso": 1,
+      "sha256_original": "9e1c033e5ea3db1c04abb3ffd45e5945255fa654845faf21d84a14eef850b299",
+      "sha256_entregado": "aaf963c32f9c001c11df81a9689bdbbe2c2586a96443f17603cb7d0078f6c2a6",
+      "copia_modificada": true
+    },
+    {
+      "caso": "OL-TC-10",
+      "archivo": "reportes/ciclo_2/evidencias/OL-TC-10/error-context.txt",
+      "tipo_original": "text/markdown",
+      "paso": 1,
+      "sha256_original": "b1e7dd1b364e5a2452aa1d199f30aefac767c230738622752deee746495e8416",
+      "sha256_entregado": "b1e7dd1b364e5a2452aa1d199f30aefac767c230738622752deee746495e8416",
+      "copia_modificada": false
+    },
+    {
+      "caso": "OL-TC-11",
+      "archivo": "reportes/ciclo_2/evidencias/OL-TC-11/browser-0-0-9ceefdc3d1023e88cc07fe3079bef9aaacaf24df.png",
+      "tipo_original": "image/png",
+      "paso": 2,
+      "sha256_original": "f6e4cf9139ca4783874872a3ec463352a9c27f9b31aa8503d34547a039963f87",
+      "sha256_entregado": "f6e4cf9139ca4783874872a3ec463352a9c27f9b31aa8503d34547a039963f87",
+      "copia_modificada": false
+    },
+    {
+      "caso": "OL-TC-11",
+      "archivo": "reportes/ciclo_2/evidencias/OL-TC-11/trace-0-3ceab9612616ef969930c2553ca2c89f7463e444.zip",
+      "tipo_original": "application/zip",
+      "paso": 2,
+      "sha256_original": "b96ce6ae534a60229b4c432e8c648777174f23a222a7b490b8811d03b9d0a342",
+      "sha256_entregado": "0df6ba268b9d7713703f9782bc988d064d1b1cb127bda8fade1df1ce665ea143",
+      "copia_modificada": true
+    },
+    {
+      "caso": "OL-TC-11",
+      "archivo": "reportes/ciclo_2/evidencias/OL-TC-11/video-0-0-0dc6649fa9ffc28e913509d3cafe5f1afdc870fe.webm",
+      "tipo_original": "video/webm",
+      "paso": 2,
+      "sha256_original": "5e1a1ee376dbd0e8f04178a4a21551421c0efbdc6fd391c969637304aaeb4bc6",
+      "sha256_entregado": "5e1a1ee376dbd0e8f04178a4a21551421c0efbdc6fd391c969637304aaeb4bc6",
+      "copia_modificada": false
+    },
+    {
+      "caso": "OL-TC-11",
+      "archivo": "reportes/ciclo_2/evidencias/OL-TC-11/OL-TC-11-3-api-calls.json",
+      "tipo_original": "application/json",
+      "paso": 2,
+      "sha256_original": "7897cc11413712ae3c1c9c193fe1af97b2ccd21f3368ea95c4bcd76063d35421",
+      "sha256_entregado": "66a745b1c9a544a65d2b43d78a6a9d17c27f0c5c3451cdf6639538c236188b90",
+      "copia_modificada": true
+    },
+    {
+      "caso": "OL-TC-11",
+      "archivo": "reportes/ciclo_2/evidencias/OL-TC-11/error-context.txt",
+      "tipo_original": "text/markdown",
+      "paso": 2,
+      "sha256_original": "9148f4ce3f7a2381c552face123d25f9da3f2f198df6d6c87145a0da8790da8b",
+      "sha256_entregado": "9148f4ce3f7a2381c552face123d25f9da3f2f198df6d6c87145a0da8790da8b",
+      "copia_modificada": false
+    },
+    {
+      "caso": "OL-TC-13",
+      "archivo": "reportes/ciclo_2/evidencias/OL-TC-13/OL-TC-13-0-backoff-timing.json",
+      "tipo_original": "application/json",
+      "paso": 1,
+      "sha256_original": "b1b60c1249ca9e61915da456c5f2839202bd72cf42516f82cc78407484090f76",
+      "sha256_entregado": "9129d71df7716acf6e4179fcb5a56a4bd19e8d290b374c1b22ca27c9d6e9c63a",
+      "copia_modificada": true
+    },
+    {
+      "caso": "OL-TC-13",
+      "archivo": "reportes/ciclo_2/evidencias/OL-TC-13/browser-0-0-2a40fffff7e999603f8f93f914f2429797920525.png",
+      "tipo_original": "image/png",
+      "paso": 1,
+      "sha256_original": "31c5d8ee92df4180ccc0661241fcda227a1633c0a45c8e925f401690c837268d",
+      "sha256_entregado": "31c5d8ee92df4180ccc0661241fcda227a1633c0a45c8e925f401690c837268d",
+      "copia_modificada": false
+    },
+    {
+      "caso": "OL-TC-13",
+      "archivo": "reportes/ciclo_2/evidencias/OL-TC-13/trace-0-3884e20938b119045a406f4e98c3547c0dbcc789.zip",
+      "tipo_original": "application/zip",
+      "paso": 1,
+      "sha256_original": "352c08a30e3663499ff1ed45a5bc778d8ba42de65b80edaebcaf84d1a3da1deb",
+      "sha256_entregado": "6c6654826885baf007d2c4a20290af662458f50835c8d64cd3caa2ca20ac29a2",
+      "copia_modificada": true
+    },
+    {
+      "caso": "OL-TC-13",
+      "archivo": "reportes/ciclo_2/evidencias/OL-TC-13/video-0-0-58399d9e274d9e6d23cf31d9149b80dd23d29b98.webm",
+      "tipo_original": "video/webm",
+      "paso": 1,
+      "sha256_original": "438c1abdbbe79f0fc7720e3f93797395e558c0700632ee473a04903937fab31c",
+      "sha256_entregado": "438c1abdbbe79f0fc7720e3f93797395e558c0700632ee473a04903937fab31c",
+      "copia_modificada": false
+    },
+    {
+      "caso": "OL-TC-13",
+      "archivo": "reportes/ciclo_2/evidencias/OL-TC-13/OL-TC-13-4-api-calls.json",
+      "tipo_original": "application/json",
+      "paso": 1,
+      "sha256_original": "015d03161be2c2123b480a57539e1079ef7d492f83c5cf8ad6a03c62963fdca0",
+      "sha256_entregado": "d21fdf2171353e04383503ff7f6dd24f1fb63a4e4bd8acc9684db2450679b386",
+      "copia_modificada": true
+    },
+    {
+      "caso": "OL-TC-13",
+      "archivo": "reportes/ciclo_2/evidencias/OL-TC-13/error-context.txt",
+      "tipo_original": "text/markdown",
+      "paso": 1,
+      "sha256_original": "70a40699c87c21c83f56dd139205078025d5b7c295272eb433f43ab8e12a600f",
+      "sha256_entregado": "70a40699c87c21c83f56dd139205078025d5b7c295272eb433f43ab8e12a600f",
+      "copia_modificada": false
+    },
+    {
+      "caso": "OL-TC-14",
+      "archivo": "reportes/ciclo_2/evidencias/OL-TC-14/browser-0-0-fce8c88f2c741b9b86a2472594e7f4e4fa8414b3.png",
+      "tipo_original": "image/png",
+      "paso": 2,
+      "sha256_original": "843ef42a21b0d33f4acc191bfd5c2dc39c00ed76afde7f3c32772b84e1b88e23",
+      "sha256_entregado": "843ef42a21b0d33f4acc191bfd5c2dc39c00ed76afde7f3c32772b84e1b88e23",
+      "copia_modificada": false
+    },
+    {
+      "caso": "OL-TC-14",
+      "archivo": "reportes/ciclo_2/evidencias/OL-TC-14/browser-1-0-d415cd475f142eed18ac142da573971ce2869142.png",
+      "tipo_original": "image/png",
+      "paso": 2,
+      "sha256_original": "47eeb54ae310024dcce6d4fa9397537f01b5278119bc70ed2933496f48826b50",
+      "sha256_entregado": "47eeb54ae310024dcce6d4fa9397537f01b5278119bc70ed2933496f48826b50",
+      "copia_modificada": false
+    },
+    {
+      "caso": "OL-TC-14",
+      "archivo": "reportes/ciclo_2/evidencias/OL-TC-14/OL-TC-14-2-api-calls.json",
+      "tipo_original": "application/json",
+      "paso": 2,
+      "sha256_original": "afecbc997cb303d8297bbe1834dab820d9acc8fc84373d0d1b510388d52a1425",
+      "sha256_entregado": "775eee041561a3befc835140d04ff35aeaf68029949745b1d167704e487813ff",
+      "copia_modificada": true
+    },
+    {
+      "caso": "OL-TC-15",
+      "archivo": "reportes/ciclo_2/evidencias/OL-TC-15/browser-0-0-51ec611bd2f70306820d7e796a82b01c19f996a0.png",
+      "tipo_original": "image/png",
+      "paso": 1,
+      "sha256_original": "0b37d19c7f2f85279dcd191dad0914d23a38e0ebecdecfabfd9813a0081da928",
+      "sha256_entregado": "0b37d19c7f2f85279dcd191dad0914d23a38e0ebecdecfabfd9813a0081da928",
+      "copia_modificada": false
+    },
+    {
+      "caso": "OL-TC-15",
+      "archivo": "reportes/ciclo_2/evidencias/OL-TC-15/OL-TC-15-1-api-calls.json",
+      "tipo_original": "application/json",
+      "paso": 1,
+      "sha256_original": "8122a8e66b9e4d3984fd6b2391d195e7c3e41a23628a785cbc393e06da7b4151",
+      "sha256_entregado": "a68a12f9c43bc7c9c4ed4c2f895ad20be0e18cbced51c5b9ef3e567788c417ea",
+      "copia_modificada": true
+    },
+    {
+      "caso": "OL-TC-16",
+      "archivo": "reportes/ciclo_2/evidencias/OL-TC-16/browser-0-0-788b9b24e3f7bf70e7d8525b7245ed54c0d5841f.png",
+      "tipo_original": "image/png",
+      "paso": 1,
+      "sha256_original": "3d61ff35a29d85b1c553dc008bae9da0a1d2d68ef7c3c265c930568b835e5751",
+      "sha256_entregado": "3d61ff35a29d85b1c553dc008bae9da0a1d2d68ef7c3c265c930568b835e5751",
+      "copia_modificada": false
+    },
+    {
+      "caso": "OL-TC-16",
+      "archivo": "reportes/ciclo_2/evidencias/OL-TC-16/trace-0-e5e6c602bb4ee3fa407506843929dedc220f8248.zip",
+      "tipo_original": "application/zip",
+      "paso": 1,
+      "sha256_original": "3eb63e02a4b47492af29a2a5943ae273b0f05a6d5db51c664105e14dd7f110f9",
+      "sha256_entregado": "70834379287070bbae55f1e5391344d014cc55be425e7b0dab1294314b8907a3",
+      "copia_modificada": true
+    },
+    {
+      "caso": "OL-TC-16",
+      "archivo": "reportes/ciclo_2/evidencias/OL-TC-16/video-0-0-1999e22a4bf6eac3f963d17464db7c0877034aac.webm",
+      "tipo_original": "video/webm",
+      "paso": 1,
+      "sha256_original": "e32ea63f3c85f123f914ffe703d6e1dda1608fb232e95ce42e1b10c38b02657a",
+      "sha256_entregado": "e32ea63f3c85f123f914ffe703d6e1dda1608fb232e95ce42e1b10c38b02657a",
+      "copia_modificada": false
+    },
+    {
+      "caso": "OL-TC-16",
+      "archivo": "reportes/ciclo_2/evidencias/OL-TC-16/OL-TC-16-3-api-calls.json",
+      "tipo_original": "application/json",
+      "paso": 1,
+      "sha256_original": "9877ec9362bb1c4796b4b84a5890f343c809302a42f2c1ab28f3cd00104bd7f8",
+      "sha256_entregado": "5696d924a6d77f723467542d9355f440f678895fd8b84bcacfce2c1da285c1a5",
+      "copia_modificada": true
+    },
+    {
+      "caso": "OL-TC-16",
+      "archivo": "reportes/ciclo_2/evidencias/OL-TC-16/error-context.txt",
+      "tipo_original": "text/markdown",
+      "paso": 1,
+      "sha256_original": "b46581b8c3790b2833dc4aa2b7fb8a5f598a47bb64ced068d45b95358881117a",
+      "sha256_entregado": "b46581b8c3790b2833dc4aa2b7fb8a5f598a47bb64ced068d45b95358881117a",
+      "copia_modificada": false
+    },
+    {
+      "caso": "OL-TC-17",
+      "archivo": "reportes/ciclo_2/evidencias/OL-TC-17/browser-0-0-5003a816922ea64faeed6e7f4c9337a229e32bab.png",
+      "tipo_original": "image/png",
+      "paso": 1,
+      "sha256_original": "4baf4004e17c8243ff5d8ba3188c9fe50d1bfa9c5fba9e686294fafba935b037",
+      "sha256_entregado": "4baf4004e17c8243ff5d8ba3188c9fe50d1bfa9c5fba9e686294fafba935b037",
+      "copia_modificada": false
+    },
+    {
+      "caso": "OL-TC-17",
+      "archivo": "reportes/ciclo_2/evidencias/OL-TC-17/browser-1-0-1724487dc8dcd57636a1a411307ad0e3149ef00a.png",
+      "tipo_original": "image/png",
+      "paso": 1,
+      "sha256_original": "1a5e18695d04692b629628ff65f77c34b8598d2909069c3507d96eb3bd7f96d5",
+      "sha256_entregado": "1a5e18695d04692b629628ff65f77c34b8598d2909069c3507d96eb3bd7f96d5",
+      "copia_modificada": false
+    },
+    {
+      "caso": "OL-TC-17",
+      "archivo": "reportes/ciclo_2/evidencias/OL-TC-17/OL-TC-17-2-api-calls.json",
+      "tipo_original": "application/json",
+      "paso": 1,
+      "sha256_original": "e716f8d5ed609a49a3190f49b8ca32b534a3b713ceb0215567a00d37fc3ca08c",
+      "sha256_entregado": "b7df67d25803ae6ea43e6022d99f6ff9707f2f3911a15318aaa735fb3c5ed271",
+      "copia_modificada": true
+    },
+    {
+      "caso": "OL-TC-18",
+      "archivo": "reportes/ciclo_2/evidencias/OL-TC-18/OL-TC-18-0-api-calls.json",
+      "tipo_original": "application/json",
+      "paso": 1,
+      "sha256_original": "eb6528c0d537bb7aa9acfa445ed8c20470eabb66fc37bded5638496b58eaa1a3",
+      "sha256_entregado": "bf7c2074f90511243297f05b1d392725813eb4821de8fb96e009c47d90008bcf",
+      "copia_modificada": true
+    },
+    {
+      "caso": "OL-TC-19",
+      "archivo": "reportes/ciclo_2/evidencias/OL-TC-19/OL-TC-19-0-api-calls.json",
+      "tipo_original": "application/json",
+      "paso": 1,
+      "sha256_original": "f44f3083dd77c7b8af8c7f08c245c70fc51d9587b54e405c3fe04fa91de21ba5",
+      "sha256_entregado": "fa6aec819e4005e702d91d9e253913474f9b493da210ae9e7e005dd226ccc4e7",
+      "copia_modificada": true
+    },
+    {
+      "caso": "OL-TC-21",
+      "archivo": "reportes/ciclo_2/evidencias/OL-TC-21/OL-TC-21-0-api-calls.json",
+      "tipo_original": "application/json",
+      "paso": 1,
+      "sha256_original": "f608e1ac3191bf9b7a6eb2488cc07a160bdf7a2123f8015b280a3697d030acb2",
+      "sha256_entregado": "c74af20db537b9d6af5901f34fd7ff3c51ddf4b87941bbaa0bf92908145c0edf",
+      "copia_modificada": true
+    },
+    {
+      "caso": "OL-TC-22",
+      "archivo": "reportes/ciclo_2/evidencias/OL-TC-22/OL-TC-22-0-api-calls.json",
+      "tipo_original": "application/json",
+      "paso": 1,
+      "sha256_original": "aa7fa5498db1d4177fa9ce41de6106be469e51799270789bcedbbaa3002e61b1",
+      "sha256_entregado": "37b0e7dfb89d1b549e0a3c3a043f4590af88caa44ea4e7dc68e4ef6c25a6bd3c",
+      "copia_modificada": true
+    },
+    {
+      "caso": "OL-TC-39",
+      "archivo": "reportes/ciclo_2/evidencias/OL-TC-39/OL-TC-39-0-api-calls.json",
+      "tipo_original": "application/json",
+      "paso": 1,
+      "sha256_original": "84fa76b67bca69074bb982cc8ef9e5d8a1b9b1e2173f68f4eed036bd95e401bc",
+      "sha256_entregado": "a6711dfd875fb061778037ae084e466516fd7562c9da6be1034fcf62f1ed261d",
+      "copia_modificada": true
+    },
+    {
+      "caso": "OL-TC-40",
+      "archivo": "reportes/ciclo_2/evidencias/OL-TC-40/OL-TC-40-0-api-calls.json",
+      "tipo_original": "application/json",
+      "paso": 1,
+      "sha256_original": "2c1a6fa47ead31340eb2a0b3419dfad2118abe2a19f9dcc0491a543e5865fb65",
+      "sha256_entregado": "16506939359e43f0c25554868218954c446c71ab81c47d31437bad9a136cf56a",
+      "copia_modificada": true
+    },
+    {
+      "caso": "OL-TC-41",
+      "archivo": "reportes/ciclo_2/evidencias/OL-TC-41/OL-TC-41-0-api-calls.json",
+      "tipo_original": "application/json",
+      "paso": 1,
+      "sha256_original": "dfae3c18aa36004d17ac8873a052208578d1bed161517666671c66af4563c6f4",
+      "sha256_entregado": "295b0dbe0e0bf9e61a871d1e8e7d762466f3084a36cc0a4585561116baee0a38",
+      "copia_modificada": true
+    },
+    {
+      "caso": "OL-TC-1",
+      "archivo": "reportes/ciclo_2/evidencias/OL-TC-1/OL-TC-1-0-api-calls.json",
+      "tipo_original": "application/json",
+      "paso": 2,
+      "sha256_original": "d71ed9d466a9fecc1758060a48f1ac4bdb518b5dd8249a654843df73bc53a0a5",
+      "sha256_entregado": "9a04e9cd19ca8c73fdf7bae50fb328b53608b9b26ea051027dcd611bde69be08",
+      "copia_modificada": true
+    },
+    {
+      "caso": "OL-TC-1",
+      "archivo": "reportes/ciclo_2/evidencias/OL-TC-1/error-context.txt",
+      "tipo_original": "text/markdown",
+      "paso": 2,
+      "sha256_original": "ebf3aa1d4a842f026992bc59dda282363a58e12221b781a23e9527cebb9e9d61",
+      "sha256_entregado": "ebf3aa1d4a842f026992bc59dda282363a58e12221b781a23e9527cebb9e9d61",
+      "copia_modificada": false
+    },
+    {
+      "caso": "OL-TC-2",
+      "archivo": "reportes/ciclo_2/evidencias/OL-TC-2/OL-TC-2-0-api-calls.json",
+      "tipo_original": "application/json",
+      "paso": 1,
+      "sha256_original": "a6ba3de712320a6e9bfc921c77426d11da2d5d38a6b1844199dde9407fdc9984",
+      "sha256_entregado": "fd48a3249e78478ac4564d10a2cbca12869c7e1dea438955a576dd77a28aeb38",
+      "copia_modificada": true
+    },
+    {
+      "caso": "OL-TC-2",
+      "archivo": "reportes/ciclo_2/evidencias/OL-TC-2/error-context.txt",
+      "tipo_original": "text/markdown",
+      "paso": 1,
+      "sha256_original": "a773085ab60e30d17d24a773c2a970f63a7d1413f0e46f66653e5722f8a34724",
+      "sha256_entregado": "a773085ab60e30d17d24a773c2a970f63a7d1413f0e46f66653e5722f8a34724",
+      "copia_modificada": false
+    },
+    {
+      "caso": "OL-TC-3",
+      "archivo": "reportes/ciclo_2/evidencias/OL-TC-3/OL-TC-3-0-api-calls.json",
+      "tipo_original": "application/json",
+      "paso": 1,
+      "sha256_original": "6c65bbedac59d410775b52ce8c2f26d7ba9c4bdc7dc629a022cae91da8e9069f",
+      "sha256_entregado": "bfd6f990f2b784aa3168167c0de706c3452a4e332524738eabf3b4382172c8d5",
+      "copia_modificada": true
+    },
+    {
+      "caso": "OL-TC-4",
+      "archivo": "reportes/ciclo_2/evidencias/OL-TC-4/OL-TC-4-0-api-calls.json",
+      "tipo_original": "application/json",
+      "paso": 1,
+      "sha256_original": "79b71aa0f70d8ffbb8c5170cdb82edc2ba48293fc525bc66068cc5589770e5a1",
+      "sha256_entregado": "52b9c8c14d977a8490c162c4a72233ce9762979c19f0ae95e496a0d7e9ca2139",
+      "copia_modificada": true
+    },
+    {
+      "caso": "OL-TC-5",
+      "archivo": "reportes/ciclo_2/evidencias/OL-TC-5/OL-TC-5-0-api-calls.json",
+      "tipo_original": "application/json",
+      "paso": 1,
+      "sha256_original": "09da6e945f31afc915ede95abd9456e1dad0875dc65ce9a2864d2ae7b8879933",
+      "sha256_entregado": "8236d9f9442a1bfb233b499d23d420ab84dba8c7f139b2a1f85bcd5090edcdc7",
+      "copia_modificada": true
+    }
+  ]
+}

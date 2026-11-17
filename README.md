@@ -1,3 +1,43 @@
+# Entrega de QA de Joseph Fonseca
+
+Proyecto académico de aseguramiento de la calidad de Outline. El alcance de Joseph cubre HU-04 Crear documento, HU-05 Autoguardado y HU-06 Resolver y editar comentarios, con veinte casos automatizados en Playwright durante C2.
+
+La guía de preparación, ejecución e ingesta en QAtlas incluye las rutas del código y las limitaciones documentadas. [Consultar la guía de pruebas](docs/proyecto/ejecuciones_HU_04_05_06.md).
+
+El cierre registra C1 con 17 aprobados y 3 fallidos, y C2 con 13 aprobados, 7 fallidos y 7 defectos abiertos. El informe y las copias de consulta de las 48 evidencias acompañan la entrega. [Abrir el informe final](docs/proyecto/informe_final.pdf). [Consultar los resultados y evidencias de C2](docs/proyecto/index.html).
+
+La base del proyecto es Outline en el commit `0e19c7d89ae2f4924af98d022675bd1e9275a239`. La documentación original de Outline continúa a continuación.
+
+---
+
+# Entrega académica de QA — Joseph Fonseca
+
+Este repositorio reúne el proyecto Outline y las pruebas de HU-04 Crear documento, HU-05 Autoguardado y HU-06 Resolver y editar comentarios. La entrega conserva el código de Vitest de C1 y los veinte casos de Playwright de C2, con su reporter de ingesta para QAtlas.
+
+| Revisión | Archivo |
+|---|---|
+| Preparación, ejecución, ingesta y trazabilidad | [Guía de pruebas](docs/proyecto/ejecuciones_HU_04_05_06.md) |
+| Informe final de 67 páginas | [Informe de pruebas](docs/proyecto/informe_final.pdf) |
+| Veinte resultados de C2 y 48 adjuntos | [Índice HTML descargable](docs/proyecto/index.html) |
+| Reportes JUnit y manifiestos históricos | [Reportes](docs/proyecto/reportes/) |
+| Archivos y hashes SHA-256 de los reportes | [Inventario](docs/proyecto/reportes/inventario.json) |
+
+C1 registra 17 aprobados y 3 fallidos. C2 registra 13 aprobados y 7 fallidos. El informe documenta los siete defectos abiertos, el cumplimiento parcial del plan y los pendientes de seguimiento. Los reportes corresponden a las ejecuciones históricas conservadas.
+
+La preparación requiere Node.js 22, PostgreSQL 18 y Docker con Docker Compose. Los comandos se ejecutan desde la raíz del repositorio, después de completar la conexión local indicada en la guía.
+
+```sh
+corepack yarn install --immutable
+corepack yarn qa:prepare
+corepack yarn qa:playwright
+```
+
+Para publicar una nueva ronda en QAtlas se proporciona `QATLAS_TOKEN` por variable de entorno o mediante `.env.playwright.local` y se ejecuta `corepack yarn qa:playwright:qatlas`. La plantilla está en [.env.playwright.example](.env.playwright.example). Las copias de consulta de las evidencias ocultan las credenciales de los registros y de las trazas.
+
+Los documentos del proyecto describen los [requisitos](docs/proyecto/requisitos_OL_04_05_06.md), los [casos](docs/proyecto/casos_OL_04_05_06.md), el [plan](docs/proyecto/planes_HU_04_05_06.md), las [suites](docs/proyecto/suites_HU_04_05_06.md) y las [ejecuciones](docs/proyecto/ejecuciones_HU_04_05_06.md). Los campos de preparación inicial se identifican como históricos de C1.
+
+## Proyecto Outline
+
 <p align="center">
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="./public/logos/outline-logo-dark.png" height="29">

@@ -1,0 +1,9 @@
+[
+  {
+    "method": "POST",
+    "path": "/api/documents.create",
+    "status": 401,
+    "request": "{\"collectionId\":\"fd56e5d9-e274-4c43-9b55-1de921ec2ab7\"}",
+    "response": "{\"ok\":false,\"error\":\"authentication_required\",\"status\":401,\"message\":\"Authentication required\"}"
+  }
+]

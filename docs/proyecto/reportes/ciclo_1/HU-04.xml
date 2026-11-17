@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites name="vitest tests" tests="5" failures="0" errors="0" time="0.4509953">
+    <testsuite name="server/routes/api/documents/documents.create.qa.test.ts" timestamp="2026-10-14T21:43:01.842Z" hostname="DESKTOP-JJ0V2RN" tests="5" failures="0" errors="0" skipped="0" time="0.4509953">
+        <testcase classname="server/routes/api/documents/documents.create.qa.test.ts" name="QA HU-04 — Crear documento (OL-TC-1…OL-TC-5) &gt; CP-HU04-01 – editor creates a document in a collection" time="0.3327659">
+        </testcase>
+        <testcase classname="server/routes/api/documents/documents.create.qa.test.ts" name="QA HU-04 — Crear documento (OL-TC-1…OL-TC-5) &gt; CP-HU04-02 – rejects an invalid collectionId" time="0.028678">
+        </testcase>
+        <testcase classname="server/routes/api/documents/documents.create.qa.test.ts" name="QA HU-04 — Crear documento (OL-TC-1…OL-TC-5) &gt; CP-HU04-03 – viewer cannot create a document" time="0.047733">
+        </testcase>
+        <testcase classname="server/routes/api/documents/documents.create.qa.test.ts" name="QA HU-04 — Crear documento (OL-TC-1…OL-TC-5) &gt; CP-HU04-04 – requires authentication" time="0.005046">
+        </testcase>
+        <testcase classname="server/routes/api/documents/documents.create.qa.test.ts" name="QA HU-04 — Crear documento (OL-TC-1…OL-TC-5) &gt; CP-HU04-05 – guest cannot create a document" time="0.0312667">
+        </testcase>
+    </testsuite>
+</testsuites>

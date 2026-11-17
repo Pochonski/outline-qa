@@ -1,0 +1,653 @@
+{
+  "version": 1,
+  "id": "1415083c-a36b-4f38-88a3-95eebbdf3334",
+  "createdAt": "2026-11-10T18:36:19.689Z",
+  "results": [
+    {
+      "test_case_code": "OL-TC-6",
+      "status": "failed",
+      "error_message": "Error: expect(locator).toBeVisible() failed\n\nLocator: getByText(/^guardando…$/i)\nExpected: visible\nTimeout: 2500ms\nError: element(s) not found\n\nCall log:\n  - Expect \"soft toBeVisible\" getByText(/^guardando…$/i) with timeout 2500ms\n  - waiting for getByText(/^guardando…$/i)\n",
+      "duration_ms": 11100,
+      "attempts": 1,
+      "flaky": false,
+      "steps": [
+        {
+          "title": "Escribir y observar guardando…",
+          "status": "failed",
+          "error_message": "Error: expect(locator).toBeVisible() failed\n\nLocator: getByText(/^guardando…$/i)\nExpected: visible\nTimeout: 2500ms\nError: element(s) not found\n\nCall log:\n  - Expect \"soft toBeVisible\" getByText(/^guardando…$/i) with timeout 2500ms\n  - waiting for getByText(/^guardando…$/i)\n"
+        },
+        {
+          "title": "Observar Guardado hh:mm:ss dentro del límite",
+          "status": "failed",
+          "error_message": "Error: expect(locator).toBeVisible() failed\n\nLocator: getByText(/^Guardado \\d{2}:\\d{2}:\\d{2}$/)\nExpected: visible\nTimeout: 1ms\nError: element(s) not found\n\nCall log:\n  - Expect \"toBeVisible\" getByText(/^Guardado \\d{2}:\\d{2}:\\d{2}$/) with timeout 1ms\n  - waiting for getByText(/^Guardado \\d{2}:\\d{2}:\\d{2}$/)\n"
+        }
+      ],
+      "evidence": [
+        {
+          "name": "browser-0-0-69029280dba32fc1232fe92ddb2970af593311cc.png",
+          "type": "image/png",
+          "path": "evidencias/OL-TC-6/browser-0-0-69029280dba32fc1232fe92ddb2970af593311cc.png",
+          "step": 1
+        },
+        {
+          "name": "trace-0-47b36f755bfc4c472d095dcebdf22560f766ce6d.zip",
+          "type": "application/zip",
+          "path": "evidencias/OL-TC-6/trace-0-47b36f755bfc4c472d095dcebdf22560f766ce6d.zip",
+          "step": 1
+        },
+        {
+          "name": "video-0-0-b031039864172a40e459be056f5adc88717de262.webm",
+          "type": "video/webm",
+          "path": "evidencias/OL-TC-6/video-0-0-b031039864172a40e459be056f5adc88717de262.webm",
+          "step": 1
+        },
+        {
+          "name": "OL-TC-6-3-api-calls.json",
+          "type": "application/json",
+          "path": "evidencias/OL-TC-6/OL-TC-6-3-api-calls.json",
+          "step": 1
+        },
+        {
+          "name": "error-context.txt",
+          "type": "text/plain",
+          "path": "evidencias/OL-TC-6/error-context.txt",
+          "step": 1
+        }
+      ]
+    },
+    {
+      "test_case_code": "OL-TC-10",
+      "status": "failed",
+      "error_message": "Error: expect(received).toEqual(expected) // deep equality\n\n- Expected  - 3\n+ Received  + 1\n\n- Array [\n-   \"PATCH\",\n- ]\n+ Array []\n\nCall Log:\n- Timeout 1500ms exceeded while waiting on the predicate",
+      "duration_ms": 11851,
+      "attempts": 1,
+      "flaky": false,
+      "steps": [
+        {
+          "title": "Comprobar debounce 2000 ms y una solicitud PATCH documents.update",
+          "status": "failed",
+          "error_message": "Error: expect(received).toEqual(expected) // deep equality\n\n- Expected  - 3\n+ Received  + 1\n\n- Array [\n-   \"PATCH\",\n- ]\n+ Array []\n\nCall Log:\n- Timeout 1500ms exceeded while waiting on the predicate"
+        }
+      ],
+      "evidence": [
+        {
+          "name": "browser-0-0-c83e13469dd3bcad457858ffc77bb8eca18244bf.png",
+          "type": "image/png",
+          "path": "evidencias/OL-TC-10/browser-0-0-c83e13469dd3bcad457858ffc77bb8eca18244bf.png",
+          "step": 1
+        },
+        {
+          "name": "trace-0-d70249cecc889b1f1b81dd16185555db6fc5b5e2.zip",
+          "type": "application/zip",
+          "path": "evidencias/OL-TC-10/trace-0-d70249cecc889b1f1b81dd16185555db6fc5b5e2.zip",
+          "step": 1
+        },
+        {
+          "name": "video-0-0-303e17ee678fc547b01dfc8e74b98dd1edb9e7be.webm",
+          "type": "video/webm",
+          "path": "evidencias/OL-TC-10/video-0-0-303e17ee678fc547b01dfc8e74b98dd1edb9e7be.webm",
+          "step": 1
+        },
+        {
+          "name": "OL-TC-10-3-api-calls.json",
+          "type": "application/json",
+          "path": "evidencias/OL-TC-10/OL-TC-10-3-api-calls.json",
+          "step": 1
+        },
+        {
+          "name": "error-context.txt",
+          "type": "text/plain",
+          "path": "evidencias/OL-TC-10/error-context.txt",
+          "step": 1
+        }
+      ]
+    },
+    {
+      "test_case_code": "OL-TC-11",
+      "status": "failed",
+      "error_message": "Error: expect(received).toBe(expected) // Object.is equality\n\nExpected: true\nReceived: false\n\nCall Log:\n- Timeout 2500ms exceeded while waiting on the predicate",
+      "duration_ms": 20402,
+      "attempts": 1,
+      "flaky": false,
+      "steps": [
+        {
+          "title": "Crear cambios pendientes sin esperar al autoguardado",
+          "status": "passed"
+        },
+        {
+          "title": "Recargar y comprobar un beacon con el último estado pendiente",
+          "status": "failed",
+          "error_message": "Error: expect(received).toBe(expected) // Object.is equality\n\nExpected: true\nReceived: false\n\nCall Log:\n- Timeout 2500ms exceeded while waiting on the predicate"
+        }
+      ],
+      "evidence": [
+        {
+          "name": "browser-0-0-9ceefdc3d1023e88cc07fe3079bef9aaacaf24df.png",
+          "type": "image/png",
+          "path": "evidencias/OL-TC-11/browser-0-0-9ceefdc3d1023e88cc07fe3079bef9aaacaf24df.png",
+          "step": 2
+        },
+        {
+          "name": "trace-0-3ceab9612616ef969930c2553ca2c89f7463e444.zip",
+          "type": "application/zip",
+          "path": "evidencias/OL-TC-11/trace-0-3ceab9612616ef969930c2553ca2c89f7463e444.zip",
+          "step": 2
+        },
+        {
+          "name": "video-0-0-0dc6649fa9ffc28e913509d3cafe5f1afdc870fe.webm",
+          "type": "video/webm",
+          "path": "evidencias/OL-TC-11/video-0-0-0dc6649fa9ffc28e913509d3cafe5f1afdc870fe.webm",
+          "step": 2
+        },
+        {
+          "name": "OL-TC-11-3-api-calls.json",
+          "type": "application/json",
+          "path": "evidencias/OL-TC-11/OL-TC-11-3-api-calls.json",
+          "step": 2
+        },
+        {
+          "name": "error-context.txt",
+          "type": "text/plain",
+          "path": "evidencias/OL-TC-11/error-context.txt",
+          "step": 2
+        }
+      ]
+    },
+    {
+      "test_case_code": "OL-TC-13",
+      "status": "failed",
+      "error_message": "Error: Intervalos reales [1016,1014,1007] ms\n\nexpect(received).toBeLessThanOrEqual(expected)\n\nExpected: <= 250\nReceived:    1986",
+      "duration_ms": 13885,
+      "attempts": 1,
+      "flaky": false,
+      "steps": [
+        {
+          "title": "Provocar fallo de red y medir reintentos de 1, 3 y 9 segundos",
+          "status": "failed",
+          "error_message": "Error: Intervalos reales [1016,1014,1007] ms\n\nexpect(received).toBeLessThanOrEqual(expected)\n\nExpected: <= 250\nReceived:    1986"
+        }
+      ],
+      "evidence": [
+        {
+          "name": "OL-TC-13-0-backoff-timing.json",
+          "type": "application/json",
+          "path": "evidencias/OL-TC-13/OL-TC-13-0-backoff-timing.json",
+          "step": 1
+        },
+        {
+          "name": "browser-0-0-2a40fffff7e999603f8f93f914f2429797920525.png",
+          "type": "image/png",
+          "path": "evidencias/OL-TC-13/browser-0-0-2a40fffff7e999603f8f93f914f2429797920525.png",
+          "step": 1
+        },
+        {
+          "name": "trace-0-3884e20938b119045a406f4e98c3547c0dbcc789.zip",
+          "type": "application/zip",
+          "path": "evidencias/OL-TC-13/trace-0-3884e20938b119045a406f4e98c3547c0dbcc789.zip",
+          "step": 1
+        },
+        {
+          "name": "video-0-0-58399d9e274d9e6d23cf31d9149b80dd23d29b98.webm",
+          "type": "video/webm",
+          "path": "evidencias/OL-TC-13/video-0-0-58399d9e274d9e6d23cf31d9149b80dd23d29b98.webm",
+          "step": 1
+        },
+        {
+          "name": "OL-TC-13-4-api-calls.json",
+          "type": "application/json",
+          "path": "evidencias/OL-TC-13/OL-TC-13-4-api-calls.json",
+          "step": 1
+        },
+        {
+          "name": "error-context.txt",
+          "type": "text/plain",
+          "path": "evidencias/OL-TC-13/error-context.txt",
+          "step": 1
+        }
+      ]
+    },
+    {
+      "test_case_code": "OL-TC-14",
+      "status": "passed",
+      "duration_ms": 13991,
+      "attempts": 1,
+      "flaky": false,
+      "steps": [
+        {
+          "title": "Editar el mismo párrafo con ambos clientes desconectados",
+          "status": "passed"
+        },
+        {
+          "title": "Reconectar y comprobar convergencia sin pérdida",
+          "status": "passed"
+        }
+      ],
+      "evidence": [
+        {
+          "name": "browser-0-0-fce8c88f2c741b9b86a2472594e7f4e4fa8414b3.png",
+          "type": "image/png",
+          "path": "evidencias/OL-TC-14/browser-0-0-fce8c88f2c741b9b86a2472594e7f4e4fa8414b3.png",
+          "step": 2
+        },
+        {
+          "name": "browser-1-0-d415cd475f142eed18ac142da573971ce2869142.png",
+          "type": "image/png",
+          "path": "evidencias/OL-TC-14/browser-1-0-d415cd475f142eed18ac142da573971ce2869142.png",
+          "step": 2
+        },
+        {
+          "name": "OL-TC-14-2-api-calls.json",
+          "type": "application/json",
+          "path": "evidencias/OL-TC-14/OL-TC-14-2-api-calls.json",
+          "step": 2
+        }
+      ]
+    },
+    {
+      "test_case_code": "OL-TC-15",
+      "status": "passed",
+      "duration_ms": 6503,
+      "attempts": 1,
+      "flaky": false,
+      "steps": [
+        {
+          "title": "Mantener el documento intacto cinco segundos y comprobar cero guardados",
+          "status": "passed"
+        }
+      ],
+      "evidence": [
+        {
+          "name": "browser-0-0-51ec611bd2f70306820d7e796a82b01c19f996a0.png",
+          "type": "image/png",
+          "path": "evidencias/OL-TC-15/browser-0-0-51ec611bd2f70306820d7e796a82b01c19f996a0.png",
+          "step": 1
+        },
+        {
+          "name": "OL-TC-15-1-api-calls.json",
+          "type": "application/json",
+          "path": "evidencias/OL-TC-15/OL-TC-15-1-api-calls.json",
+          "step": 1
+        }
+      ]
+    },
+    {
+      "test_case_code": "OL-TC-16",
+      "status": "failed",
+      "error_message": "Error: El caso exige tres intentos fallidos.\n\nexpect(received).toBe(expected) // Object.is equality\n\nExpected: 3\nReceived: 4",
+      "duration_ms": 13481,
+      "attempts": 1,
+      "flaky": false,
+      "steps": [
+        {
+          "title": "Agotar reintentos, mostrar error y mantener el editor habilitado",
+          "status": "failed",
+          "error_message": "Error: El caso exige tres intentos fallidos.\n\nexpect(received).toBe(expected) // Object.is equality\n\nExpected: 3\nReceived: 4"
+        }
+      ],
+      "evidence": [
+        {
+          "name": "browser-0-0-788b9b24e3f7bf70e7d8525b7245ed54c0d5841f.png",
+          "type": "image/png",
+          "path": "evidencias/OL-TC-16/browser-0-0-788b9b24e3f7bf70e7d8525b7245ed54c0d5841f.png",
+          "step": 1
+        },
+        {
+          "name": "trace-0-e5e6c602bb4ee3fa407506843929dedc220f8248.zip",
+          "type": "application/zip",
+          "path": "evidencias/OL-TC-16/trace-0-e5e6c602bb4ee3fa407506843929dedc220f8248.zip",
+          "step": 1
+        },
+        {
+          "name": "video-0-0-1999e22a4bf6eac3f963d17464db7c0877034aac.webm",
+          "type": "video/webm",
+          "path": "evidencias/OL-TC-16/video-0-0-1999e22a4bf6eac3f963d17464db7c0877034aac.webm",
+          "step": 1
+        },
+        {
+          "name": "OL-TC-16-3-api-calls.json",
+          "type": "application/json",
+          "path": "evidencias/OL-TC-16/OL-TC-16-3-api-calls.json",
+          "step": 1
+        },
+        {
+          "name": "error-context.txt",
+          "type": "text/plain",
+          "path": "evidencias/OL-TC-16/error-context.txt",
+          "step": 1
+        }
+      ]
+    },
+    {
+      "test_case_code": "OL-TC-17",
+      "status": "passed",
+      "duration_ms": 13262,
+      "attempts": 1,
+      "flaky": false,
+      "steps": [
+        {
+          "title": "Editar en paralelo y observar ambos aportes en menos de un segundo",
+          "status": "passed"
+        }
+      ],
+      "evidence": [
+        {
+          "name": "browser-0-0-5003a816922ea64faeed6e7f4c9337a229e32bab.png",
+          "type": "image/png",
+          "path": "evidencias/OL-TC-17/browser-0-0-5003a816922ea64faeed6e7f4c9337a229e32bab.png",
+          "step": 1
+        },
+        {
+          "name": "browser-1-0-1724487dc8dcd57636a1a411307ad0e3149ef00a.png",
+          "type": "image/png",
+          "path": "evidencias/OL-TC-17/browser-1-0-1724487dc8dcd57636a1a411307ad0e3149ef00a.png",
+          "step": 1
+        },
+        {
+          "name": "OL-TC-17-2-api-calls.json",
+          "type": "application/json",
+          "path": "evidencias/OL-TC-17/OL-TC-17-2-api-calls.json",
+          "step": 1
+        }
+      ]
+    },
+    {
+      "test_case_code": "OL-TC-18",
+      "status": "passed",
+      "duration_ms": 259,
+      "attempts": 1,
+      "flaky": false,
+      "steps": [
+        {
+          "title": "Editar contenido y comprobar timestamp de modificación",
+          "status": "passed"
+        }
+      ],
+      "evidence": [
+        {
+          "name": "OL-TC-18-0-api-calls.json",
+          "type": "application/json",
+          "path": "evidencias/OL-TC-18/OL-TC-18-0-api-calls.json",
+          "step": 1
+        }
+      ]
+    },
+    {
+      "test_case_code": "OL-TC-19",
+      "status": "passed",
+      "duration_ms": 236,
+      "attempts": 1,
+      "flaky": false,
+      "steps": [
+        {
+          "title": "Rechazar la edición ajena y conservar el contenido original",
+          "status": "passed"
+        }
+      ],
+      "evidence": [
+        {
+          "name": "OL-TC-19-0-api-calls.json",
+          "type": "application/json",
+          "path": "evidencias/OL-TC-19/OL-TC-19-0-api-calls.json",
+          "step": 1
+        }
+      ]
+    },
+    {
+      "test_case_code": "OL-TC-21",
+      "status": "passed",
+      "duration_ms": 279,
+      "attempts": 1,
+      "flaky": false,
+      "steps": [
+        {
+          "title": "Eliminar, comprobar deletedAt y ausencia en comments.list",
+          "status": "passed"
+        }
+      ],
+      "evidence": [
+        {
+          "name": "OL-TC-21-0-api-calls.json",
+          "type": "application/json",
+          "path": "evidencias/OL-TC-21/OL-TC-21-0-api-calls.json",
+          "step": 1
+        }
+      ]
+    },
+    {
+      "test_case_code": "OL-TC-22",
+      "status": "passed",
+      "duration_ms": 248,
+      "attempts": 1,
+      "flaky": false,
+      "steps": [
+        {
+          "title": "Resolver el comentario y comprobar resolvedAt persistido",
+          "status": "passed"
+        }
+      ],
+      "evidence": [
+        {
+          "name": "OL-TC-22-0-api-calls.json",
+          "type": "application/json",
+          "path": "evidencias/OL-TC-22/OL-TC-22-0-api-calls.json",
+          "step": 1
+        }
+      ]
+    },
+    {
+      "test_case_code": "OL-TC-39",
+      "status": "passed",
+      "duration_ms": 257,
+      "attempts": 1,
+      "flaky": false,
+      "steps": [
+        {
+          "title": "Rechazar la eliminación ajena y mantener el comentario visible",
+          "status": "passed"
+        }
+      ],
+      "evidence": [
+        {
+          "name": "OL-TC-39-0-api-calls.json",
+          "type": "application/json",
+          "path": "evidencias/OL-TC-39/OL-TC-39-0-api-calls.json",
+          "step": 1
+        }
+      ]
+    },
+    {
+      "test_case_code": "OL-TC-40",
+      "status": "passed",
+      "duration_ms": 193,
+      "attempts": 1,
+      "flaky": false,
+      "steps": [
+        {
+          "title": "Rechazar el texto vacío y conservar el original",
+          "status": "passed"
+        }
+      ],
+      "evidence": [
+        {
+          "name": "OL-TC-40-0-api-calls.json",
+          "type": "application/json",
+          "path": "evidencias/OL-TC-40/OL-TC-40-0-api-calls.json",
+          "step": 1
+        }
+      ]
+    },
+    {
+      "test_case_code": "OL-TC-41",
+      "status": "passed",
+      "duration_ms": 261,
+      "attempts": 1,
+      "flaky": false,
+      "steps": [
+        {
+          "title": "Reabrir y comprobar resolvedAt nulo",
+          "status": "passed"
+        }
+      ],
+      "evidence": [
+        {
+          "name": "OL-TC-41-0-api-calls.json",
+          "type": "application/json",
+          "path": "evidencias/OL-TC-41/OL-TC-41-0-api-calls.json",
+          "step": 1
+        }
+      ]
+    },
+    {
+      "test_case_code": "OL-TC-1",
+      "status": "failed",
+      "error_message": "Error: El payload debe devolver el título por defecto definido en el caso.\n\nexpect(received).toBe(expected) // Object.is equality\n\nExpected: \"Sin título\"\nReceived: \"\"",
+      "duration_ms": 75,
+      "attempts": 1,
+      "flaky": false,
+      "steps": [
+        {
+          "title": "Crear un documento en una colección como editor",
+          "status": "passed"
+        },
+        {
+          "title": "Comprobar el título por defecto y la apertura del editor",
+          "status": "failed",
+          "error_message": "Error: El payload debe devolver el título por defecto definido en el caso.\n\nexpect(received).toBe(expected) // Object.is equality\n\nExpected: \"Sin título\"\nReceived: \"\""
+        }
+      ],
+      "evidence": [
+        {
+          "name": "OL-TC-1-0-api-calls.json",
+          "type": "application/json",
+          "path": "evidencias/OL-TC-1/OL-TC-1-0-api-calls.json",
+          "step": 2
+        },
+        {
+          "name": "error-context.txt",
+          "type": "text/plain",
+          "path": "evidencias/OL-TC-1/error-context.txt",
+          "step": 2
+        }
+      ]
+    },
+    {
+      "test_case_code": "OL-TC-2",
+      "status": "failed",
+      "error_message": "Error: {\"data\":{\"id\":\"4788af31-73f8-4549-b9af-f4ba9c84efd7\",\"url\":\"/doc/untitled-brkqB0e5eK\",\"urlId\":\"brkqB0e5eK\",\"title\":\"\",\"data\":{\"type\":\"doc\",\"content\":[{\"type\":\"paragraph\"}]},\"icon\":null,\"color\":null,\"tasks\":{\"completed\":0,\"total\":0},\"language\":null,\"createdAt\":\"2026-11-10T18:36:18.347Z\",\"createdBy\":{\"id\":\"da8f3618-100c-48b2-b488-5cf977e2a1d4\",\"name\":\"QA editor\",\"avatarUrl\":null,\"color\":\"#e600e0\",\"role\":\"member\",\"isSuspended\":false,\"createdAt\":\"2026-11-10T18:23:38.026Z\",\"updatedAt\":\"2026-11-10T18:36:14.407Z\",\"deletedAt\":null,\"lastActiveAt\":\"2026-11-10T18:36:14.406Z\",\"timezone\":\"America/Costa_Rica\"},\"updatedAt\":\"2026-11-10T18:36:18.347Z\",\"updatedBy\":{\"id\":\"da8f3618-100c-48b2-b488-5cf977e2a1d4\",\"name\":\"QA editor\",\"avatarUrl\":null,\"color\":\"#e600e0\",\"role\":\"member\",\"isSuspended\":false,\"createdAt\":\"2026-11-10T18:23:38.026Z\",\"updatedAt\":\"2026-11-10T18:36:14.407Z\",\"deletedAt\":null,\"lastActiveAt\":\"2026-11-10T18:36:14.406Z\",\"timezone\":\"America/Costa_Rica\"},\"publishedAt\":null,\"archivedAt\":null,\"deprecatedReason\":null,\"deletedAt\":null,\"collaboratorIds\":[\"da8f3618-100c-48b2-b488-5cf977e2a1d4\"],\"revision\":1,\"fullWidth\":false,\"preferences\":null,\"collectionId\":null,\"parentDocumentId\":null,\"isCollectionDeleted\":false,\"templateId\":null,\"insightsEnabled\":true,\"popularityScore\":0},\"policies\":[{\"id\":\"4788af31-73f8-4549-b9af-f4ba9c84efd7\",\"abilities\":{\"read\":true,\"update\":true,\"delete\":true,\"move\":true,\"duplicate\":true,\"download\":true,\"star\":true,\"unstar\":true,\"subscribe\":true,\"unsubscribe\":true,\"share\":true,\"archive\":false,\"restore\":false,\"updateDeprecatedReason\":false,\"listRevisions\":true,\"listViews\":true,\"comment\":true,\"publish\":true,\"manageUsers\":true,\"createChildDocument\":false,\"updateInsights\":false,\"pin\":false,\"unpin\":false,\"pinToHome\":false,\"permanentDelete\":false,\"unarchive\":false,\"unpublish\":false}}],\"status\":200,\"ok\":true}\n\nexpect(received).toBe(expected) // Object.is equality\n\nExpected: 400\nReceived: 200",
+      "duration_ms": 108,
+      "attempts": 1,
+      "flaky": false,
+      "steps": [
+        {
+          "title": "Omitir collectionId y comprobar el rechazo sin crear documentos",
+          "status": "failed",
+          "error_message": "Error: {\"data\":{\"id\":\"4788af31-73f8-4549-b9af-f4ba9c84efd7\",\"url\":\"/doc/untitled-brkqB0e5eK\",\"urlId\":\"brkqB0e5eK\",\"title\":\"\",\"data\":{\"type\":\"doc\",\"content\":[{\"type\":\"paragraph\"}]},\"icon\":null,\"color\":null,\"tasks\":{\"completed\":0,\"total\":0},\"language\":null,\"createdAt\":\"2026-11-10T18:36:18.347Z\",\"createdBy\":{\"id\":\"da8f3618-100c-48b2-b488-5cf977e2a1d4\",\"name\":\"QA editor\",\"avatarUrl\":null,\"color\":\"#e600e0\",\"role\":\"member\",\"isSuspended\":false,\"createdAt\":\"2026-11-10T18:23:38.026Z\",\"updatedAt\":\"2026-11-10T18:36:14.407Z\",\"deletedAt\":null,\"lastActiveAt\":\"2026-11-10T18:36:14.406Z\",\"timezone\":\"America/Costa_Rica\"},\"updatedAt\":\"2026-11-10T18:36:18.347Z\",\"updatedBy\":{\"id\":\"da8f3618-100c-48b2-b488-5cf977e2a1d4\",\"name\":\"QA editor\",\"avatarUrl\":null,\"color\":\"#e600e0\",\"role\":\"member\",\"isSuspended\":false,\"createdAt\":\"2026-11-10T18:23:38.026Z\",\"updatedAt\":\"2026-11-10T18:36:14.407Z\",\"deletedAt\":null,\"lastActiveAt\":\"2026-11-10T18:36:14.406Z\",\"timezone\":\"America/Costa_Rica\"},\"publishedAt\":null,\"archivedAt\":null,\"deprecatedReason\":null,\"deletedAt\":null,\"collaboratorIds\":[\"da8f3618-100c-48b2-b488-5cf977e2a1d4\"],\"revision\":1,\"fullWidth\":false,\"preferences\":null,\"collectionId\":null,\"parentDocumentId\":null,\"isCollectionDeleted\":false,\"templateId\":null,\"insightsEnabled\":true,\"popularityScore\":0},\"policies\":[{\"id\":\"4788af31-73f8-4549-b9af-f4ba9c84efd7\",\"abilities\":{\"read\":true,\"update\":true,\"delete\":true,\"move\":true,\"duplicate\":true,\"download\":true,\"star\":true,\"unstar\":true,\"subscribe\":true,\"unsubscribe\":true,\"share\":true,\"archive\":false,\"restore\":false,\"updateDeprecatedReason\":false,\"listRevisions\":true,\"listViews\":true,\"comment\":true,\"publish\":true,\"manageUsers\":true,\"createChildDocument\":false,\"updateInsights\":false,\"pin\":false,\"unpin\":false,\"pinToHome\":false,\"permanentDelete\":false,\"unarchive\":false,\"unpublish\":false}}],\"status\":200,\"ok\":true}\n\nexpect(received).toBe(expected) // Object.is equality\n\nExpected: 400\nReceived: 200"
+        }
+      ],
+      "evidence": [
+        {
+          "name": "OL-TC-2-0-api-calls.json",
+          "type": "application/json",
+          "path": "evidencias/OL-TC-2/OL-TC-2-0-api-calls.json",
+          "step": 1
+        },
+        {
+          "name": "error-context.txt",
+          "type": "text/plain",
+          "path": "evidencias/OL-TC-2/error-context.txt",
+          "step": 1
+        }
+      ]
+    },
+    {
+      "test_case_code": "OL-TC-3",
+      "status": "passed",
+      "duration_ms": 78,
+      "attempts": 1,
+      "flaky": false,
+      "steps": [
+        {
+          "title": "Rechazar la creación de un viewer con authorization_error",
+          "status": "passed"
+        }
+      ],
+      "evidence": [
+        {
+          "name": "OL-TC-3-0-api-calls.json",
+          "type": "application/json",
+          "path": "evidencias/OL-TC-3/OL-TC-3-0-api-calls.json",
+          "step": 1
+        }
+      ]
+    },
+    {
+      "test_case_code": "OL-TC-4",
+      "status": "passed",
+      "duration_ms": 21,
+      "attempts": 1,
+      "flaky": false,
+      "steps": [
+        {
+          "title": "Rechazar una solicitud sin autenticación",
+          "status": "passed"
+        }
+      ],
+      "evidence": [
+        {
+          "name": "OL-TC-4-0-api-calls.json",
+          "type": "application/json",
+          "path": "evidencias/OL-TC-4/OL-TC-4-0-api-calls.json",
+          "step": 1
+        }
+      ]
+    },
+    {
+      "test_case_code": "OL-TC-5",
+      "status": "passed",
+      "duration_ms": 28,
+      "attempts": 1,
+      "flaky": false,
+      "steps": [
+        {
+          "title": "Rechazar la creación de un guest",
+          "status": "passed"
+        }
+      ],
+      "evidence": [
+        {
+          "name": "OL-TC-5-0-api-calls.json",
+          "type": "application/json",
+          "path": "evidencias/OL-TC-5/OL-TC-5-0-api-calls.json",
+          "step": 1
+        }
+      ]
+    }
+  ],
+  "groups": {
+    "hu04-create": {
+      "id": 190,
+      "code": "OL-RUN-16",
+      "completed": true
+    },
+    "hu04-indicator": {
+      "id": 191,
+      "code": "OL-RUN-17",
+      "completed": true
+    },
+    "hu05-autosave": {
+      "id": 192,
+      "code": "OL-RUN-18",
+      "completed": true
+    },
+    "hu05-beacon": {
+      "id": 193,
+      "code": "OL-RUN-19",
+      "completed": true
+    },
+    "hu06-comments": {
+      "id": 194,
+      "code": "OL-RUN-20",
+      "completed": true
+    }
+  }
+}

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites name="vitest tests" tests="6" failures="1" errors="0" time="0.4795497">
+    <testsuite name="app/scenes/Document/hooks/useDocumentSave.qa.test.ts" timestamp="2026-10-14T22:28:29.378Z" hostname="DESKTOP-JJ0V2RN" tests="3" failures="1" errors="0" skipped="0" time="0.0146082">
+        <testcase classname="app/scenes/Document/hooks/useDocumentSave.qa.test.ts" name="QA HU-05 autosave &gt; CP-HU05-01" time="0.0065284">
+            <failure message="expected 3000 to deeply equal 2000" type="AssertionError">
+AssertionError: expected 3000 to deeply equal 2000
+
+- Expected
++ Received
+
+- 2000
++ 3000
+
+ ❯ app/scenes/Document/hooks/useDocumentSave.qa.test.ts:7:28
+            </failure>
+        </testcase>
+        <testcase classname="app/scenes/Document/hooks/useDocumentSave.qa.test.ts" name="QA HU-05 autosave &gt; CP-HU05-04" time="0.0053224">
+        </testcase>
+        <testcase classname="app/scenes/Document/hooks/useDocumentSave.qa.test.ts" name="QA HU-05 autosave &gt; CP-HU05-07" time="0.001483">
+        </testcase>
+    </testsuite>
+    <testsuite name="server/routes/api/documents/documents.update.qa.test.ts" timestamp="2026-10-14T22:28:29.383Z" hostname="DESKTOP-JJ0V2RN" tests="3" failures="0" errors="0" skipped="0" time="0.4649415">
+        <testcase classname="server/routes/api/documents/documents.update.qa.test.ts" name="QA HU-05 autosave persistence &gt; CP-HU05-03" time="0.3282919">
+        </testcase>
+        <testcase classname="server/routes/api/documents/documents.update.qa.test.ts" name="QA HU-05 autosave persistence &gt; CP-HU05-05" time="0.0516064">
+        </testcase>
+        <testcase classname="server/routes/api/documents/documents.update.qa.test.ts" name="QA HU-05 autosave persistence &gt; CP-HU05-06" time="0.0799972">
+        </testcase>
+    </testsuite>
+</testsuites>

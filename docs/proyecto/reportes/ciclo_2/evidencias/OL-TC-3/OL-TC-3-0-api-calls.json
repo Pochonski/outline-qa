@@ -1,0 +1,9 @@
+[
+  {
+    "method": "POST",
+    "path": "/api/documents.create",
+    "status": 403,
+    "request": "{\"collectionId\":\"fd56e5d9-e274-4c43-9b55-1de921ec2ab7\",\"title\":\"Viewer QA\"}",
+    "response": "{\"ok\":false,\"error\":\"authorization_error\",\"status\":403,\"message\":\"Authorization error\"}"
+  }
+]

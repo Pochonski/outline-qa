@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites name="vitest tests" tests="7" failures="0" errors="0" time="0.7280844">
+    <testsuite name="server/routes/api/comments/comments.qa.test.ts" timestamp="2026-10-14T22:06:27.521Z" hostname="DESKTOP-JJ0V2RN" tests="7" failures="0" errors="0" skipped="0" time="0.7280844">
+        <testcase classname="server/routes/api/comments/comments.qa.test.ts" name="QA HU-06 comments &gt; CP-HU06-01" time="0.3232025">
+        </testcase>
+        <testcase classname="server/routes/api/comments/comments.qa.test.ts" name="QA HU-06 comments &gt; CP-HU06-02" time="0.0607534">
+        </testcase>
+        <testcase classname="server/routes/api/comments/comments.qa.test.ts" name="QA HU-06 comments &gt; CP-HU06-03" time="0.113621">
+        </testcase>
+        <testcase classname="server/routes/api/comments/comments.qa.test.ts" name="QA HU-06 comments &gt; CP-HU06-04" time="0.0632018">
+        </testcase>
+        <testcase classname="server/routes/api/comments/comments.qa.test.ts" name="QA HU-06 comments &gt; CP-HU06-05" time="0.0874682">
+        </testcase>
+        <testcase classname="server/routes/api/comments/comments.qa.test.ts" name="QA HU-06 comments &gt; CP-HU06-06" time="0.0286322">
+        </testcase>
+        <testcase classname="server/routes/api/comments/comments.qa.test.ts" name="QA HU-06 comments &gt; CP-HU06-07" time="0.045634">
+        </testcase>
+    </testsuite>
+</testsuites>

@@ -1,0 +1,142 @@
+[
+  {
+    "caso": "OL-TC-1",
+    "corrida": "OL-RUN-27",
+    "resultado": "aprobado",
+    "fecha_registro": "2026-11-16T01:36:08.315305Z",
+    "nota": "El origen historico y las fechas originales constan en los respaldos de QAtlas."
+  },
+  {
+    "caso": "OL-TC-2",
+    "corrida": "OL-RUN-27",
+    "resultado": "aprobado",
+    "fecha_registro": "2026-11-16T01:36:09.088457Z",
+    "nota": "El origen historico y las fechas originales constan en los respaldos de QAtlas."
+  },
+  {
+    "caso": "OL-TC-3",
+    "corrida": "OL-RUN-27",
+    "resultado": "aprobado",
+    "fecha_registro": "2026-11-16T01:36:09.177512Z",
+    "nota": "El origen historico y las fechas originales constan en los respaldos de QAtlas."
+  },
+  {
+    "caso": "OL-TC-4",
+    "corrida": "OL-RUN-27",
+    "resultado": "aprobado",
+    "fecha_registro": "2026-11-16T01:36:09.265834Z",
+    "nota": "El origen historico y las fechas originales constan en los respaldos de QAtlas."
+  },
+  {
+    "caso": "OL-TC-5",
+    "corrida": "OL-RUN-27",
+    "resultado": "aprobado",
+    "fecha_registro": "2026-11-16T01:36:09.422382Z",
+    "nota": "El origen historico y las fechas originales constan en los respaldos de QAtlas."
+  },
+  {
+    "caso": "OL-TC-10",
+    "corrida": "OL-RUN-28",
+    "resultado": "fallido",
+    "fecha_registro": "2026-11-16T01:36:21.828285Z",
+    "nota": "El origen historico y las fechas originales constan en los respaldos de QAtlas."
+  },
+  {
+    "caso": "OL-TC-13",
+    "corrida": "OL-RUN-28",
+    "resultado": "aprobado",
+    "fecha_registro": "2026-11-16T01:36:22.148526Z",
+    "nota": "El origen historico y las fechas originales constan en los respaldos de QAtlas."
+  },
+  {
+    "caso": "OL-TC-14",
+    "corrida": "OL-RUN-28",
+    "resultado": "aprobado",
+    "fecha_registro": "2026-11-16T01:36:21.928475Z",
+    "nota": "El origen historico y las fechas originales constan en los respaldos de QAtlas."
+  },
+  {
+    "caso": "OL-TC-15",
+    "corrida": "OL-RUN-28",
+    "resultado": "aprobado",
+    "fecha_registro": "2026-11-16T01:36:22.222286Z",
+    "nota": "El origen historico y las fechas originales constan en los respaldos de QAtlas."
+  },
+  {
+    "caso": "OL-TC-16",
+    "corrida": "OL-RUN-28",
+    "resultado": "aprobado",
+    "fecha_registro": "2026-11-16T01:36:22.322623Z",
+    "nota": "El origen historico y las fechas originales constan en los respaldos de QAtlas."
+  },
+  {
+    "caso": "OL-TC-17",
+    "corrida": "OL-RUN-28",
+    "resultado": "aprobado",
+    "fecha_registro": "2026-11-16T01:36:22.065054Z",
+    "nota": "El origen historico y las fechas originales constan en los respaldos de QAtlas."
+  },
+  {
+    "caso": "OL-TC-18",
+    "corrida": "OL-RUN-29",
+    "resultado": "aprobado",
+    "fecha_registro": "2026-11-16T01:36:39.910499Z",
+    "nota": "El origen historico y las fechas originales constan en los respaldos de QAtlas."
+  },
+  {
+    "caso": "OL-TC-19",
+    "corrida": "OL-RUN-29",
+    "resultado": "aprobado",
+    "fecha_registro": "2026-11-16T01:36:40.026537Z",
+    "nota": "El origen historico y las fechas originales constan en los respaldos de QAtlas."
+  },
+  {
+    "caso": "OL-TC-21",
+    "corrida": "OL-RUN-29",
+    "resultado": "aprobado",
+    "fecha_registro": "2026-11-16T01:36:40.637829Z",
+    "nota": "El origen historico y las fechas originales constan en los respaldos de QAtlas."
+  },
+  {
+    "caso": "OL-TC-22",
+    "corrida": "OL-RUN-29",
+    "resultado": "aprobado",
+    "fecha_registro": "2026-11-16T01:36:40.724192Z",
+    "nota": "El origen historico y las fechas originales constan en los respaldos de QAtlas."
+  },
+  {
+    "caso": "OL-TC-39",
+    "corrida": "OL-RUN-29",
+    "resultado": "aprobado",
+    "fecha_registro": "2026-11-16T01:36:40.817854Z",
+    "nota": "El origen historico y las fechas originales constan en los respaldos de QAtlas."
+  },
+  {
+    "caso": "OL-TC-40",
+    "corrida": "OL-RUN-29",
+    "resultado": "aprobado",
+    "fecha_registro": "2026-11-16T01:36:40.909462Z",
+    "nota": "El origen historico y las fechas originales constan en los respaldos de QAtlas."
+  },
+  {
+    "caso": "OL-TC-41",
+    "corrida": "OL-RUN-29",
+    "resultado": "aprobado",
+    "fecha_registro": "2026-11-16T01:36:40.988636Z",
+    "nota": "El origen historico y las fechas originales constan en los respaldos de QAtlas."
+  },
+  {
+    "caso": "OL-TC-6",
+    "corrida": "OL-RUN-14",
+    "resultado": "fallido",
+    "fecha_registro": "2026-10-15T00:28:19.155534Z",
+    "nota": "El origen historico y las fechas originales constan en los respaldos de QAtlas."
+  },
+  {
+    "caso": "OL-TC-11",
+    "corrida": "OL-RUN-15",
+    "resultado": "fallido",
+    "fecha_registro": "2026-10-15T01:06:37.792819Z",
+    "nota": "El origen historico y las fechas originales constan en los respaldos de QAtlas."
+  }
+]

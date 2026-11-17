@@ -16,7 +16,7 @@ import { useLocationSidebarContext } from "~/hooks/useLocationSidebarContext";
 import useStores from "~/hooks/useStores";
 import { documentEditPath } from "~/utils/routeHelpers";
 
-const AUTOSAVE_DELAY = 3000;
+export const AUTOSAVE_DELAY = 3000;
 
 interface UseDocumentSaveOptions {
   /** The document model being edited. */

@@ -1,0 +1,37 @@
+[
+  {
+    "method": "POST",
+    "path": "/api/documents.create",
+    "status": 200,
+    "request": "{\"collectionId\":\"fd56e5d9-e274-4c43-9b55-1de921ec2ab7\",\"title\":\"QA d066fd11-e224-4d0a-b799-d6b180c86f7a\",\"text\":\"Párrafo inicial de QA.\",\"publish\":true}",
+    "response": "{\"data\":{\"id\":\"63c3ef93-db1f-419d-be43-f64c0d738932\",\"url\":\"/doc/qa-d066fd11-e224-4d0a-b799-d6b180c86f7a-GefLhX2MEv\",\"urlId\":\"GefLhX2MEv\",\"title\":\"QA d066fd11-e224-4d0a-b799-d6b180c86f7a\",\"data\":{\"type\":\"doc\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"text\":\"Párrafo inicial de QA.\",\"type\":\"text\"}]}]},\"icon\":null,\"color\":null,\"tasks\":{\"completed\":0,\"total\":0},\"language\":null,\"createdAt\":\"2026-11-10T18:36:16.078Z\",\"createdBy\":{\"id\":\"da8f3618-100c-48b2-b488-5cf977e2a1d4\",\"name\":\"QA editor\",\"avatarUrl\":null,\"color\":\"#e600e0\",\"role\":\"member\",\"isSuspended\":false,\"createdAt\":\"2026-11-10T18:23:38.026Z\",\"updatedAt\":\"2026-11-10T18:36:14.407Z\",\"deletedAt\":null,\"lastActiveAt\":\"2026-11-10T18:36:14.406Z\",\"timezone\":\"America/Costa_Rica\"},\"updatedAt\":\"2026-11-10T18:36:16.078Z\",\"updatedBy\":{\"id\":\"da8f3618-100c-48b2-b488-5cf977e2a1d4\",\"name\":\"QA editor\",\"avatarUrl\":null,\"color\":\"#e600e0\",\"role\":\"member\",\"isSuspended\":false,\"createdAt\":\"2026-11-10T18:23:38.026Z\",\"updatedAt\":\"2026-11-10T18:36:14.407Z\",\"deletedAt\":null,\"lastActiveAt\":\"2026-11-10T18:36:14.406Z\",\"timezone\":\"America/Costa_Rica\"},\"publishedAt\":\"2026-11-10T18:36:16.088Z\",\"archivedAt\":null,\"deprecatedReason\":null,\"deletedAt\":null,\"collaboratorIds\":[\"da8f3618-100c-48b2-b488-5cf977e2a1d4\"],\"revision\":2,\"fullWidth\":false,\"preferences\":null,\"collectionId\":\"fd56e5d9-e274-4c43-9b55-1de921ec2ab7\",\"parentDocumentId\":null,\"isCollectionDeleted\":false,\"templateId\":null,\"insightsEnabled\":true,\"popularityScore\":0},\"policies\":[{\"id\":\"63c3ef93-db1f-419d-be43-f64c0d738932\",\"abilities\":{\"read\":true,\"update\":true,\"delete\":true,\"move\":true,\"duplicate\":true,\"download\":true,\"star\":true,\"unstar\":true,\"subscribe\":true,\"unsubscribe\":true,\"share\":true,\"archive\":true,\"restore\":false,\"updateDeprecatedReason\":false,\"listRevisions\":true,\"listViews\":true,\"comment\":true,\"publish\":false,\"manageUsers\":false,\"createChildDocument\":true,\"updateInsights\":false,\"pin\":false,\"unpin\":false,\"pinToHome\":false,\"permanentDelete\":false,\"unarchive\":false,\"unpublish\":true}}],\"status\":200,\"ok\":true}"
+  },
+  {
+    "method": "POST",
+    "path": "/api/comments.create",
+    "status": 200,
+    "request": "{\"documentId\":\"63c3ef93-db1f-419d-be43-f64c0d738932\",\"text\":\"Comentario original QA\"}",
+    "response": "{\"data\":{\"id\":\"8547a052-0429-4821-9130-975d3a6a53db\",\"data\":{\"type\":\"doc\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"text\":\"Comentario original QA\",\"type\":\"text\"}]}]},\"documentId\":\"63c3ef93-db1f-419d-be43-f64c0d738932\",\"parentCommentId\":null,\"createdBy\":{\"id\":\"da8f3618-100c-48b2-b488-5cf977e2a1d4\",\"name\":\"QA editor\",\"avatarUrl\":null,\"color\":\"#e600e0\",\"role\":\"member\",\"isSuspended\":false,\"createdAt\":\"2026-11-10T18:23:38.026Z\",\"updatedAt\":\"2026-11-10T18:36:14.407Z\",\"deletedAt\":null,\"lastActiveAt\":\"2026-11-10T18:36:14.406Z\",\"timezone\":\"America/Costa_Rica\"},\"createdById\":\"da8f3618-100c-48b2-b488-5cf977e2a1d4\",\"resolvedAt\":null,\"resolvedBy\":null,\"resolvedById\":null,\"createdAt\":\"2026-11-10T18:36:16.151Z\",\"updatedAt\":\"2026-11-10T18:36:16.151Z\",\"reactions\":[]},\"policies\":[{\"id\":\"8547a052-0429-4821-9130-975d3a6a53db\",\"abilities\":{\"read\":true,\"update\":true,\"delete\":true,\"resolve\":true,\"unresolve\":false,\"readReaction\":true,\"addReaction\":true,\"removeReaction\":true}}],\"status\":200,\"ok\":true}"
+  },
+  {
+    "method": "POST",
+    "path": "/api/comments.delete",
+    "status": 200,
+    "request": "{\"id\":\"8547a052-0429-4821-9130-975d3a6a53db\"}",
+    "response": "{\"success\":true,\"status\":200,\"ok\":true}"
+  },
+  {
+    "method": "SELECT",
+    "path": "QA comments.deletedAt",
+    "status": 200,
+    "request": "8547a052-0429-4821-9130-975d3a6a53db",
+    "response": "{\"deletedAt\":\"2026-11-10T18:36:16.220Z\"}"
+  },
+  {
+    "method": "POST",
+    "path": "/api/comments.list",
+    "status": 200,
+    "request": "{\"documentId\":\"63c3ef93-db1f-419d-be43-f64c0d738932\"}",
+    "response": "{\"pagination\":{\"limit\":25,\"offset\":0,\"nextPath\":\"/api/comments.list?limit=25&offset=25\",\"total\":0},\"data\":[],\"policies\":[],\"status\":200,\"ok\":true}"
+  }
+]

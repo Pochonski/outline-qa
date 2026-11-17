@@ -1,0 +1,30 @@
+[
+  {
+    "method": "POST",
+    "path": "/api/documents.create",
+    "status": 200,
+    "request": "{\"collectionId\":\"fd56e5d9-e274-4c43-9b55-1de921ec2ab7\",\"title\":\"QA bcacdf2e-7905-4324-b520-9ed3d92d61cb\",\"text\":\"Párrafo inicial de QA.\",\"publish\":true}",
+    "response": "{\"data\":{\"id\":\"f182a9e4-f973-46de-9b4c-5ffd9df76ea7\",\"url\":\"/doc/qa-bcacdf2e-7905-4324-b520-9ed3d92d61cb-UpCpVrmUyA\",\"urlId\":\"UpCpVrmUyA\",\"title\":\"QA bcacdf2e-7905-4324-b520-9ed3d92d61cb\",\"data\":{\"type\":\"doc\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"text\":\"Párrafo inicial de QA.\",\"type\":\"text\"}]}]},\"icon\":null,\"color\":null,\"tasks\":{\"completed\":0,\"total\":0},\"language\":null,\"createdAt\":\"2026-11-10T18:36:16.907Z\",\"createdBy\":{\"id\":\"da8f3618-100c-48b2-b488-5cf977e2a1d4\",\"name\":\"QA editor\",\"avatarUrl\":null,\"color\":\"#e600e0\",\"role\":\"member\",\"isSuspended\":false,\"createdAt\":\"2026-11-10T18:23:38.026Z\",\"updatedAt\":\"2026-11-10T18:36:14.407Z\",\"deletedAt\":null,\"lastActiveAt\":\"2026-11-10T18:36:14.406Z\",\"timezone\":\"America/Costa_Rica\"},\"updatedAt\":\"2026-11-10T18:36:16.907Z\",\"updatedBy\":{\"id\":\"da8f3618-100c-48b2-b488-5cf977e2a1d4\",\"name\":\"QA editor\",\"avatarUrl\":null,\"color\":\"#e600e0\",\"role\":\"member\",\"isSuspended\":false,\"createdAt\":\"2026-11-10T18:23:38.026Z\",\"updatedAt\":\"2026-11-10T18:36:14.407Z\",\"deletedAt\":null,\"lastActiveAt\":\"2026-11-10T18:36:14.406Z\",\"timezone\":\"America/Costa_Rica\"},\"publishedAt\":\"2026-11-10T18:36:16.917Z\",\"archivedAt\":null,\"deprecatedReason\":null,\"deletedAt\":null,\"collaboratorIds\":[\"da8f3618-100c-48b2-b488-5cf977e2a1d4\"],\"revision\":2,\"fullWidth\":false,\"preferences\":null,\"collectionId\":\"fd56e5d9-e274-4c43-9b55-1de921ec2ab7\",\"parentDocumentId\":null,\"isCollectionDeleted\":false,\"templateId\":null,\"insightsEnabled\":true,\"popularityScore\":0},\"policies\":[{\"id\":\"f182a9e4-f973-46de-9b4c-5ffd9df76ea7\",\"abilities\":{\"read\":true,\"update\":true,\"delete\":true,\"move\":true,\"duplicate\":true,\"download\":true,\"star\":true,\"unstar\":true,\"subscribe\":true,\"unsubscribe\":true,\"share\":true,\"archive\":true,\"restore\":false,\"updateDeprecatedReason\":false,\"listRevisions\":true,\"listViews\":true,\"comment\":true,\"publish\":false,\"manageUsers\":false,\"createChildDocument\":true,\"updateInsights\":false,\"pin\":false,\"unpin\":false,\"pinToHome\":false,\"permanentDelete\":false,\"unarchive\":false,\"unpublish\":true}}],\"status\":200,\"ok\":true}"
+  },
+  {
+    "method": "POST",
+    "path": "/api/comments.create",
+    "status": 200,
+    "request": "{\"documentId\":\"f182a9e4-f973-46de-9b4c-5ffd9df76ea7\",\"text\":\"Comentario original QA\"}",
+    "response": "{\"data\":{\"id\":\"d9a94a37-1f3b-45eb-b378-221dd334a868\",\"data\":{\"type\":\"doc\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"text\":\"Comentario original QA\",\"type\":\"text\"}]}]},\"documentId\":\"f182a9e4-f973-46de-9b4c-5ffd9df76ea7\",\"parentCommentId\":null,\"createdBy\":{\"id\":\"da8f3618-100c-48b2-b488-5cf977e2a1d4\",\"name\":\"QA editor\",\"avatarUrl\":null,\"color\":\"#e600e0\",\"role\":\"member\",\"isSuspended\":false,\"createdAt\":\"2026-11-10T18:23:38.026Z\",\"updatedAt\":\"2026-11-10T18:36:14.407Z\",\"deletedAt\":null,\"lastActiveAt\":\"2026-11-10T18:36:14.406Z\",\"timezone\":\"America/Costa_Rica\"},\"createdById\":\"da8f3618-100c-48b2-b488-5cf977e2a1d4\",\"resolvedAt\":null,\"resolvedBy\":null,\"resolvedById\":null,\"createdAt\":\"2026-11-10T18:36:16.974Z\",\"updatedAt\":\"2026-11-10T18:36:16.974Z\",\"reactions\":[]},\"policies\":[{\"id\":\"d9a94a37-1f3b-45eb-b378-221dd334a868\",\"abilities\":{\"read\":true,\"update\":true,\"delete\":true,\"resolve\":true,\"unresolve\":false,\"readReaction\":true,\"addReaction\":true,\"removeReaction\":true}}],\"status\":200,\"ok\":true}"
+  },
+  {
+    "method": "POST",
+    "path": "/api/comments.update",
+    "status": 400,
+    "request": "{\"id\":\"d9a94a37-1f3b-45eb-b378-221dd334a868\",\"text\":\"\"}",
+    "response": "{\"ok\":false,\"error\":\"validation_error\",\"status\":400,\"message\":\"body: One of data or text is required\"}"
+  },
+  {
+    "method": "POST",
+    "path": "/api/comments.info",
+    "status": 200,
+    "request": "{\"id\":\"d9a94a37-1f3b-45eb-b378-221dd334a868\"}",
+    "response": "{\"data\":{\"id\":\"d9a94a37-1f3b-45eb-b378-221dd334a868\",\"data\":{\"type\":\"doc\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"text\":\"Comentario original QA\",\"type\":\"text\"}]}]},\"documentId\":\"f182a9e4-f973-46de-9b4c-5ffd9df76ea7\",\"parentCommentId\":null,\"createdBy\":{\"id\":\"da8f3618-100c-48b2-b488-5cf977e2a1d4\",\"name\":\"QA editor\",\"avatarUrl\":null,\"color\":\"#e600e0\",\"role\":\"member\",\"isSuspended\":false,\"createdAt\":\"2026-11-10T18:23:38.026Z\",\"updatedAt\":\"2026-11-10T18:36:14.407Z\",\"deletedAt\":null,\"lastActiveAt\":\"2026-11-10T18:36:14.406Z\",\"timezone\":\"America/Costa_Rica\"},\"createdById\":\"da8f3618-100c-48b2-b488-5cf977e2a1d4\",\"resolvedAt\":null,\"resolvedBy\":null,\"resolvedById\":null,\"createdAt\":\"2026-11-10T18:36:16.974Z\",\"updatedAt\":\"2026-11-10T18:36:16.974Z\",\"reactions\":[]},\"policies\":[{\"id\":\"d9a94a37-1f3b-45eb-b378-221dd334a868\",\"abilities\":{\"read\":true,\"update\":true,\"delete\":true,\"resolve\":true,\"unresolve\":false,\"readReaction\":true,\"addReaction\":true,\"removeReaction\":true}}],\"status\":200,\"ok\":true}"
+  }
+]

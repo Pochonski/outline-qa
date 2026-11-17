@@ -1,0 +1,123 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: server\routes\api\documents\documents.create.playwright.spec.ts >> CP-HU04-01 Crear documento como editor
+- Location: server\routes\api\documents\documents.create.playwright.spec.ts:8:1
+
+# Error details
+
+```
+Error: El payload debe devolver el título por defecto definido en el caso.
+
+expect(received).toBe(expected) // Object.is equality
+
+Expected: "Sin título"
+Received: ""
+```
+
+# Test source
+
+```ts
+  1  | import {
+  2  |   test,
+  3  |   expect,
+  4  |   readDocument,
+  5  | } from "../../../../docs/proyecto/tools/playwright-fixtures";
+  6  | import { z } from "zod";
+  7  | 
+  8  | test(
+  9  |   "CP-HU04-01 Crear documento como editor",
+  10 |   { annotation: { type: "qatlas", description: "OL-TC-1" } },
+  11 |   async ({ qa }) => {
+  12 |     const document =
+  13 |       await test.step("Crear un documento en una colección como editor", async () => {
+  14 |         const response = await qa.post("documents.create", {
+  15 |           collectionId: qa.actors.collectionId,
+  16 |         });
+  17 |         expect(response.status(), await response.text()).toBe(200);
+  18 |         const created = await readDocument(response);
+  19 |         qa.documents.push(created.id);
+  20 |         return created;
+  21 |       });
+  22 |     await test.step("Comprobar el título por defecto y la apertura del editor", async () => {
+  23 |       expect(
+  24 |         document.title,
+  25 |         "El payload debe devolver el título por defecto definido en el caso."
+> 26 |       ).toBe("Sin título");
+     |         ^ Error: El payload debe devolver el título por defecto definido en el caso.
+  27 |       const page = await qa.openDocument(document);
+  28 |       await expect(
+  29 |         page.locator('.ProseMirror[contenteditable="true"]').first()
+  30 |       ).toBeVisible();
+  31 |     });
+  32 |   }
+  33 | );
+  34 | 
+  35 | test(
+  36 |   "CP-HU04-02 Crear documento sin colección destino",
+  37 |   { annotation: { type: "qatlas", description: "OL-TC-2" } },
+  38 |   async ({ qa }) => {
+  39 |     await test.step("Omitir collectionId y comprobar el rechazo sin crear documentos", async () => {
+  40 |       const response = await qa.post("documents.create", {});
+  41 |       if (response.status() === 200) {
+  42 |         qa.documents.push((await readDocument(response)).id);
+  43 |       }
+  44 |       expect(response.status(), await response.text()).toBe(400);
+  45 |     });
+  46 |   }
+  47 | );
+  48 | 
+  49 | test(
+  50 |   "CP-HU04-03 Viewer intenta crear documento",
+  51 |   { annotation: { type: "qatlas", description: "OL-TC-3" } },
+  52 |   async ({ qa }) => {
+  53 |     await test.step("Rechazar la creación de un viewer con authorization_error", async () => {
+  54 |       const response = await qa.post(
+  55 |         "documents.create",
+  56 |         { collectionId: qa.actors.collectionId, title: "Viewer QA" },
+  57 |         "viewer"
+  58 |       );
+  59 |       expect(response.status(), await response.text()).toBe(403);
+  60 |       expect(
+  61 |         z.object({ error: z.string() }).parse(await response.json()).error
+  62 |       ).toBe("authorization_error");
+  63 |     });
+  64 |   }
+  65 | );
+  66 | 
+  67 | test(
+  68 |   "CP-HU04-04 Crear documento sin token",
+  69 |   { annotation: { type: "qatlas", description: "OL-TC-4" } },
+  70 |   async ({ qa }) => {
+  71 |     await test.step("Rechazar una solicitud sin autenticación", async () => {
+  72 |       const response = await qa.post(
+  73 |         "documents.create",
+  74 |         { collectionId: qa.actors.collectionId },
+  75 |         null
+  76 |       );
+  77 |       expect(response.status(), await response.text()).toBe(401);
+  78 |     });
+  79 |   }
+  80 | );
+  81 | 
+  82 | test(
+  83 |   "CP-HU04-05 Guest intenta crear documento",
+  84 |   { annotation: { type: "qatlas", description: "OL-TC-5" } },
+  85 |   async ({ qa }) => {
+  86 |     await test.step("Rechazar la creación de un guest", async () => {
+  87 |       const response = await qa.post(
+  88 |         "documents.create",
+  89 |         { collectionId: qa.actors.collectionId, title: "Guest QA" },
+  90 |         "guest"
+  91 |       );
+  92 |       expect(response.status(), await response.text()).toBe(403);
+  93 |     });
+  94 |   }
+  95 | );
+  96 | 
+```

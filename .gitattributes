@@ -1,0 +1,2 @@
+# Preserve historical report bytes for the SHA-256 inventory on every platform.
+/docs/proyecto/reportes/** -text

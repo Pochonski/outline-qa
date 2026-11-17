@@ -1,0 +1,72 @@
+﻿code;title;format;role;i_want;so_that;preconditions;main_flow;acceptance_criteria;gherkin_given;gherkin_when;gherkin_then;parent_code;status;priority;owner_email;updated_by_email;created_at;updated_at
+OL-12;HU-09 — Drag & Drop de documentos;historia_usuario;editor;arrastrar documentos para reorganizarlos jerárquicamente;mantener el workspace ordenado.;"El usuario ha iniciado sesión en Outline y tiene rol editor.
+Existen al menos dos documentos o colecciones disponibles para realizar el movimiento.
+El documento de origen está disponible en el menú lateral del workspace.
+El usuario tiene permisos de escritura en el destino para realizar un movimiento válido.";"El editor inicia sesión en Outline y abre el workspace.
+El editor localiza en el menú lateral el documento que desea reorganizar.
+El editor arrastra el documento hasta otra colección o documento de destino permitido.
+El sistema muestra visualmente la zona donde se puede soltar el documento.
+El editor suelta el documento y el sistema actualiza su ubicación dentro del workspace.";"CA-09.1: Dado un editor en el sidebar, cuando arrastra un documento sobre otra colección o documento destino manteniendo un hover >300 ms, entonces el sistema muestra una zona de drop visual con un borde resaltado de 2 px en color primario.
+CA-09.2: Dado un drop exitoso, cuando el editor suelta el documento, entonces este se anida correctamente bajo el destino y se actualiza el parámetro parentDocumentId mediante la llamada documents.move.
+CA-09.3: Dado un editor sin permisos de escritura en la colección de destino, cuando intenta soltar un documento sobre ella, entonces el sistema rechaza el movimiento, muestra un toast con el mensaje ""Sin permisos"" y revierte visualmente a la posición original.";;;;;aprobado;alta;yobando@estudiantec.cr;yobando@estudiantec.cr;2026-10-13T03:16:09.559573+00:00;2026-10-15T02:07:11.750749+00:00
+OL-11;HU-08 — Tema oscuro;historia_usuario;usuario;cambiar entre tema claro y oscuro;reducir la fatiga visual.;"El usuario tiene acceso a Outline desde un navegador compatible.
+El usuario ha iniciado sesión en Outline.
+La aplicación permite seleccionar entre tema claro, oscuro y sistema.
+Para comprobar la persistencia, el navegador permite utilizar localStorage.";"El usuario inicia sesión en Outline y abre el menú de configuración de apariencia.
+El usuario selecciona el tema oscuro.
+El sistema cambia la apariencia de la interfaz sin recargar la página.
+El usuario recarga la página y el sistema conserva el tema seleccionado.";"CA-08.1: Dado un usuario autenticado, cuando selecciona ""oscuro"" desde el menú de temas, entonces la interfaz cambia inmediatamente (≤100 ms) sin recargar la página, persiste en el localStorage y se aplica a todas las pestañas abiertas mediante el evento storage.
+CA-08.2: Dado un usuario con el tema oscuro activo, cuando recarga la página o abre una nueva pestaña, entonces el tema persiste y se aplica antes del primer renderizado para evitar destellos (FOUC).
+CA-08.3: Dado un usuario nuevo sin preferencias guardadas, cuando visita el sitio por primera vez, entonces el sistema detecta automáticamente la directiva prefers-color-scheme del sistema operativo y aplica el tema correspondiente.
+CA-08.4: Dado un usuario con el tema configurado en ""Sistema"", cuando cambia la preferencia de color del S.O. (por ejemplo, al anochecer), entonces la interfaz se actualiza de forma automática sin necesidad de recargar.";;;;;aprobado;media;yobando@estudiantec.cr;yobando@estudiantec.cr;2026-10-13T03:06:45.602436+00:00;2026-10-15T02:07:17.251998+00:00
+OL-10;HU-07 — Accesibilidad móvil;historia_usuario;usuario móvil;usar Outline desde mi teléfono para consultar o editar documentos con facilidad;poder trabajar con mis documentos desde un dispositivo móvil.;"El usuario tiene acceso a Outline desde un dispositivo móvil o un entorno de prueba con pantalla móvil.
+El usuario ha iniciado sesión y tiene permisos para consultar documentos.
+Existe al menos un documento disponible en el workspace.
+Para las pruebas de edición, el usuario tiene permisos de escritura en el documento.";"El usuario abre Outline desde su dispositivo móvil e inicia sesión.
+El sistema muestra el workspace con un diseño adaptado al tamaño de la pantalla.
+El usuario abre un documento y navega por su contenido.
+Si tiene permisos de edición, el usuario abre el editor y utiliza sus herramientas táctiles.";"CA-07.1: Dado un iPhone 13 con Safari iOS 17 y viewport de 390×844 px, cuando navega al workspace, entonces el layout es responsive sin scroll horizontal, el sidebar se oculta en un drawer accesible vía menú hamburguesa y el contenido principal ocupa el 100% del ancho.
+CA-07.2: Dado un editor en documento móvil, cuando abre el editor, entonces la barra de herramientas aparece como menú flotante con gestos touch (tap para abrir, swipe para invocar InsertMenu).
+CA-07.3: Dado un usuario móvil, cuando toca cualquier elemento interactivo, entonces el objetivo táctil (target) tiene un tamaño mínimo de 44×44 px (cumpliendo con WCAG 2.5.5).
+CA-07.4: Dado un documento con tablas en vista móvil, cuando se visualiza, entonces las tablas utilizan overflow-x:auto con scroll horizontal independiente sin afectar el diseño del resto de la página.
+CA-07.5: Dado un usuario móvil con la preferencia de sistema prefers-reduced-motion: reduce, cuando navega entre escenas, entonces las animaciones de transición se reducen a menos de 100 ms o se eliminan por completo.";;;;;aprobado;alta;yobando@estudiantec.cr;yobando@estudiantec.cr;2026-10-13T03:03:03.154392+00:00;2026-10-15T02:07:21.455596+00:00
+OL-9;HU-03 — Configuración granular de notificaciones y suscripción por evento;historia_usuario;usuario;activar o desactivar individualmente cada tipo de notificación desde /settings/notifications;reducir el ruido y recibir solo información relevante.;"El usuario ha iniciado sesión.
+El usuario tiene notificaciones configurables habilitadas.";"El usuario accede a la configuración de notificaciones.
+El usuario activa o desactiva un tipo de notificación.
+El sistema guarda la preferencia y confirma el cambio.";"CA-03.1: Dado un usuario en la ruta /settings/notifications, cuando desactiva el interruptor de PublishDocument, entonces se ejecuta la mutación users.notificationsUnsubscribe con un retardo (debounce) de 500 ms y se despliega un toast con la confirmación ""Notifications saved"".
+CA-03.2: Dado un usuario que recibe una notificación por correo electrónico provista de un enlace de cancelación firmado por HMAC, cuando hace clic sobre dicho enlace con el parámetro ?follow=true, entonces la página intermedia procesa la petición, ejecuta notifications.unsubscribe y muestra un aviso de éxito (?success).
+CA-03.3: Dado un usuario visualizando un documento, cuando pulsa el botón ""Subscribe"" en el menú contextual, entonces se invoca subscriptions.create para documents.update y el icono se actualiza a ""Subscribed"" con su respectivo distintivo.
+CA-03.4: Dado un usuario que recibe una notificación por correo, cuando abre el mensaje sin interactuar con los enlaces, entonces se descarga el píxel transparente de seguimiento (notifications.pixel) marcando la notificación como leída en el próximo refresco.";;;;;aprobado;media;rachelmonque@estudiantec.cr;rachelmonque@estudiantec.cr;2026-10-10T01:27:23.024743+00:00;2026-10-15T02:03:04.716698+00:00
+OL-8;HU-02 — Administrar miembros del equipo;historia_usuario;administrador del equipo;quiero invitar, promover, degradar, suspender y eliminar miembros;gestionar adecuadamente el acceso y roles de mi organización.;"El usuario que ejecuta la acción está autenticado.
+Existe un workspace con al menos un administrador activo.";"El administrador accede a la gestión de miembros del equipo.
+El administrador invita, cambia el rol, suspende o elimina a un miembro.
+El sistema aplica el cambio y lo refleja en la lista de miembros.";"CA-02.1: Dado un admin autenticado, cuando ingresa un correo electrónico y rol en el formulario de invitación, entonces el sistema genera el registro y despacha un correo con el enlace de aceptación.
+CA-02.2: Dado un admin, cuando ejecuta users.promote especificando el identificador del miembro y el nuevo rol, entonces el servidor responde con código 200 y actualiza los privilegios (Admin / Member / Viewer / Guest).
+CA-02.3: Dado un usuario con rol viewer autenticado, cuando intenta ejecutar un POST users.invite con un correo válido, entonces el servidor rechaza la solicitud respondiendo un código 403 con el identificador id: authorization_error.
+CA-02.4: Dado un administrador, cuando intenta suspender su propia cuenta o la del último administrador activo del workspace, entonces el servidor responde con un código 400 y el identificador id: cannot_suspend_last_admin, abortando la operación.";;;;;aprobado;alta;rachelmonque@estudiantec.cr;rachelmonque@estudiantec.cr;2026-10-10T01:23:34.972993+00:00;2026-10-15T02:19:13.311859+00:00
+OL-7;HU-01 — Publicar y compartir documento;historia_usuario;editor;publicar un documento;obtener una URL pública para compartirlo con personas externas.;"El editor ha iniciado sesión.
+El editor tiene un documento creado.
+El enlace compartido tiene una restricción de dominio configurada";"El editor abre el documento creado.
+El editor selecciona la opción de publicar y compartir.
+El sistema genera la URL pública.
+La persona externa abre la URL y visualiza el documento.";CA-01.1: Dado un enlace compartido con restricción de dominio, cuando el visitante accede desde un dominio no permitido, entonces el sistema rechaza el acceso con un código 403.;;;;;aprobado;alta;rachelmonque@estudiantec.cr;rachelmonque@estudiantec.cr;2026-10-10T00:32:13.192333+00:00;2026-10-15T02:19:25.003304+00:00
+OL-6;HU-06 — Resolver y editar comentarios;historia_usuario;editor;resolver comentarios cuando la discusión termina y editar mis propios comentarios;mantener la conversación limpia.;"Existe un documento con comentarios activos y el usuario tiene permiso de comentar/editar.
+Para CA-06.4 existe un comentario del usuario ""Y"" y un usuario ""X"" autenticado no autor.";"El autor o editor con permisos abre un comentario existente.
+Edita el contenido, lo resuelve o lo elimina según corresponda.
+El sistema actualiza timestamp/estado y refleja el cambio en el listado.";"CA-06.1: Dado un comentario existente, cuando el autor o un editor con permisos accede a comments.update, entonces el sistema actualiza el contenido y registra el timestamp de modificación.
+CA-06.2: Dado un comentario creado, cuando el autor invoca comments.delete, entonces se aplica borrado lógico (soft delete) y deja de mostrarse en el listado.
+CA-06.3: Dado un comentario activo, cuando un editor ejecuta comments.resolve, entonces el campo resolvedAt se actualiza y la interfaz lo categoriza como ""Resuelto"".
+CA-06.4: Dado un usuario ""X"" que no es autor, cuando intenta POST comments.update sobre comentario de ""Y"", entonces el servidor responde 403 con id: authorization_error.";;;;;aprobado;alta;j.fonseca@estudiantec.cr;j.fonseca@estudiantec.cr;2026-10-10T00:29:59.003271+00:00;2026-10-15T03:57:45.530951+00:00
+OL-5;HU-05 — Auto-save en editor;historia_usuario;editor;que el documento se guarde automáticamente;no perder trabajo.;"El editor está autenticado en un documento existente con cambios sin guardar.
+Hay conexión a red al iniciar (para CA-05.1; para CA-05.3 se simula corte).
+El documento permite escritura (no es solo lectura).";"El editor modifica el contenido del documento.
+Transcurren 2 segundos sin actividad de escritura (debounce 2000ms).
+El sistema guarda vía PATCH documents.update y muestra ""Guardado hh:mm:ss"".";"CA-05.1: Dado un editor con cambios sin guardar, cuando transcurren 2 segundos sin actividad (debounce 2000ms), entonces el sistema guarda con PATCH documents.update y muestra ""Guardado hh:mm:ss"".
+CA-05.2: Dado un editor con cambios pendientes, cuando cierra la pestaña o abandona la página (beforeunload), entonces el sistema despacha un navigator.sendBeacon con el último estado pendiente.
+CA-05.3: Dado un fallo de guardado por interrupción de red, cuando se recupera la conexión (evento online), entonces el sistema reintenta con retroceso exponencial (1s/3s/9s, máx. 3 intentos) de forma transparente.
+CA-05.4: Dado dos editores modificando el mismo párrafo offline, cuando ambos recuperan conexión y sincronizan, entonces Y.js aplica resolución CRDT manteniendo ambos aportes sin pérdida (merge automático).";;;;;aprobado;alta;j.fonseca@estudiantec.cr;j.fonseca@estudiantec.cr;2026-10-10T00:28:45.531438+00:00;2026-10-15T03:57:49.725987+00:00
+OL-4;HU-04 — Crear documento;historia_usuario;editor;crear un nuevo documento en una colección con título por defecto;empezar a documentar inmediatamente.;" El usuario tiene rol editor con permisos de escritura en la colección destino.
+Existe al menos una colección disponible en el workspace.";"El editor hace clic en ""Nuevo documento"" dentro de una colección.
+El sistema crea el documento con título por defecto y abre el editor.
+El editor escribe y el sistema muestra el estado de guardado.";"CA-04.1: Dado un editor en un documento nuevo, cuando empieza a escribir y deja de hacerlo durante >2 segundos, entonces el indicador cambia a ""guardando…"" y al completarse a ""Guardado hh:mm:ss"" en ≤2,5 s desde la última pulsación.
+CA-04.2: Dado un viewer, cuando intenta realizar un POST /api/documents.create, entonces el servidor responde con código de error 403.";;;;;aprobado;alta;j.fonseca@estudiantec.cr;j.fonseca@estudiantec.cr;2026-10-10T00:26:36.190774+00:00;2026-10-15T03:57:54.435465+00:00

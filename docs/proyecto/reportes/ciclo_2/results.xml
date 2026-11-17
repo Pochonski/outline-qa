@@ -1,0 +1,467 @@
+<testsuites id="" name="" tests="20" failures="7" skipped="0" errors="0" time="115.34154600000001">
+<testsuite name="app\scenes\Document\components\Document.playwright.spec.ts" timestamp="2026-11-10T18:34:24.656Z" hostname="" tests="8" failures="5" skipped="0" time="104.475" errors="0">
+<testcase name="CP-HU04-06 Indicador guardando visible" classname="app\scenes\Document\components\Document.playwright.spec.ts" time="11.1">
+<properties>
+<property name="qatlas" value="OL-TC-6">
+</property>
+</properties>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|artifacts\app-scenes-Document-compon-33bc1-Indicador-guardando-visible\attachments\browser-0-0-69029280dba32fc1232fe92ddb2970af593311cc.png]]
+
+[[ATTACHMENT|artifacts\app-scenes-Document-compon-33bc1-Indicador-guardando-visible\attachments\trace-0-47b36f755bfc4c472d095dcebdf22560f766ce6d.zip]]
+
+[[ATTACHMENT|artifacts\app-scenes-Document-compon-33bc1-Indicador-guardando-visible\attachments\video-0-0-b031039864172a40e459be056f5adc88717de262.webm]]
+
+[[ATTACHMENT|artifacts\app-scenes-Document-compon-33bc1-Indicador-guardando-visible\error-context.md]]
+]]>
+</system-out>
+<failure message="expect(locator).toBeVisible() failed" type="expect.toBeVisible">
+<![CDATA[  app\scenes\Document\components\Document.playwright.spec.ts:23:1 › CP-HU04-06 Indicador guardando visible 
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: getByText(/^guardando…$/i)
+    Expected: visible
+    Timeout: 2500ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "soft toBeVisible" getByText(/^guardando…$/i) with timeout 2500ms
+      - waiting for getByText(/^guardando…$/i)
+
+
+      32 |       await expect
+      33 |         .soft(page.getByText(/^guardando…$/i))
+    > 34 |         .toBeVisible({ timeout: 2500 });
+         |          ^
+      35 |     });
+      36 |     await test.step("Observar Guardado hh:mm:ss dentro del límite", async () => {
+      37 |       await expect(page.getByText(/^Guardado \d{2}:\d{2}:\d{2}$/)).toBeVisible({
+        at C:\Users\Joseph Fonseca\Documents\Joseph\Proyectos\outline\app\scenes\Document\components\Document.playwright.spec.ts:34:10
+        at C:\Users\Joseph Fonseca\Documents\Joseph\Proyectos\outline\app\scenes\Document\components\Document.playwright.spec.ts:29:5
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: getByText(/^Guardado \d{2}:\d{2}:\d{2}$/)
+    Expected: visible
+    Timeout: 1ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" getByText(/^Guardado \d{2}:\d{2}:\d{2}$/) with timeout 1ms
+      - waiting for getByText(/^Guardado \d{2}:\d{2}:\d{2}$/)
+
+
+      35 |     });
+      36 |     await test.step("Observar Guardado hh:mm:ss dentro del límite", async () => {
+    > 37 |       await expect(page.getByText(/^Guardado \d{2}:\d{2}:\d{2}$/)).toBeVisible({
+         |                                                                    ^
+      38 |         timeout: Math.max(1, 2500 - (Date.now() - lastKeystroke)),
+      39 |       });
+      40 |       expect(Date.now() - lastKeystroke).toBeLessThanOrEqual(2500);
+        at C:\Users\Joseph Fonseca\Documents\Joseph\Proyectos\outline\app\scenes\Document\components\Document.playwright.spec.ts:37:68
+        at C:\Users\Joseph Fonseca\Documents\Joseph\Proyectos\outline\app\scenes\Document\components\Document.playwright.spec.ts:36:5
+
+    attachment #1: browser-0-0 (image/png) ─────────────────────────────────────────────────────────
+    .qa\runs\1415083c-a36b-4f38-88a3-95eebbdf3334\artifacts\app-scenes-Document-compon-33bc1-Indicador-guardando-visible\attachments\browser-0-0-69029280dba32fc1232fe92ddb2970af593311cc.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: trace-0 (application/zip) ───────────────────────────────────────────────────────
+    .qa\runs\1415083c-a36b-4f38-88a3-95eebbdf3334\artifacts\app-scenes-Document-compon-33bc1-Indicador-guardando-visible\attachments\trace-0-47b36f755bfc4c472d095dcebdf22560f766ce6d.zip
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #3: video-0-0 (video/webm) ──────────────────────────────────────────────────────────
+    .qa\runs\1415083c-a36b-4f38-88a3-95eebbdf3334\artifacts\app-scenes-Document-compon-33bc1-Indicador-guardando-visible\attachments\video-0-0-b031039864172a40e459be056f5adc88717de262.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: .qa\runs\1415083c-a36b-4f38-88a3-95eebbdf3334\artifacts\app-scenes-Document-compon-33bc1-Indicador-guardando-visible\error-context.md
+]]>
+</failure>
+</testcase>
+<testcase name="CP-HU05-01 Debounce 2 segundos dispara guardado" classname="app\scenes\Document\components\Document.playwright.spec.ts" time="11.851">
+<properties>
+<property name="qatlas" value="OL-TC-10">
+</property>
+</properties>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|artifacts\app-scenes-Document-compon-9ae12-2-segundos-dispara-guardado\attachments\browser-0-0-c83e13469dd3bcad457858ffc77bb8eca18244bf.png]]
+
+[[ATTACHMENT|artifacts\app-scenes-Document-compon-9ae12-2-segundos-dispara-guardado\attachments\trace-0-d70249cecc889b1f1b81dd16185555db6fc5b5e2.zip]]
+
+[[ATTACHMENT|artifacts\app-scenes-Document-compon-9ae12-2-segundos-dispara-guardado\attachments\video-0-0-303e17ee678fc547b01dfc8e74b98dd1edb9e7be.webm]]
+
+[[ATTACHMENT|artifacts\app-scenes-Document-compon-9ae12-2-segundos-dispara-guardado\error-context.md]]
+]]>
+</system-out>
+<failure message="expect(received).toEqual(expected) // deep equality" type="expect.toEqual">
+<![CDATA[  app\scenes\Document\components\Document.playwright.spec.ts:45:1 › CP-HU05-01 Debounce 2 segundos dispara guardado › Comprobar debounce 2000 ms y una solicitud PATCH documents.update 
+
+    Error: expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 3
+    + Received  + 1
+
+    - Array [
+    -   "PATCH",
+    - ]
+    + Array []
+
+    Call Log:
+    - Timeout 1500ms exceeded while waiting on the predicate
+
+      68 |           { timeout: 1500 }
+      69 |         )
+    > 70 |         .toEqual(["PATCH"]);
+         |          ^
+      71 |     });
+      72 |   }
+      73 | );
+        at C:\Users\Joseph Fonseca\Documents\Joseph\Proyectos\outline\app\scenes\Document\components\Document.playwright.spec.ts:70:10
+        at C:\Users\Joseph Fonseca\Documents\Joseph\Proyectos\outline\app\scenes\Document\components\Document.playwright.spec.ts:50:5
+
+    attachment #1: browser-0-0 (image/png) ─────────────────────────────────────────────────────────
+    .qa\runs\1415083c-a36b-4f38-88a3-95eebbdf3334\artifacts\app-scenes-Document-compon-9ae12-2-segundos-dispara-guardado\attachments\browser-0-0-c83e13469dd3bcad457858ffc77bb8eca18244bf.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: trace-0 (application/zip) ───────────────────────────────────────────────────────
+    .qa\runs\1415083c-a36b-4f38-88a3-95eebbdf3334\artifacts\app-scenes-Document-compon-9ae12-2-segundos-dispara-guardado\attachments\trace-0-d70249cecc889b1f1b81dd16185555db6fc5b5e2.zip
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #3: video-0-0 (video/webm) ──────────────────────────────────────────────────────────
+    .qa\runs\1415083c-a36b-4f38-88a3-95eebbdf3334\artifacts\app-scenes-Document-compon-9ae12-2-segundos-dispara-guardado\attachments\video-0-0-303e17ee678fc547b01dfc8e74b98dd1edb9e7be.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: .qa\runs\1415083c-a36b-4f38-88a3-95eebbdf3334\artifacts\app-scenes-Document-compon-9ae12-2-segundos-dispara-guardado\error-context.md
+]]>
+</failure>
+</testcase>
+<testcase name="CP-HU05-02 Cerrar pestaña envía beacon" classname="app\scenes\Document\components\Document.playwright.spec.ts" time="20.402">
+<properties>
+<property name="qatlas" value="OL-TC-11">
+</property>
+</properties>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|artifacts\app-scenes-Document-compon-1d19a-Cerrar-pestaña-envía-beacon\attachments\browser-0-0-9ceefdc3d1023e88cc07fe3079bef9aaacaf24df.png]]
+
+[[ATTACHMENT|artifacts\app-scenes-Document-compon-1d19a-Cerrar-pestaña-envía-beacon\attachments\trace-0-3ceab9612616ef969930c2553ca2c89f7463e444.zip]]
+
+[[ATTACHMENT|artifacts\app-scenes-Document-compon-1d19a-Cerrar-pestaña-envía-beacon\attachments\video-0-0-0dc6649fa9ffc28e913509d3cafe5f1afdc870fe.webm]]
+
+[[ATTACHMENT|artifacts\app-scenes-Document-compon-1d19a-Cerrar-pestaña-envía-beacon\error-context.md]]
+]]>
+</system-out>
+<failure message="expect(received).toBe(expected) // Object.is equality" type="expect.toBe">
+<![CDATA[  app\scenes\Document\components\Document.playwright.spec.ts:75:1 › CP-HU05-02 Cerrar pestaña envía beacon › Recargar y comprobar un beacon con el último estado pendiente 
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: true
+    Received: false
+
+    Call Log:
+    - Timeout 2500ms exceeded while waiting on the predicate
+
+      117 |           { timeout: 2500 }
+      118 |         )
+    > 119 |         .toBe(true);
+          |          ^
+      120 |     });
+      121 |   }
+      122 | );
+        at C:\Users\Joseph Fonseca\Documents\Joseph\Proyectos\outline\app\scenes\Document\components\Document.playwright.spec.ts:119:10
+        at C:\Users\Joseph Fonseca\Documents\Joseph\Proyectos\outline\app\scenes\Document\components\Document.playwright.spec.ts:109:5
+
+    attachment #1: browser-0-0 (image/png) ─────────────────────────────────────────────────────────
+    .qa\runs\1415083c-a36b-4f38-88a3-95eebbdf3334\artifacts\app-scenes-Document-compon-1d19a-Cerrar-pestaña-envía-beacon\attachments\browser-0-0-9ceefdc3d1023e88cc07fe3079bef9aaacaf24df.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: trace-0 (application/zip) ───────────────────────────────────────────────────────
+    .qa\runs\1415083c-a36b-4f38-88a3-95eebbdf3334\artifacts\app-scenes-Document-compon-1d19a-Cerrar-pestaña-envía-beacon\attachments\trace-0-3ceab9612616ef969930c2553ca2c89f7463e444.zip
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #3: video-0-0 (video/webm) ──────────────────────────────────────────────────────────
+    .qa\runs\1415083c-a36b-4f38-88a3-95eebbdf3334\artifacts\app-scenes-Document-compon-1d19a-Cerrar-pestaña-envía-beacon\attachments\video-0-0-0dc6649fa9ffc28e913509d3cafe5f1afdc870fe.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: .qa\runs\1415083c-a36b-4f38-88a3-95eebbdf3334\artifacts\app-scenes-Document-compon-1d19a-Cerrar-pestaña-envía-beacon\error-context.md
+]]>
+</failure>
+</testcase>
+<testcase name="CP-HU05-03 Reintento con backoff al recuperar red" classname="app\scenes\Document\components\Document.playwright.spec.ts" time="13.885">
+<properties>
+<property name="qatlas" value="OL-TC-13">
+</property>
+</properties>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|artifacts\app-scenes-Document-compon-80399-on-backoff-al-recuperar-red\attachments\browser-0-0-2a40fffff7e999603f8f93f914f2429797920525.png]]
+
+[[ATTACHMENT|artifacts\app-scenes-Document-compon-80399-on-backoff-al-recuperar-red\attachments\trace-0-3884e20938b119045a406f4e98c3547c0dbcc789.zip]]
+
+[[ATTACHMENT|artifacts\app-scenes-Document-compon-80399-on-backoff-al-recuperar-red\attachments\video-0-0-58399d9e274d9e6d23cf31d9149b80dd23d29b98.webm]]
+
+[[ATTACHMENT|artifacts\app-scenes-Document-compon-80399-on-backoff-al-recuperar-red\error-context.md]]
+]]>
+</system-out>
+<failure message="Intervalos reales [1016,1014,1007] ms" type="expect.toBeLessThanOrEqual">
+<![CDATA[  app\scenes\Document\components\Document.playwright.spec.ts:124:1 › CP-HU05-03 Reintento con backoff al recuperar red › Provocar fallo de red y medir reintentos de 1, 3 y 9 segundos 
+
+    Error: Intervalos reales [1016,1014,1007] ms
+
+    expect(received).toBeLessThanOrEqual(expected)
+
+    Expected: <= 250
+    Received:    1986
+
+      152 |             Math.abs(intervals[index] - expectedDelay),
+      153 |             `Intervalos reales ${JSON.stringify(intervals)} ms`
+    > 154 |           ).toBeLessThanOrEqual(250);
+          |             ^
+      155 |         }
+      156 |       } finally {
+      157 |         await info.attach("backoff-timing.json", {
+        at C:\Users\Joseph Fonseca\Documents\Joseph\Proyectos\outline\app\scenes\Document\components\Document.playwright.spec.ts:154:13
+        at C:\Users\Joseph Fonseca\Documents\Joseph\Proyectos\outline\app\scenes\Document\components\Document.playwright.spec.ts:129:5
+
+    attachment #2: browser-0-0 (image/png) ─────────────────────────────────────────────────────────
+    .qa\runs\1415083c-a36b-4f38-88a3-95eebbdf3334\artifacts\app-scenes-Document-compon-80399-on-backoff-al-recuperar-red\attachments\browser-0-0-2a40fffff7e999603f8f93f914f2429797920525.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #3: trace-0 (application/zip) ───────────────────────────────────────────────────────
+    .qa\runs\1415083c-a36b-4f38-88a3-95eebbdf3334\artifacts\app-scenes-Document-compon-80399-on-backoff-al-recuperar-red\attachments\trace-0-3884e20938b119045a406f4e98c3547c0dbcc789.zip
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #4: video-0-0 (video/webm) ──────────────────────────────────────────────────────────
+    .qa\runs\1415083c-a36b-4f38-88a3-95eebbdf3334\artifacts\app-scenes-Document-compon-80399-on-backoff-al-recuperar-red\attachments\video-0-0-58399d9e274d9e6d23cf31d9149b80dd23d29b98.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: .qa\runs\1415083c-a36b-4f38-88a3-95eebbdf3334\artifacts\app-scenes-Document-compon-80399-on-backoff-al-recuperar-red\error-context.md
+]]>
+</failure>
+</testcase>
+<testcase name="CP-HU05-04 Merge CRDT sin pérdida" classname="app\scenes\Document\components\Document.playwright.spec.ts" time="13.991">
+<properties>
+<property name="qatlas" value="OL-TC-14">
+</property>
+</properties>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|artifacts\app-scenes-Document-compon-2a5d7-5-04-Merge-CRDT-sin-pérdida\attachments\browser-0-0-fce8c88f2c741b9b86a2472594e7f4e4fa8414b3.png]]
+
+[[ATTACHMENT|artifacts\app-scenes-Document-compon-2a5d7-5-04-Merge-CRDT-sin-pérdida\attachments\browser-1-0-d415cd475f142eed18ac142da573971ce2869142.png]]
+]]>
+</system-out>
+</testcase>
+<testcase name="CP-HU05-05 Sin cambios no dispara guardado" classname="app\scenes\Document\components\Document.playwright.spec.ts" time="6.503">
+<properties>
+<property name="qatlas" value="OL-TC-15">
+</property>
+</properties>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|artifacts\app-scenes-Document-compon-d9cc2-cambios-no-dispara-guardado\attachments\browser-0-0-51ec611bd2f70306820d7e796a82b01c19f996a0.png]]
+]]>
+</system-out>
+</testcase>
+<testcase name="CP-HU05-06 Agota tres intentos y avisa sin bloquear" classname="app\scenes\Document\components\Document.playwright.spec.ts" time="13.481">
+<properties>
+<property name="qatlas" value="OL-TC-16">
+</property>
+</properties>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|artifacts\app-scenes-Document-compon-292dc-tentos-y-avisa-sin-bloquear\attachments\browser-0-0-788b9b24e3f7bf70e7d8525b7245ed54c0d5841f.png]]
+
+[[ATTACHMENT|artifacts\app-scenes-Document-compon-292dc-tentos-y-avisa-sin-bloquear\attachments\trace-0-e5e6c602bb4ee3fa407506843929dedc220f8248.zip]]
+
+[[ATTACHMENT|artifacts\app-scenes-Document-compon-292dc-tentos-y-avisa-sin-bloquear\attachments\video-0-0-1999e22a4bf6eac3f963d17464db7c0877034aac.webm]]
+
+[[ATTACHMENT|artifacts\app-scenes-Document-compon-292dc-tentos-y-avisa-sin-bloquear\error-context.md]]
+]]>
+</system-out>
+<failure message="El caso exige tres intentos fallidos." type="expect.toBe">
+<![CDATA[  app\scenes\Document\components\Document.playwright.spec.ts:244:1 › CP-HU05-06 Agota tres intentos y avisa sin bloquear › Agotar reintentos, mostrar error y mantener el editor habilitado 
+
+    Error: El caso exige tres intentos fallidos.
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 3
+    Received: 4
+
+      257 |         page.locator('[data-sonner-toast][data-type="error"]')
+      258 |       ).toBeVisible({ timeout: 18000 });
+    > 259 |       expect.soft(attempts, "El caso exige tres intentos fallidos.").toBe(3);
+          |                                                                      ^
+      260 |       await insert(page, " SIGO-EDITANDO");
+      261 |       await expect(editor(page)).toContainText("SIGO-EDITANDO");
+      262 |     });
+        at C:\Users\Joseph Fonseca\Documents\Joseph\Proyectos\outline\app\scenes\Document\components\Document.playwright.spec.ts:259:70
+        at C:\Users\Joseph Fonseca\Documents\Joseph\Proyectos\outline\app\scenes\Document\components\Document.playwright.spec.ts:249:5
+
+    attachment #1: browser-0-0 (image/png) ─────────────────────────────────────────────────────────
+    .qa\runs\1415083c-a36b-4f38-88a3-95eebbdf3334\artifacts\app-scenes-Document-compon-292dc-tentos-y-avisa-sin-bloquear\attachments\browser-0-0-788b9b24e3f7bf70e7d8525b7245ed54c0d5841f.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: trace-0 (application/zip) ───────────────────────────────────────────────────────
+    .qa\runs\1415083c-a36b-4f38-88a3-95eebbdf3334\artifacts\app-scenes-Document-compon-292dc-tentos-y-avisa-sin-bloquear\attachments\trace-0-e5e6c602bb4ee3fa407506843929dedc220f8248.zip
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #3: video-0-0 (video/webm) ──────────────────────────────────────────────────────────
+    .qa\runs\1415083c-a36b-4f38-88a3-95eebbdf3334\artifacts\app-scenes-Document-compon-292dc-tentos-y-avisa-sin-bloquear\attachments\video-0-0-1999e22a4bf6eac3f963d17464db7c0877034aac.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: .qa\runs\1415083c-a36b-4f38-88a3-95eebbdf3334\artifacts\app-scenes-Document-compon-292dc-tentos-y-avisa-sin-bloquear\error-context.md
+]]>
+</failure>
+</testcase>
+<testcase name="CP-HU05-07 Edición concurrente en párrafos distintos" classname="app\scenes\Document\components\Document.playwright.spec.ts" time="13.262">
+<properties>
+<property name="qatlas" value="OL-TC-17">
+</property>
+</properties>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|artifacts\app-scenes-Document-compon-393ac-rente-en-párrafos-distintos\attachments\browser-0-0-5003a816922ea64faeed6e7f4c9337a229e32bab.png]]
+
+[[ATTACHMENT|artifacts\app-scenes-Document-compon-393ac-rente-en-párrafos-distintos\attachments\browser-1-0-1724487dc8dcd57636a1a411307ad0e3149ef00a.png]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+<testsuite name="server\routes\api\comments\comments.playwright.spec.ts" timestamp="2026-11-10T18:34:24.656Z" hostname="" tests="7" failures="0" skipped="0" time="1.733" errors="0">
+<testcase name="CP-HU06-01 Autor edita su comentario" classname="server\routes\api\comments\comments.playwright.spec.ts" time="0.259">
+<properties>
+<property name="qatlas" value="OL-TC-18">
+</property>
+</properties>
+</testcase>
+<testcase name="CP-HU06-02 No autor intenta editar" classname="server\routes\api\comments\comments.playwright.spec.ts" time="0.236">
+<properties>
+<property name="qatlas" value="OL-TC-19">
+</property>
+</properties>
+</testcase>
+<testcase name="CP-HU06-03 Autor elimina con borrado lógico" classname="server\routes\api\comments\comments.playwright.spec.ts" time="0.279">
+<properties>
+<property name="qatlas" value="OL-TC-21">
+</property>
+</properties>
+</testcase>
+<testcase name="CP-HU06-04 Resolver comentario" classname="server\routes\api\comments\comments.playwright.spec.ts" time="0.248">
+<properties>
+<property name="qatlas" value="OL-TC-22">
+</property>
+</properties>
+</testcase>
+<testcase name="CP-HU06-05 No autor intenta eliminar" classname="server\routes\api\comments\comments.playwright.spec.ts" time="0.257">
+<properties>
+<property name="qatlas" value="OL-TC-39">
+</property>
+</properties>
+</testcase>
+<testcase name="CP-HU06-06 Editar con texto vacío" classname="server\routes\api\comments\comments.playwright.spec.ts" time="0.193">
+<properties>
+<property name="qatlas" value="OL-TC-40">
+</property>
+</properties>
+</testcase>
+<testcase name="CP-HU06-07 Reabrir comentario resuelto" classname="server\routes\api\comments\comments.playwright.spec.ts" time="0.261">
+<properties>
+<property name="qatlas" value="OL-TC-41">
+</property>
+</properties>
+</testcase>
+</testsuite>
+<testsuite name="server\routes\api\documents\documents.create.playwright.spec.ts" timestamp="2026-11-10T18:34:24.656Z" hostname="" tests="5" failures="2" skipped="0" time="0.31" errors="0">
+<testcase name="CP-HU04-01 Crear documento como editor" classname="server\routes\api\documents\documents.create.playwright.spec.ts" time="0.075">
+<properties>
+<property name="qatlas" value="OL-TC-1">
+</property>
+</properties>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|artifacts\server-routes-api-document-08225-Crear-documento-como-editor\error-context.md]]
+]]>
+</system-out>
+<failure message="El payload debe devolver el título por defecto definido en el caso." type="expect.toBe">
+<![CDATA[  server\routes\api\documents\documents.create.playwright.spec.ts:8:1 › CP-HU04-01 Crear documento como editor › Comprobar el título por defecto y la apertura del editor 
+
+    Error: El payload debe devolver el título por defecto definido en el caso.
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: "Sin título"
+    Received: ""
+
+      24 |         document.title,
+      25 |         "El payload debe devolver el título por defecto definido en el caso."
+    > 26 |       ).toBe("Sin título");
+         |         ^
+      27 |       const page = await qa.openDocument(document);
+      28 |       await expect(
+      29 |         page.locator('.ProseMirror[contenteditable="true"]').first()
+        at C:\Users\Joseph Fonseca\Documents\Joseph\Proyectos\outline\server\routes\api\documents\documents.create.playwright.spec.ts:26:9
+        at C:\Users\Joseph Fonseca\Documents\Joseph\Proyectos\outline\server\routes\api\documents\documents.create.playwright.spec.ts:22:5
+
+    Error Context: .qa\runs\1415083c-a36b-4f38-88a3-95eebbdf3334\artifacts\server-routes-api-document-08225-Crear-documento-como-editor\error-context.md
+]]>
+</failure>
+</testcase>
+<testcase name="CP-HU04-02 Crear documento sin colección destino" classname="server\routes\api\documents\documents.create.playwright.spec.ts" time="0.108">
+<properties>
+<property name="qatlas" value="OL-TC-2">
+</property>
+</properties>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|artifacts\server-routes-api-document-78d4d-mento-sin-colección-destino\error-context.md]]
+]]>
+</system-out>
+<failure message="{&quot;data&quot;:{&quot;id&quot;:&quot;4788af31-73f8-4549-b9af-f4ba9c84efd7&quot;,&quot;url&quot;:&quot;/doc/untitled-brkqB0e5eK&quot;,&quot;urlId&quot;:&quot;brkqB0e5eK&quot;,&quot;title&quot;:&quot;&quot;,&quot;data&quot;:{&quot;type&quot;:&quot;doc&quot;,&quot;content&quot;:[{&quot;type&quot;:&quot;paragraph&quot;}]},&quot;icon&quot;:null,&quot;color&quot;:null,&quot;tasks&quot;:{&quot;completed&quot;:0,&quot;total&quot;:0},&quot;language&quot;:null,&quot;createdAt&quot;:&quot;2026-11-10T18:36:18.347Z&quot;,&quot;createdBy&quot;:{&quot;id&quot;:&quot;da8f3618-100c-48b2-b488-5cf977e2a1d4&quot;,&quot;name&quot;:&quot;QA editor&quot;,&quot;avatarUrl&quot;:null,&quot;color&quot;:&quot;#e600e0&quot;,&quot;role&quot;:&quot;member&quot;,&quot;isSuspended&quot;:false,&quot;createdAt&quot;:&quot;2026-11-10T18:23:38.026Z&quot;,&quot;updatedAt&quot;:&quot;2026-11-10T18:36:14.407Z&quot;,&quot;deletedAt&quot;:null,&quot;lastActiveAt&quot;:&quot;2026-11-10T18:36:14.406Z&quot;,&quot;timezone&quot;:&quot;America/Costa_Rica&quot;},&quot;updatedAt&quot;:&quot;2026-11-10T18:36:18.347Z&quot;,&quot;updatedBy&quot;:{&quot;id&quot;:&quot;da8f3618-100c-48b2-b488-5cf977e2a1d4&quot;,&quot;name&quot;:&quot;QA editor&quot;,&quot;avatarUrl&quot;:null,&quot;color&quot;:&quot;#e600e0&quot;,&quot;role&quot;:&quot;member&quot;,&quot;isSuspended&quot;:false,&quot;createdAt&quot;:&quot;2026-11-10T18:23:38.026Z&quot;,&quot;updatedAt&quot;:&quot;2026-11-10T18:36:14.407Z&quot;,&quot;deletedAt&quot;:null,&quot;lastActiveAt&quot;:&quot;2026-11-10T18:36:14.406Z&quot;,&quot;timezone&quot;:&quot;America/Costa_Rica&quot;},&quot;publishedAt&quot;:null,&quot;archivedAt&quot;:null,&quot;deprecatedReason&quot;:null,&quot;deletedAt&quot;:null,&quot;collaboratorIds&quot;:[&quot;da8f3618-100c-48b2-b488-5cf977e2a1d4&quot;],&quot;revision&quot;:1,&quot;fullWidth&quot;:false,&quot;preferences&quot;:null,&quot;collectionId&quot;:null,&quot;parentDocumentId&quot;:null,&quot;isCollectionDeleted&quot;:false,&quot;templateId&quot;:null,&quot;insightsEnabled&quot;:true,&quot;popularityScore&quot;:0},&quot;policies&quot;:[{&quot;id&quot;:&quot;4788af31-73f8-4549-b9af-f4ba9c84efd7&quot;,&quot;abilities&quot;:{&quot;read&quot;:true,&quot;update&quot;:true,&quot;delete&quot;:true,&quot;move&quot;:true,&quot;duplicate&quot;:true,&quot;download&quot;:true,&quot;star&quot;:true,&quot;unstar&quot;:true,&quot;subscribe&quot;:true,&quot;unsubscribe&quot;:true,&quot;share&quot;:true,&quot;archive&quot;:false,&quot;restore&quot;:false,&quot;updateDeprecatedReason&quot;:false,&quot;listRevisions&quot;:true,&quot;listViews&quot;:true,&quot;comment&quot;:true,&quot;publish&quot;:true,&quot;manageUsers&quot;:true,&quot;createChildDocument&quot;:false,&quot;updateInsights&quot;:false,&quot;pin&quot;:false,&quot;unpin&quot;:false,&quot;pinToHome&quot;:false,&quot;permanentDelete&quot;:false,&quot;unarchive&quot;:false,&quot;unpublish&quot;:false}}],&quot;status&quot;:200,&quot;ok&quot;:true}" type="expect.toBe">
+<![CDATA[  server\routes\api\documents\documents.create.playwright.spec.ts:35:1 › CP-HU04-02 Crear documento sin colección destino › Omitir collectionId y comprobar el rechazo sin crear documentos 
+
+    Error: {"data":{"id":"4788af31-73f8-4549-b9af-f4ba9c84efd7","url":"/doc/untitled-brkqB0e5eK","urlId":"brkqB0e5eK","title":"","data":{"type":"doc","content":[{"type":"paragraph"}]},"icon":null,"color":null,"tasks":{"completed":0,"total":0},"language":null,"createdAt":"2026-11-10T18:36:18.347Z","createdBy":{"id":"da8f3618-100c-48b2-b488-5cf977e2a1d4","name":"QA editor","avatarUrl":null,"color":"#e600e0","role":"member","isSuspended":false,"createdAt":"2026-11-10T18:23:38.026Z","updatedAt":"2026-11-10T18:36:14.407Z","deletedAt":null,"lastActiveAt":"2026-11-10T18:36:14.406Z","timezone":"America/Costa_Rica"},"updatedAt":"2026-11-10T18:36:18.347Z","updatedBy":{"id":"da8f3618-100c-48b2-b488-5cf977e2a1d4","name":"QA editor","avatarUrl":null,"color":"#e600e0","role":"member","isSuspended":false,"createdAt":"2026-11-10T18:23:38.026Z","updatedAt":"2026-11-10T18:36:14.407Z","deletedAt":null,"lastActiveAt":"2026-11-10T18:36:14.406Z","timezone":"America/Costa_Rica"},"publishedAt":null,"archivedAt":null,"deprecatedReason":null,"deletedAt":null,"collaboratorIds":["da8f3618-100c-48b2-b488-5cf977e2a1d4"],"revision":1,"fullWidth":false,"preferences":null,"collectionId":null,"parentDocumentId":null,"isCollectionDeleted":false,"templateId":null,"insightsEnabled":true,"popularityScore":0},"policies":[{"id":"4788af31-73f8-4549-b9af-f4ba9c84efd7","abilities":{"read":true,"update":true,"delete":true,"move":true,"duplicate":true,"download":true,"star":true,"unstar":true,"subscribe":true,"unsubscribe":true,"share":true,"archive":false,"restore":false,"updateDeprecatedReason":false,"listRevisions":true,"listViews":true,"comment":true,"publish":true,"manageUsers":true,"createChildDocument":false,"updateInsights":false,"pin":false,"unpin":false,"pinToHome":false,"permanentDelete":false,"unarchive":false,"unpublish":false}}],"status":200,"ok":true}
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 400
+    Received: 200
+
+      42 |         qa.documents.push((await readDocument(response)).id);
+      43 |       }
+    > 44 |       expect(response.status(), await response.text()).toBe(400);
+         |                                                        ^
+      45 |     });
+      46 |   }
+      47 | );
+        at C:\Users\Joseph Fonseca\Documents\Joseph\Proyectos\outline\server\routes\api\documents\documents.create.playwright.spec.ts:44:56
+        at C:\Users\Joseph Fonseca\Documents\Joseph\Proyectos\outline\server\routes\api\documents\documents.create.playwright.spec.ts:39:5
+
+    Error Context: .qa\runs\1415083c-a36b-4f38-88a3-95eebbdf3334\artifacts\server-routes-api-document-78d4d-mento-sin-colección-destino\error-context.md
+]]>
+</failure>
+</testcase>
+<testcase name="CP-HU04-03 Viewer intenta crear documento" classname="server\routes\api\documents\documents.create.playwright.spec.ts" time="0.078">
+<properties>
+<property name="qatlas" value="OL-TC-3">
+</property>
+</properties>
+</testcase>
+<testcase name="CP-HU04-04 Crear documento sin token" classname="server\routes\api\documents\documents.create.playwright.spec.ts" time="0.021">
+<properties>
+<property name="qatlas" value="OL-TC-4">
+</property>
+</properties>
+</testcase>
+<testcase name="CP-HU04-05 Guest intenta crear documento" classname="server\routes\api\documents\documents.create.playwright.spec.ts" time="0.028">
+<properties>
+<property name="qatlas" value="OL-TC-5">
+</property>
+</properties>
+</testcase>
+</testsuite>
+</testsuites>
