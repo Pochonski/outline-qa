@@ -1,8 +1,6 @@
 # Plan de pruebas — Proyecto Outline QA (60 casos, equipo completo)
 
-Este documento conserva la planificación inicial del equipo para C1. Las fechas sugeridas, los campos de borrador y la distribución de 18 automatizados con Vitest y 2 manuales por integrante pertenecen a esa etapa. El alcance de Joseph en C2 comprende veinte casos automatizados con Playwright. El cierre y el seguimiento se describen en la guía de ejecución y el informe final. [Consultar la entrega de Joseph](ejecuciones_HU_04_05_06.md).
-
-Este documento conserva la planificación inicial de C1. Las fechas sugeridas, el estado Borrador y la distribución de 18 automatizados y 2 manuales por integrante pertenecen a esa etapa. El cierre de Joseph incorpora veinte casos con Playwright en C2 y declara cumplimiento parcial de los criterios de salida. [Consultar la entrega y los resultados](ejecuciones_HU_04_05_06.md).
+Este documento conserva la planificación inicial de C1. Las fechas sugeridas, el estado Borrador y la distribución de 18 automatizados con Vitest y 2 manuales por integrante pertenecen a esa etapa. El cierre de Joseph incorpora veinte casos con Playwright en C2 y declara cumplimiento parcial de los criterios de salida. [Consultar la entrega y los resultados](ejecuciones_HU_04_05_06.md).
 
 **QAtlas:** Planes de Prueba → Nuevo (un solo plan para todo el proyecto, según indicación del profesor).
 **Proyecto:** Outline — aseguramiento de calidad (Fase 2, plan de pruebas).

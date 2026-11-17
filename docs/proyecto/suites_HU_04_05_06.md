@@ -2,8 +2,6 @@
 
 Estas agrupaciones conservan los nombres y la modalidad inicial de C1. El reporter de C2 mantiene cinco grupos y automatiza también los dos casos de origen manual. Las corridas y la trazabilidad actual se describen en la guía de ejecución. [Consultar las ejecuciones de C1 y C2](ejecuciones_HU_04_05_06.md).
 
-Este documento describe la organización original de las cinco suites de C1. En C2 Playwright conserva esos cinco grupos, con automatización de los veinte casos. [Consultar las corridas y los archivos actuales](ejecuciones_HU_04_05_06.md).
-
 **Propietario:** Joseph Andres Fonseca Nuñez (Test Manager)
 **QAtlas:** Suites → Nuevo. Cada suite suma los casos de su plan de pruebas.
 **Plan base:** plan único de sesenta casos del equipo. [Consultar el plan](planes_HU_04_05_06.md).

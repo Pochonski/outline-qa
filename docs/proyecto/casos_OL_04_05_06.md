@@ -2,8 +2,6 @@
 
 Este documento conserva el diseño inicial de los veinte casos y sus campos de preparación de C1. En C2, Playwright automatiza los veinte casos, incluidos CP-HU04-06 y CP-HU05-02. La guía de ejecución relaciona cada código OL-TC con su archivo actual, su resultado histórico y las comprobaciones pendientes. Los identificadores de automatización consignados en el diseño corresponden a la planificación inicial. [Consultar la trazabilidad de C2](ejecuciones_HU_04_05_06.md).
 
-Este documento conserva el diseño inicial de los veinte casos. Los campos de estado y los identificadores de automatización corresponden a esa preparación. En C2 los veinte casos se ejecutaron con Playwright, incluidos los dos de origen manual. La guía de entrega relaciona cada código OL-TC con su archivo y resultado actual. [Consultar ejecuciones y trazabilidad de C2](ejecuciones_HU_04_05_06.md).
-
 **Propietario:** Joseph Andres Fonseca Nuñez
 **Mapeo:** OL-4 = HU-04 Crear documento · OL-5 = HU-05 Auto-save en editor · OL-6 = HU-06 Resolver y editar comentarios
 **Regla:** 18 automatizados + 2 manuales (10%). Estado inicial en QAtlas: Borrador.

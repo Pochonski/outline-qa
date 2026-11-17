@@ -1,7 +1,5 @@
 # Requisitos QA — HU-04, HU-05, HU-06 (Outline)
 
-Este documento conserva la definición de los requisitos y los campos utilizados en su preparación inicial. Las indicaciones de carga y el estado «Borrador» corresponden a esa etapa. El informe final recoge los resultados de C1 y C2 y las limitaciones de verificación. [Consultar la guía de la entrega](ejecuciones_HU_04_05_06.md).
-
 Este documento conserva las definiciones y los campos utilizados para registrar los requisitos durante la preparación inicial. El estado Borrador describe esa etapa. La consulta del 16 de noviembre de 2026 utilizada en el informe registra los tres requisitos aprobados en QAtlas. La guía de entrega reúne el estado de ejecución de sus casos y las comprobaciones pendientes. [Consultar la guía de pruebas](ejecuciones_HU_04_05_06.md).
 
 **Propietario:** Joseph Andres Fonseca Nuñez
