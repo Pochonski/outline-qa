@@ -34,9 +34,6 @@ describe("OL-TC-56 - Movimiento entre colecciones permitidas", () => {
         "utf8"
       );
 
-      console.log(`\n========== PASO ${paso} ==========`);
-      console.log(descripcion);
-      console.log(JSON.stringify(datos, null, 2));
     }
 
     // PASO 1: Preparar dos colecciones y un documento
@@ -146,12 +143,5 @@ describe("OL-TC-56 - Movimiento entre colecciones permitidas", () => {
     expect(encontradoEnDestino).not.toBeNull();
     expect(encontradoEnOrigen).toBeNull();
 
-    console.log("\n======================================");
-    console.log("OL-TC-56 - COMPROBACIONES COMPLETADAS");
-    console.log("PASO 1 - Dos colecciones preparadas");
-    console.log("PASO 2 - Movimiento aceptado con HTTP 200");
-    console.log("PASO 3 - Documento y contenido conservados");
-    console.log("PASO 4 - Documento ubicado en destino");
-    console.log("======================================");
   });
 });

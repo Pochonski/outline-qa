@@ -33,9 +33,6 @@ describe("OL-TC-59 - Evitar mover un documento dentro de sus descendientes", () 
         "utf8"
       );
 
-      console.log(`\n========== PASO ${paso} ==========`);
-      console.log(descripcion);
-      console.log(JSON.stringify(datos, null, 2));
     }
 
     // PASO 1: Crear documento padre e hijo
@@ -154,12 +151,5 @@ describe("OL-TC-59 - Evitar mover un documento dentro de sus descendientes", () 
     expect(estructuraCorrecta).toBe(true);
     expect(padreActualizado?.parentDocumentId).not.toBe(hijo.id);
 
-    console.log("\n====================================");
-    console.log("OL-TC-59 - COMPROBACIONES COMPLETADAS");
-    console.log("PASO 1 - Padre e hijo preparados");
-    console.log("PASO 2 - Movimiento circular rechazado");
-    console.log("PASO 3 - Padre conserva su ubicacion");
-    console.log("PASO 4 - Jerarquia original conservada");
-    console.log("====================================");
   });
 });

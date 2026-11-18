@@ -40,9 +40,6 @@ describe("OL-TC-61 - Rechazar movimiento sin autenticacion", () => {
         "utf8"
       );
 
-      console.log(`\n========== PASO ${paso} ==========`);
-      console.log(descripcion);
-      console.log(JSON.stringify(datos, null, 2));
     }
 
     // PASO 1: Preparar documento y destino validos
@@ -155,12 +152,5 @@ describe("OL-TC-61 - Rechazar movimiento sin autenticacion", () => {
     expect(encontradoEnOrigen).not.toBeNull();
     expect(encontradoEnDestino).toBeNull();
 
-    console.log("\n====================================");
-    console.log("OL-TC-61 - COMPROBACIONES COMPLETADAS");
-    console.log("PASO 1 - Documento y destino preparados");
-    console.log("PASO 2 - Solicitud sin autenticacion enviada");
-    console.log("PASO 3 - Servidor respondio HTTP 401");
-    console.log("PASO 4 - Ubicacion original conservada");
-    console.log("====================================");
   });
 });

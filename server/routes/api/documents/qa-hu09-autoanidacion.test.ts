@@ -36,9 +36,6 @@ describe("OL-TC-58 - Evitar mover un documento dentro de si mismo", () => {
         "utf8"
       );
 
-      console.log(`\n========== PASO ${paso} ==========`);
-      console.log(descripcion);
-      console.log(JSON.stringify(datos, null, 2));
     }
 
     // PASO 1: Preparar documento valido
@@ -151,12 +148,5 @@ describe("OL-TC-58 - Evitar mover un documento dentro de si mismo", () => {
     expect(documentosAutoanidados).toBe(0);
     expect(actualizado?.parentDocumentId).toBeNull();
 
-    console.log("\n====================================");
-    console.log("OL-TC-58 - COMPROBACIONES COMPLETADAS");
-    console.log("PASO 1 - Documento valido preparado");
-    console.log("PASO 2 - Autoanidacion rechazada con HTTP 400");
-    console.log("PASO 3 - Ubicacion original conservada");
-    console.log("PASO 4 - Jerarquia sin autoanidacion");
-    console.log("====================================");
   });
 });

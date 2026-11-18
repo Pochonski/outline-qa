@@ -50,9 +50,6 @@ describe("OL-TC-54 - Rechazar movimiento sin permisos", () => {
         "utf8"
       );
 
-      console.log(`\n========== PASO ${paso} ==========`);
-      console.log(descripcion);
-      console.log(JSON.stringify(datos, null, 2));
     }
 
     // ==========================================
@@ -195,12 +192,5 @@ describe("OL-TC-54 - Rechazar movimiento sin permisos", () => {
       origenColeccion.id
     );
 
-    console.log("\n====================================");
-    console.log("OL-TC-54 - COMPROBACIONES COMPLETADAS");
-    console.log("PASO 1 - Permisos preparados");
-    console.log("PASO 2 - Movimiento rechazado con HTTP 403");
-    console.log("PASO 3 - Ubicacion original conservada");
-    console.log("PASO 4 - Destino sin el documento");
-    console.log("====================================");
   });
 });

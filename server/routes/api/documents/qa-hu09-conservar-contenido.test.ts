@@ -40,9 +40,6 @@ describe("OL-TC-60 - Conservar contenido despues de mover documento", () => {
         "utf8"
       );
 
-      console.log(`\n========== PASO ${paso} ==========`);
-      console.log(descripcion);
-      console.log(JSON.stringify(datos, null, 2));
     }
 
     // PASO 1: Preparar un documento con contenido conocido
@@ -172,12 +169,5 @@ describe("OL-TC-60 - Conservar contenido despues de mover documento", () => {
 
     expect(resultadoCorrecto).toBe(true);
 
-    console.log("\n====================================");
-    console.log("OL-TC-60 - COMPROBACIONES COMPLETADAS");
-    console.log("PASO 1 - Documento y contenido preparados");
-    console.log("PASO 2 - Movimiento aceptado con HTTP 200");
-    console.log("PASO 3 - Titulo y contenido conservados");
-    console.log("PASO 4 - Documento confirmado en destino");
-    console.log("====================================");
   });
 });

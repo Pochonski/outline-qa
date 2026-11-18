@@ -37,9 +37,6 @@ describe("OL-TC-57 - Rechazar movimiento a destino invalido", () => {
         "utf8"
       );
 
-      console.log(`\n========== PASO ${paso} ==========`);
-      console.log(descripcion);
-      console.log(JSON.stringify(datos, null, 2));
     }
 
     // PASO 1: Preparar documento de origen
@@ -154,12 +151,5 @@ describe("OL-TC-57 - Rechazar movimiento a destino invalido", () => {
     expect(encontradoEnOrigen).not.toBeNull();
     expect(encontradoEnDestino).toBeNull();
 
-    console.log("\n====================================");
-    console.log("OL-TC-57 - COMPROBACIONES COMPLETADAS");
-    console.log("PASO 1 - Documento preparado");
-    console.log("PASO 2 - Destino inexistente rechazado");
-    console.log("PASO 3 - Ubicacion original conservada");
-    console.log("PASO 4 - Estructura original confirmada");
-    console.log("====================================");
   });
 });
