@@ -10,6 +10,8 @@
 
 Las pruebas de Playwright originales están en qa-tests/.
 
+Estos 16 archivos requieren el servidor local `https://local.outline.dev:3000`, documentos preparados y el archivo privado `qa-tests/.auth/wiki.json`. No forman parte de la suite de Playwright configurada en la raíz. No se deben contar como pruebas ejecutadas por CI.
+
 También se incluyen pruebas unitarias y de integración en app/, shared/ y server/.
 
 ## Ejecución
