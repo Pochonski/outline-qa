@@ -28,6 +28,25 @@ Para publicar una nueva ronda en QAtlas se proporciona `QATLAS_TOKEN` por variab
 
 Los documentos del proyecto describen los [requisitos](docs/proyecto/requisitos_OL_04_05_06.md), los [casos](docs/proyecto/casos_OL_04_05_06.md), el [plan](docs/proyecto/planes_HU_04_05_06.md), las [suites](docs/proyecto/suites_HU_04_05_06.md) y las [ejecuciones](docs/proyecto/ejecuciones_HU_04_05_06.md). Los campos de preparación inicial se identifican como históricos de C1.
 
+## Pruebas de Rachel Monterrey (HU-01 a HU-03)
+
+Rachel Monterrey cubre HU-01 Publicar y compartir documento (OL-7), HU-02 Administrar miembros del equipo (OL-8) y HU-03 Configuración de notificaciones (OL-9). Sus veinte casos de prueba y sus resultados están en QAtlas, proyecto OL, y en su informe de pruebas. Las pruebas automáticas son de Vitest y están junto a las rutas de la API que prueban.
+
+| Archivo | Historia | Casos de prueba | Casos de QAtlas |
+|---|---|---|---|
+| server/routes/api/shares/shares.qa-hu01.test.ts | HU-01 | CP-HU01-01 a 04 | OL-TC-7, 9, 12 y 20 |
+| server/routes/api/users/users.qa-hu02.test.ts | HU-02 | CP-HU02-01 a 09 | OL-TC-23 a 31 |
+| server/routes/api/notifications/notifications.qa-hu03.test.ts | HU-03 | CP-HU03-01, 02, 03 y 05 | OL-TC-32, 33, 34 y 36 |
+| server/routes/api/subscriptions/subscriptions.qa-hu03.test.ts | HU-03 | CP-HU03-04 | OL-TC-35 |
+
+Cada prueba tiene una sola verificación, lleva el código del caso en su nombre y prepara sus datos en un método previo. CP-HU01-03 y CP-HU01-04 están parametrizadas. CP-HU01-01 queda como pendiente (it.todo), porque Outline no tiene la lista de dominios permitidos que pide el requisito CA-01.1 (defecto OL-BUG-1). Los casos manuales OL-TC-37 y OL-TC-38 no tienen prueba automática.
+
+La ejecución conjunta del 17 de noviembre de 2026 dio 17 pruebas aprobadas y 1 pendiente. No se registró en QAtlas. Requiere PostgreSQL y Redis de pruebas en ejecución, y se lanza desde la raíz del repositorio.
+
+```sh
+yarn vitest run server/routes/api/users/users.qa-hu02.test.ts server/routes/api/shares/shares.qa-hu01.test.ts server/routes/api/notifications/notifications.qa-hu03.test.ts server/routes/api/subscriptions/subscriptions.qa-hu03.test.ts
+```
+
 ## Proyecto Outline
 
 <p align="center">
