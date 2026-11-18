@@ -17,6 +17,8 @@ data/*
 *.cert
 .history
 .qa/
+qa-tests/.auth/
+qa-tests/evidencias/
 .env.playwright.local
 playwright-report/
 test-results/

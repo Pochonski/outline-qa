@@ -16,6 +16,8 @@ La base del proyecto es Outline en el commit `0e19c7d89ae2f4924af98d022675bd1e92
 
 C1 registra 17 aprobados y 3 fallidos. C2 registra 13 aprobados y 7 fallidos. El informe documenta los siete defectos abiertos, el cumplimiento parcial del plan y los pendientes de seguimiento. Los reportes corresponden a las ejecuciones históricas conservadas.
 
+La prueba de Vitest `CP-HU05-01` conserva la aserción del requisito de 2000 ms como fallo esperado: Outline usa 3000 ms. Este estado permite ejecutar la suite en CI sin presentar el comportamiento actual como aprobado ni cambiar los resultados históricos.
+
 La preparación requiere Node.js 22, PostgreSQL 18 y Docker con Docker Compose. Los comandos se ejecutan desde la raíz del repositorio, después de completar la conexión local indicada en la guía.
 
 ```sh
@@ -45,6 +47,26 @@ La ejecución conjunta del 17 de noviembre de 2026 dio 17 pruebas aprobadas y 1 
 
 ```sh
 yarn vitest run server/routes/api/users/users.qa-hu02.test.ts server/routes/api/shares/shares.qa-hu01.test.ts server/routes/api/notifications/notifications.qa-hu03.test.ts server/routes/api/subscriptions/subscriptions.qa-hu03.test.ts
+```
+
+## Pruebas de Yendri Obando (HU-07 a HU-09)
+
+Sus veinte casos, OL-TC-42 a OL-TC-61, están en `docs/proyecto/casos_de_prueba.csv`. OL-TC-42 y OL-TC-52 son manuales. El repositorio incluye las siguientes pruebas que pueden ejecutarse con la configuración del equipo:
+
+| Archivo | Cobertura |
+|---|---|
+| `app/scenes/Document/components/hu07-tabla.playwright.spec.ts` | OL-TC-43 con Playwright y evidencia adjunta |
+| `shared/editor/nodes/TableView.qa-hu07.test.ts` | Comprobación de la estructura de OL-TC-43 |
+| `app/stores/UiStore.qa-hu07.test.ts` | Cuatro comprobaciones adicionales del menú móvil |
+| `server/routes/api/documents/qa-hu09-*.test.ts` | OL-TC-54, 56, 57, 58, 59, 60 y 61 |
+
+Los 16 archivos originales de `qa-tests/*.spec.ts` se conservan como trabajo entregado por Yendri. Dependen de `https://local.outline.dev:3000`, del estado de sesión privado `qa-tests/.auth/wiki.json` y de datos locales. La configuración estándar de Playwright no los incluye. Sus resultados no deben contarse como ejecuciones reproducibles en este repositorio; Yendri registró una ejecución correcta de OL-TC-43 tras adaptarla. Los demás casos automatizados de HU-07 a HU-09 quedan pendientes de adaptación y validación. Los resultados de QAtlas y del informe de cada integrante son históricos e independientes de estas ejecuciones de CI.
+
+```sh
+corepack yarn test app/stores/UiStore.qa-hu07.test.ts
+corepack yarn test shared/editor/nodes/TableView.qa-hu07.test.ts
+corepack yarn test server/routes/api/documents/qa-hu09
+corepack yarn qa:playwright app/scenes/Document/components/hu07-tabla.playwright.spec.ts --reporter=list
 ```
 
 ## Proyecto Outline
