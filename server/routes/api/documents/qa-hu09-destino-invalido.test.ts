@@ -161,11 +161,11 @@ describe("OL-TC-57 - Rechazar movimiento a destino invalido", () => {
   });
 
   it("OL-TC-57 - responde con error HTTP", () => {
-    expect(observaciones[2]).toBeGreaterThanOrEqual(esperados[2]);
+    expect(observaciones[2]).toBeGreaterThanOrEqual(400);
   });
 
   it("OL-TC-57 - responde con error del cliente", () => {
-    expect(observaciones[3]).toBeLessThan(esperados[3]);
+    expect(observaciones[3]).toBeLessThan(500);
   });
 
   it("OL-TC-57 - encuentra el documento final", () => {

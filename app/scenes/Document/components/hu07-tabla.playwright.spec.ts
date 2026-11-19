@@ -60,7 +60,7 @@ test.describe("OL-TC-43 - Desplazamiento horizontal en tablas móviles", () => {
     }));
   });
 
-  test.afterEach(async ({}, info) => {
+  test.afterEach(async ({ qa: _qa }, info) => {
     await info.attach("OL-TC-43_Tabla_Movil.png", {
       body: await page.screenshot({ fullPage: true }),
       contentType: "image/png",
