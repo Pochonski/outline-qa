@@ -30,26 +30,26 @@ Los documentos del proyecto describen los [requisitos](docs/proyecto/requisitos_
 
 ## Pruebas de Rachel Monterrey (HU-01 a HU-03)
 
-Rachel Monterrey cubre HU-01 Publicar y compartir documento (OL-7), HU-02 Administrar miembros del equipo (OL-8) y HU-03 Configuración de notificaciones (OL-9). Sus veinte casos de prueba y sus resultados están en QAtlas, proyecto OL, y en su informe de pruebas. Las pruebas automáticas son de dos tipos: las de Vitest están junto a las rutas de la API que prueban, y las de Playwright están en la carpeta `playwright-rachel-hu01-03`. Las dos suites cubren los mismos 18 casos automatizados.
+Rachel Monterrey cubre HU-01 Publicar y compartir documento (OL-7), HU-02 Administrar miembros del equipo (OL-8) y HU-03 Configuración de notificaciones (OL-9). Sus veinte casos y sus resultados están en QAtlas, proyecto OL, y en su informe de pruebas. Dieciocho casos están automatizados con dos suites que cubren los mismos casos, una de Vitest y otra de Playwright. Los casos manuales OL-TC-37 y OL-TC-38 no tienen prueba automática.
 
-| Archivo | Historia | Casos de prueba | Casos de QAtlas |
-|---|---|---|---|
-| server/routes/api/shares/shares.qa-hu01.test.ts | HU-01 | CP-HU01-01 a 04 | OL-TC-7, 9, 12 y 20 |
-| server/routes/api/users/users.qa-hu02.test.ts | HU-02 | CP-HU02-01 a 09 | OL-TC-23 a 31 |
-| server/routes/api/notifications/notifications.qa-hu03.test.ts | HU-03 | CP-HU03-01, 02, 03 y 05 | OL-TC-32, 33, 34 y 36 |
-| server/routes/api/subscriptions/subscriptions.qa-hu03.test.ts | HU-03 | CP-HU03-04 | OL-TC-35 |
+| Revisión | Archivo |
+|---|---|
+| HU-01, CP-HU01-01 a 04 (OL-TC-7, 9, 12 y 20), Vitest | [shares.qa-hu01.test.ts](server/routes/api/shares/shares.qa-hu01.test.ts) |
+| HU-02, CP-HU02-01 a 09 (OL-TC-23 a 31), Vitest | [users.qa-hu02.test.ts](server/routes/api/users/users.qa-hu02.test.ts) |
+| HU-03, CP-HU03-01, 02, 03 y 05 (OL-TC-32, 33, 34 y 36), Vitest | [notifications.qa-hu03.test.ts](server/routes/api/notifications/notifications.qa-hu03.test.ts) |
+| HU-03, CP-HU03-04 (OL-TC-35), Vitest | [subscriptions.qa-hu03.test.ts](server/routes/api/subscriptions/subscriptions.qa-hu03.test.ts) |
+| HU-01 a HU-03, pruebas de la API con Playwright (ciclo 2) | [playwright-rachel-hu01-03](playwright-rachel-hu01-03/) |
+| Preparación y ejecución de Playwright | [README de Playwright](playwright-rachel-hu01-03/README.md) |
 
-Cada prueba tiene una sola verificación, lleva el código del caso en su nombre y prepara sus datos en un método previo. CP-HU01-03 y CP-HU01-04 están parametrizadas. CP-HU01-01 queda como pendiente (it.todo), porque Outline no tiene la lista de dominios permitidos que pide el requisito CA-01.1 (defecto OL-BUG-1). Los casos manuales OL-TC-37 y OL-TC-38 no tienen prueba automática.
+Vitest registra 17 pruebas aprobadas y 1 pendiente (CP-HU01-01, `it.todo`, porque Outline no tiene la lista de dominios permitidos que pide el requisito CA-01.1, defecto OL-BUG-1); fue una verificación local del 17 de noviembre de 2026. Playwright registra 66 pruebas aprobadas y 1 omitida (OL-TC-7, bloqueada por OL-BUG-1) en la ejecución local del 18 de noviembre de 2026. Los resultados registrados en QAtlas para esta historia son los del ciclo 2 (OL-RUN-21), obtenidos con las pruebas de Playwright.
 
-La ejecución conjunta del 17 de noviembre de 2026 dio 17 pruebas aprobadas y 1 pendiente. No se registró en QAtlas. Requiere PostgreSQL y Redis de pruebas en ejecución, y se lanza desde la raíz del repositorio.
+En las dos suites cada prueba tiene una sola verificación, lleva el código del caso en su nombre y prepara sus datos en un método previo (`beforeEach`). Están parametrizados CP-HU01-03 y CP-HU01-04 en Vitest, y los roles de CP-HU02-05 en Playwright.
+
+Vitest requiere PostgreSQL y Redis de pruebas en ejecución y se lanza desde la raíz del repositorio. Playwright requiere Node.js 22 y un Outline aislado en el puerto 3010 (Docker o código fuente, según su README) y se lanza desde su carpeta, sin enviar resultados a QAtlas.
 
 ```sh
 yarn vitest run server/routes/api/users/users.qa-hu02.test.ts server/routes/api/shares/shares.qa-hu01.test.ts server/routes/api/notifications/notifications.qa-hu03.test.ts server/routes/api/subscriptions/subscriptions.qa-hu03.test.ts
-```
 
-Las pruebas de Playwright de la carpeta `playwright-rachel-hu01-03` llaman a la API de un Outline aislado (sin navegador) y son con las que se obtuvo la ejecución del ciclo 2 (OL-RUN-21): automatizan 18 de los 20 casos, con un archivo por historia (`hu01.spec.ts`, `hu02.spec.ts` y `hu03.spec.ts`). Cada caso tiene su bloque de pruebas con una sola verificación por prueba, la preparación en `beforeEach` y la etiqueta `@OL-TC-n` que lo vincula con QAtlas. CP-HU02-05 está parametrizada por rol. CP-HU01-01 (OL-TC-7) queda bloqueada por el defecto OL-BUG-1. La ejecución del 18 de noviembre de 2026 dio 66 pruebas aprobadas y 1 omitida, sin enviar nada a QAtlas. Las instrucciones para levantar el Outline aislado están en el README de esa carpeta, y se ejecutan desde ella.
-
-```sh
 cd playwright-rachel-hu01-03
 npm install
 npx playwright test
