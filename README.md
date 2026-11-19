@@ -1,22 +1,82 @@
-# Entrega académica de QA — Joseph Fonseca
+# Entrega académica de QA — Outline
 
-Este repositorio reúne el proyecto Outline y las pruebas de HU-04 Crear documento, HU-05 Autoguardado y HU-06 Resolver y editar comentarios. Los cuatro archivos Vitest se refactorizaron el 18 de noviembre de 2026 para la rúbrica, sin cambiar sus verificaciones; la versión anterior está en el commit `bbc90af335`. La entrega conserva los veinte casos de Playwright de C2 y su reporter de ingesta para QAtlas.
+Este repositorio reúne el proyecto Outline y el proyecto de pruebas del equipo para el curso Aseguramiento de la Calidad del Software (TEC, Escuela de Ingeniería en Computación, Campus Tecnológico Local San Carlos). El equipo lo forman Rachel Monterrey, Joseph Fonseca y Yendri Obando. Los casos, las ejecuciones y los defectos están registrados en QAtlas, proyecto OL.
 
-El plan del equipo abarca sesenta casos, veinte por integrante. Rachel Monterrey cubre HU-01 a HU-03, Joseph Fonseca HU-04 a HU-06 y Yendri Obando HU-07 a HU-09. Los CSV incluidos reúnen los sesenta casos y los nueve requisitos del equipo. [Consultar el plan y su distribución](docs/proyecto/planes_HU_04_05_06.md).
+El plan del equipo abarca sesenta casos, veinte por integrante, y nueve requisitos. Los CSV incluidos reúnen los sesenta casos y los requisitos. [Consultar el plan y su distribución](docs/proyecto/planes_HU_04_05_06.md).
 
 La base del proyecto es Outline en el commit `0e19c7d89ae2f4924af98d022675bd1e9275a239`.
+
+| Integrante | Historias de usuario | Pruebas automáticas |
+|---|---|---|
+| Rachel Monterrey | HU-01 Publicar y compartir documento, HU-02 Administrar miembros del equipo, HU-03 Configuración de notificaciones | Vitest y Playwright (API) |
+| Joseph Fonseca | HU-04 Crear documento, HU-05 Autoguardado, HU-06 Resolver y editar comentarios | Vitest y Playwright |
+| Yendri Obando | HU-07 Interfaz y visualización en dispositivos móviles, HU-08 Temas, preferencias y persistencia, HU-09 Movimiento de documentos y validaciones | Vitest y Playwright |
+
+## Resultados del equipo
+
+| Integrante | C1 aprobados | C1 fallidos | C1 bloqueados | C2 aprobados | C2 fallidos | C2 bloqueados |
+|---|---|---|---|---|---|---|
+| Rachel | 19 | 0 | 1 | 19 | 0 | 1 |
+| Yendri | 15 | 2 | 3 | 15 | 5 | 0 |
+| Joseph | 17 | 3 | 0 | 13 | 7 | 0 |
+| Equipo | 51 | 5 | 4 | 47 | 12 | 1 |
+
+El equipo aprobó 85 % de los casos en el ciclo 1 (51 de 60) y 78,3 % en el ciclo 2 (47 de 60). Las pruebas dejaron 13 defectos abiertos en QAtlas (OL-BUG-1 a OL-BUG-13) y un hallazgo sobre el criterio de aceptación CA-02.4. Los resultados de QAtlas y del informe son históricos e independientes de las ejecuciones locales que se describen más abajo.
 
 | Revisión | Archivo |
 |---|---|
 | Preparación, ejecución, ingesta y trazabilidad | [Guía de pruebas](docs/proyecto/ejecuciones_HU_04_05_06.md) |
-| Informe final de 67 páginas | [Informe de pruebas](docs/proyecto/informe_final.pdf) |
-| Veinte resultados de C2 y 48 adjuntos | [Índice HTML descargable](docs/proyecto/index.html) |
+| Informe de pruebas | [Informe de pruebas](docs/proyecto/informe_final.pdf) |
+| Resultados de C2 y adjuntos | [Índice HTML descargable](docs/proyecto/index.html) |
 | Reportes JUnit y manifiestos históricos | [Reportes](docs/proyecto/reportes/) |
 | Archivos y hashes SHA-256 de los reportes | [Inventario](docs/proyecto/reportes/inventario.json) |
+| Casos y requisitos del equipo | [casos_de_prueba.csv](docs/proyecto/casos_de_prueba.csv), [requisitos.csv](docs/proyecto/requisitos.csv) |
 
-C1 registra 17 aprobados y 3 fallidos. C2 registra 13 aprobados y 7 fallidos. El informe documenta los siete defectos abiertos, el cumplimiento parcial del plan y los pendientes de seguimiento. Los reportes corresponden a las ejecuciones históricas conservadas.
+Los documentos de HU-04 a HU-06 describen los [requisitos](docs/proyecto/requisitos_OL_04_05_06.md), los [casos](docs/proyecto/casos_OL_04_05_06.md), el [plan](docs/proyecto/planes_HU_04_05_06.md), las [suites](docs/proyecto/suites_HU_04_05_06.md) y las [ejecuciones](docs/proyecto/ejecuciones_HU_04_05_06.md). Los campos de preparación inicial se identifican como históricos de C1.
 
-La prueba de Vitest `CP-HU05-01` conserva la aserción del requisito de 2000 ms como fallo esperado: Outline usa 3000 ms. Este estado permite ejecutar la suite en CI sin presentar el comportamiento actual como aprobado ni cambiar los resultados históricos.
+## Pruebas de Rachel Monterrey (HU-01 a HU-03)
+
+Rachel cubre HU-01 Publicar y compartir documento (OL-7), HU-02 Administrar miembros del equipo (OL-8) y HU-03 Configuración de notificaciones (OL-9). Sus veinte casos y sus resultados están en QAtlas y en el informe de pruebas. Dieciocho casos están automatizados con dos suites que cubren los mismos casos, una de Vitest y otra de Playwright. Los casos manuales OL-TC-37 y OL-TC-38 no tienen prueba automática.
+
+| Revisión | Archivo |
+|---|---|
+| HU-01, CP-HU01-01 a 04 (OL-TC-7, 9, 12 y 20), Vitest | [shares.qa-hu01.test.ts](server/routes/api/shares/shares.qa-hu01.test.ts) |
+| HU-02, CP-HU02-01 a 09 (OL-TC-23 a 31), Vitest | [users.qa-hu02.test.ts](server/routes/api/users/users.qa-hu02.test.ts) |
+| HU-03, CP-HU03-01, 02, 03 y 05 (OL-TC-32, 33, 34 y 36), Vitest | [notifications.qa-hu03.test.ts](server/routes/api/notifications/notifications.qa-hu03.test.ts) |
+| HU-03, CP-HU03-04 (OL-TC-35), Vitest | [subscriptions.qa-hu03.test.ts](server/routes/api/subscriptions/subscriptions.qa-hu03.test.ts) |
+| HU-01 a HU-03, pruebas de la API con Playwright (ciclo 2) | [playwright-rachel-hu01-03](playwright-rachel-hu01-03/) |
+| Preparación y ejecución de Playwright | [README de Playwright](playwright-rachel-hu01-03/README.md) |
+
+Vitest registra 17 pruebas aprobadas y 1 pendiente (CP-HU01-01, `it.todo`, porque Outline no tiene la lista de dominios permitidos que pide el requisito CA-01.1, defecto OL-BUG-1) en la ejecución del 17 de noviembre de 2026. Playwright registra 66 pruebas aprobadas y 1 omitida (OL-TC-7, bloqueada por OL-BUG-1) en la ejecución del 18 de noviembre de 2026. La ejecución OL-RUN-21 del ciclo 2 en QAtlas se obtuvo con las pruebas de Playwright.
+
+En las dos suites cada prueba tiene una sola verificación, lleva el código del caso en su nombre y prepara sus datos en un método previo (`beforeEach`). Están parametrizados CP-HU01-03 y CP-HU01-04 en Vitest, y los roles de CP-HU02-05 en Playwright.
+
+Vitest requiere PostgreSQL y Redis de pruebas en ejecución y se lanza desde la raíz del repositorio. Playwright requiere Node.js 22 y un Outline aislado en el puerto 3010 (Docker o código fuente, según su README) y se lanza desde su carpeta, sin enviar resultados a QAtlas.
+
+```sh
+yarn vitest run server/routes/api/users/users.qa-hu02.test.ts server/routes/api/shares/shares.qa-hu01.test.ts server/routes/api/notifications/notifications.qa-hu03.test.ts server/routes/api/subscriptions/subscriptions.qa-hu03.test.ts
+
+cd playwright-rachel-hu01-03
+npm install
+npx playwright test
+```
+
+## Pruebas de Joseph Fonseca (HU-04 a HU-06)
+
+Joseph cubre HU-04 Crear documento, HU-05 Autoguardado y HU-06 Resolver y editar comentarios. Sus veinte casos están en QAtlas y en el informe de pruebas. Tiene dieciocho casos con prueba de Vitest y veinte casos de Playwright, que son los de C2 y se publican en QAtlas con su propio reporter.
+
+| Revisión | Archivo |
+|---|---|
+| HU-04, OL-TC-1 a 5, Vitest | [documents.create.qa.test.ts](server/routes/api/documents/documents.create.qa.test.ts) |
+| HU-05, OL-TC-13, 15 y 16, Vitest | [documents.update.qa.test.ts](server/routes/api/documents/documents.update.qa.test.ts) |
+| HU-05, OL-TC-10, 14 y 17, Vitest | [useDocumentSave.qa.test.ts](app/scenes/Document/hooks/useDocumentSave.qa.test.ts) |
+| HU-06, OL-TC-18, 19, 21, 22 y 39 a 41, Vitest | [comments.qa.test.ts](server/routes/api/comments/comments.qa.test.ts) |
+| HU-04, OL-TC-1 a 5, Playwright | [documents.create.playwright.spec.ts](server/routes/api/documents/documents.create.playwright.spec.ts) |
+| HU-04 y HU-05, OL-TC-6, 10, 11 y 13 a 17, Playwright | [Document.playwright.spec.ts](app/scenes/Document/components/Document.playwright.spec.ts) |
+| HU-06, OL-TC-18, 19, 21, 22 y 39 a 41, Playwright | [comments.playwright.spec.ts](server/routes/api/comments/comments.playwright.spec.ts) |
+| Reporter de ingesta para QAtlas | [qatlas-reporter.ts](docs/proyecto/tools/qatlas-reporter.ts) |
+
+Vitest registra 18 pruebas: 17 aprobadas y 1 fallo esperado. La prueba `CP-HU05-01` conserva la aserción del requisito de 2000 ms como fallo esperado (`it.fails`), porque Outline usa 3000 ms. Este estado permite ejecutar la suite en CI sin presentar el comportamiento actual como aprobado ni cambiar los resultados históricos. C1 registra 17 aprobados y 3 fallidos. C2 registra 13 aprobados y 7 fallidos. Los reportes corresponden a las ejecuciones históricas conservadas.
 
 La preparación requiere Node.js 22, PostgreSQL 18 y Docker con Docker Compose. Los comandos se ejecutan desde la raíz del repositorio, después de completar la conexión local indicada en la guía.
 
@@ -28,37 +88,17 @@ corepack yarn qa:playwright
 
 Para publicar una nueva ronda en QAtlas se proporciona `QATLAS_TOKEN` por variable de entorno o mediante `.env.playwright.local` y se ejecuta `corepack yarn qa:playwright:qatlas`. La plantilla está en [.env.playwright.example](.env.playwright.example). Las copias de consulta de las evidencias ocultan las credenciales de los registros y de las trazas.
 
-Los documentos del proyecto describen los [requisitos](docs/proyecto/requisitos_OL_04_05_06.md), los [casos](docs/proyecto/casos_OL_04_05_06.md), el [plan](docs/proyecto/planes_HU_04_05_06.md), las [suites](docs/proyecto/suites_HU_04_05_06.md) y las [ejecuciones](docs/proyecto/ejecuciones_HU_04_05_06.md). Los campos de preparación inicial se identifican como históricos de C1.
-
-## Pruebas de Rachel Monterrey (HU-01 a HU-03)
-
-Rachel Monterrey cubre HU-01 Publicar y compartir documento (OL-7), HU-02 Administrar miembros del equipo (OL-8) y HU-03 Configuración de notificaciones (OL-9). Sus veinte casos de prueba y sus resultados están en QAtlas, proyecto OL, y en su informe de pruebas. Las pruebas automáticas son de Vitest y están junto a las rutas de la API que prueban.
-
-| Archivo | Historia | Casos de prueba | Casos de QAtlas |
-|---|---|---|---|
-| server/routes/api/shares/shares.qa-hu01.test.ts | HU-01 | CP-HU01-01 a 04 | OL-TC-7, 9, 12 y 20 |
-| server/routes/api/users/users.qa-hu02.test.ts | HU-02 | CP-HU02-01 a 09 | OL-TC-23 a 31 |
-| server/routes/api/notifications/notifications.qa-hu03.test.ts | HU-03 | CP-HU03-01, 02, 03 y 05 | OL-TC-32, 33, 34 y 36 |
-| server/routes/api/subscriptions/subscriptions.qa-hu03.test.ts | HU-03 | CP-HU03-04 | OL-TC-35 |
-
-Cada prueba tiene una sola verificación, lleva el código del caso en su nombre y prepara sus datos en un método previo. CP-HU01-03 y CP-HU01-04 están parametrizadas. CP-HU01-01 queda como pendiente (it.todo), porque Outline no tiene la lista de dominios permitidos que pide el requisito CA-01.1 (defecto OL-BUG-1). Los casos manuales OL-TC-37 y OL-TC-38 no tienen prueba automática.
-
-La ejecución conjunta del 17 de noviembre de 2026 dio 17 pruebas aprobadas y 1 pendiente. No se registró en QAtlas. Requiere PostgreSQL y Redis de pruebas en ejecución, y se lanza desde la raíz del repositorio.
-
-```sh
-yarn vitest run server/routes/api/users/users.qa-hu02.test.ts server/routes/api/shares/shares.qa-hu01.test.ts server/routes/api/notifications/notifications.qa-hu03.test.ts server/routes/api/subscriptions/subscriptions.qa-hu03.test.ts
-```
-
 ## Pruebas de Yendri Obando (HU-07 a HU-09)
 
-Sus veinte casos, OL-TC-42 a OL-TC-61, están en `docs/proyecto/casos_de_prueba.csv`. OL-TC-42 y OL-TC-52 son manuales. El repositorio incluye las siguientes pruebas que pueden ejecutarse con la configuración del equipo:
+Yendri cubre HU-07 Interfaz y visualización en dispositivos móviles, HU-08 Temas, preferencias y persistencia, y HU-09 Movimiento de documentos y validaciones. Sus veinte casos, OL-TC-42 a OL-TC-61, están en [casos_de_prueba.csv](docs/proyecto/casos_de_prueba.csv). OL-TC-42 y OL-TC-52 son manuales. El repositorio incluye las siguientes pruebas, que pueden ejecutarse con la configuración del equipo:
 
 | Archivo | Cobertura |
 |---|---|
-| `app/scenes/Document/components/hu07-tabla.playwright.spec.ts` | OL-TC-43 con Playwright y evidencia adjunta |
-| `shared/editor/nodes/TableView.qa-hu07.test.ts` | Comprobación de la estructura de OL-TC-43 |
-| `app/stores/UiStore.qa-hu07.test.ts` | Cuatro comprobaciones adicionales del menú móvil |
+| [hu07-tabla.playwright.spec.ts](app/scenes/Document/components/hu07-tabla.playwright.spec.ts) | OL-TC-43 con Playwright y evidencia adjunta |
+| [TableView.qa-hu07.test.ts](shared/editor/nodes/TableView.qa-hu07.test.ts) | Comprobación de la estructura de OL-TC-43 |
+| [UiStore.qa-hu07.test.ts](app/stores/UiStore.qa-hu07.test.ts) | Cuatro comprobaciones adicionales del menú móvil |
 | `server/routes/api/documents/qa-hu09-*.test.ts` | OL-TC-54, 56, 57, 58, 59, 60 y 61 |
+| [qa-tests](qa-tests/) | Los 16 archivos originales de Playwright (HU-07 a HU-09) y su [README](qa-tests/README.md) |
 
 Los 16 archivos originales de `qa-tests/*.spec.ts` se conservan como trabajo entregado por Yendri. Dependen de `https://local.outline.dev:3000`, del estado de sesión privado `qa-tests/.auth/wiki.json` y de datos locales. La configuración estándar de Playwright no los incluye. Sus resultados no deben contarse como ejecuciones reproducibles en este repositorio; Yendri registró una ejecución correcta de OL-TC-43 tras adaptarla. Los demás casos automatizados de HU-07 a HU-09 quedan pendientes de adaptación y validación. Los resultados de QAtlas y del informe de cada integrante son históricos e independientes de estas ejecuciones de CI.
 
