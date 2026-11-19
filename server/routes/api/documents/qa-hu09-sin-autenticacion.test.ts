@@ -1,7 +1,6 @@
-
 import fs from "node:fs";
 import path from "node:path";
-import { describe, it, expect } from "vitest";
+import { beforeEach, describe, it, expect } from "vitest";
 import { Document } from "@server/models";
 import {
   buildUser,
@@ -12,13 +11,15 @@ import { getTestServer } from "@server/test/support";
 
 const server = getTestServer();
 
-const carpeta = path.resolve(
-  process.cwd(),
-  "qa-tests/evidencias"
-);
+const carpeta = path.resolve(process.cwd(), "qa-tests/evidencias");
 
 describe("OL-TC-61 - Rechazar movimiento sin autenticacion", () => {
-  it("rechaza la solicitud sin sesion y conserva el documento", async () => {
+  let observaciones: unknown[];
+  let esperados: unknown[];
+
+  beforeEach(async () => {
+    observaciones = [];
+    esperados = [];
     fs.mkdirSync(carpeta, { recursive: true });
 
     const resultados: Record<string, unknown>[] = [];
@@ -39,7 +40,6 @@ describe("OL-TC-61 - Rechazar movimiento sin autenticacion", () => {
         JSON.stringify(resultados, null, 2),
         "utf8"
       );
-
     }
 
     // PASO 1: Preparar documento y destino validos
@@ -64,8 +64,10 @@ describe("OL-TC-61 - Rechazar movimiento sin autenticacion", () => {
     const coleccionOriginal = documento.collectionId;
     const padreOriginal = documento.parentDocumentId;
 
-    expect(origen.id).not.toBe(destino.id);
-    expect(coleccionOriginal).toBe(origen.id);
+    observaciones.push(origen.id);
+    esperados.push(destino.id);
+    observaciones.push(coleccionOriginal);
+    esperados.push(origen.id);
 
     guardar(1, "Documento y destino preparados", {
       documentoId,
@@ -81,15 +83,12 @@ describe("OL-TC-61 - Rechazar movimiento sin autenticacion", () => {
     // No pasamos el objeto usuario a server.post.
     // Esto simula una peticion sin sesion autenticada.
 
-    const respuesta = await server.post(
-      "/api/documents.move",
-      {
-        body: {
-          id: documentoId,
-          collectionId: destino.id,
-        },
-      }
-    );
+    const respuesta = await server.post("/api/documents.move", {
+      body: {
+        id: documentoId,
+        collectionId: destino.id,
+      },
+    });
 
     guardar(2, "Solicitud de movimiento sin autenticacion", {
       endpoint: "/api/documents.move",
@@ -111,14 +110,17 @@ describe("OL-TC-61 - Rechazar movimiento sin autenticacion", () => {
       movimientoRechazado: respuesta.status === 401,
     });
 
-    expect(respuesta.status).toBe(401);
-    expect(cuerpo.ok).toBe(false);
+    observaciones.push(respuesta.status);
+    esperados.push(401);
+    observaciones.push(cuerpo.ok);
+    esperados.push(false);
 
     // PASO 4: Comprobar que el documento sigue igual
 
     const actualizado = await Document.findByPk(documentoId);
 
-    expect(actualizado).not.toBeNull();
+    observaciones.push(actualizado);
+    esperados.push(undefined);
 
     const ubicacionConservada =
       actualizado?.collectionId === coleccionOriginal &&
@@ -148,9 +150,43 @@ describe("OL-TC-61 - Rechazar movimiento sin autenticacion", () => {
       ubicacionConservada,
     });
 
-    expect(ubicacionConservada).toBe(true);
-    expect(encontradoEnOrigen).not.toBeNull();
-    expect(encontradoEnDestino).toBeNull();
+    observaciones.push(ubicacionConservada);
+    esperados.push(true);
+    observaciones.push(encontradoEnOrigen);
+    esperados.push(undefined);
+    observaciones.push(encontradoEnDestino);
+    esperados.push(undefined);
+  });
 
+  it("OL-TC-61 - usa colecciones distintas", () => {
+    expect(observaciones[0]).not.toBe(esperados[0]);
+  });
+
+  it("OL-TC-61 - parte de la colección origen", () => {
+    expect(observaciones[1]).toBe(esperados[1]);
+  });
+
+  it("OL-TC-61 - responde HTTP 401", () => {
+    expect(observaciones[2]).toBe(esperados[2]);
+  });
+
+  it("OL-TC-61 - indica operación fallida", () => {
+    expect(observaciones[3]).toBe(esperados[3]);
+  });
+
+  it("OL-TC-61 - encuentra el documento final", () => {
+    expect(observaciones[4]).not.toBeNull();
+  });
+
+  it("OL-TC-61 - conserva la ubicación", () => {
+    expect(observaciones[5]).toBe(esperados[5]);
+  });
+
+  it("OL-TC-61 - permanece en el origen", () => {
+    expect(observaciones[6]).not.toBeNull();
+  });
+
+  it("OL-TC-61 - no aparece en el destino", () => {
+    expect(observaciones[7]).toBeNull();
   });
 });

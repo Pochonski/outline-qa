@@ -1,7 +1,6 @@
-
 import fs from "node:fs";
 import path from "node:path";
-import { describe, it, expect } from "vitest";
+import { beforeEach, describe, it, expect } from "vitest";
 import { Document } from "@server/models";
 import {
   buildUser,
@@ -15,7 +14,12 @@ const server = getTestServer();
 const carpeta = path.resolve(process.cwd(), "qa-tests/evidencias");
 
 describe("OL-TC-59 - Evitar mover un documento dentro de sus descendientes", () => {
-  it("rechaza el movimiento del padre dentro de su hijo", async () => {
+  let observaciones: unknown[];
+  let esperados: unknown[];
+
+  beforeEach(async () => {
+    observaciones = [];
+    esperados = [];
     fs.mkdirSync(carpeta, { recursive: true });
 
     const resultados: Record<string, unknown>[] = [];
@@ -32,7 +36,6 @@ describe("OL-TC-59 - Evitar mover un documento dentro de sus descendientes", () 
         JSON.stringify(resultados, null, 2),
         "utf8"
       );
-
     }
 
     // PASO 1: Crear documento padre e hijo
@@ -59,10 +62,14 @@ describe("OL-TC-59 - Evitar mover un documento dentro de sus descendientes", () 
     const padreOriginal = await Document.findByPk(padre.id);
     const hijoOriginal = await Document.findByPk(hijo.id);
 
-    expect(padreOriginal).not.toBeNull();
-    expect(hijoOriginal).not.toBeNull();
-    expect(padreOriginal?.parentDocumentId).toBeNull();
-    expect(hijoOriginal?.parentDocumentId).toBe(padre.id);
+    observaciones.push(padreOriginal);
+    esperados.push(undefined);
+    observaciones.push(hijoOriginal);
+    esperados.push(undefined);
+    observaciones.push(padreOriginal?.parentDocumentId);
+    esperados.push(undefined);
+    observaciones.push(hijoOriginal?.parentDocumentId);
+    esperados.push(padre.id);
 
     const coleccionPadreOriginal = padreOriginal!.collectionId;
     const padreDelPadreOriginal = padreOriginal!.parentDocumentId;
@@ -80,17 +87,13 @@ describe("OL-TC-59 - Evitar mover un documento dentro de sus descendientes", () 
 
     // PASO 2: Intentar mover el padre dentro de su hijo
 
-    const respuesta = await server.post(
-      "/api/documents.move",
-      usuario,
-      {
-        body: {
-          id: padre.id,
-          collectionId: coleccion.id,
-          parentDocumentId: hijo.id,
-        },
-      }
-    );
+    const respuesta = await server.post("/api/documents.move", usuario, {
+      body: {
+        id: padre.id,
+        collectionId: coleccion.id,
+        parentDocumentId: hijo.id,
+      },
+    });
 
     const cuerpo = await respuesta.json();
 
@@ -102,15 +105,19 @@ describe("OL-TC-59 - Evitar mover un documento dentro de sus descendientes", () 
       rechazado: respuesta.status === 400,
     });
 
-    expect(respuesta.status).toBe(400);
-    expect(cuerpo.ok).toBe(false);
-    expect(cuerpo.message).toContain("infinite loop detected");
+    observaciones.push(respuesta.status);
+    esperados.push(400);
+    observaciones.push(cuerpo.ok);
+    esperados.push(false);
+    observaciones.push(cuerpo.message);
+    esperados.push("infinite loop detected");
 
     // PASO 3: Comprobar ubicacion del padre
 
     const padreActualizado = await Document.findByPk(padre.id);
 
-    expect(padreActualizado).not.toBeNull();
+    observaciones.push(padreActualizado);
+    esperados.push(undefined);
 
     guardar(3, "Ubicacion del padre despues del rechazo", {
       coleccionAnterior: coleccionPadreOriginal,
@@ -123,14 +130,17 @@ describe("OL-TC-59 - Evitar mover un documento dentro de sus descendientes", () 
         padreActualizado?.parentDocumentId === padreDelPadreOriginal,
     });
 
-    expect(padreActualizado?.collectionId).toBe(coleccionPadreOriginal);
-    expect(padreActualizado?.parentDocumentId).toBe(padreDelPadreOriginal);
+    observaciones.push(padreActualizado?.collectionId);
+    esperados.push(coleccionPadreOriginal);
+    observaciones.push(padreActualizado?.parentDocumentId);
+    esperados.push(padreDelPadreOriginal);
 
     // PASO 4: Comprobar estructura final
 
     const hijoActualizado = await Document.findByPk(hijo.id);
 
-    expect(hijoActualizado).not.toBeNull();
+    observaciones.push(hijoActualizado);
+    esperados.push(undefined);
 
     const estructuraCorrecta =
       hijoActualizado?.parentDocumentId === padre.id &&
@@ -148,8 +158,61 @@ describe("OL-TC-59 - Evitar mover un documento dentro de sus descendientes", () 
       relacionCircular: padreActualizado?.parentDocumentId === hijo.id,
     });
 
-    expect(estructuraCorrecta).toBe(true);
-    expect(padreActualizado?.parentDocumentId).not.toBe(hijo.id);
+    observaciones.push(estructuraCorrecta);
+    esperados.push(true);
+    observaciones.push(padreActualizado?.parentDocumentId);
+    esperados.push(hijo.id);
+  });
 
+  it("OL-TC-59 - encuentra el padre inicial", () => {
+    expect(observaciones[0]).not.toBeNull();
+  });
+
+  it("OL-TC-59 - encuentra el hijo inicial", () => {
+    expect(observaciones[1]).not.toBeNull();
+  });
+
+  it("OL-TC-59 - el padre inicia en la raíz", () => {
+    expect(observaciones[2]).toBeNull();
+  });
+
+  it("OL-TC-59 - el hijo inicia bajo el padre", () => {
+    expect(observaciones[3]).toBe(esperados[3]);
+  });
+
+  it("OL-TC-59 - responde HTTP 400", () => {
+    expect(observaciones[4]).toBe(esperados[4]);
+  });
+
+  it("OL-TC-59 - indica operación fallida", () => {
+    expect(observaciones[5]).toBe(esperados[5]);
+  });
+
+  it("OL-TC-59 - explica el ciclo", () => {
+    expect(observaciones[6]).toContain(esperados[6]);
+  });
+
+  it("OL-TC-59 - encuentra el padre final", () => {
+    expect(observaciones[7]).not.toBeNull();
+  });
+
+  it("OL-TC-59 - conserva la colección del padre", () => {
+    expect(observaciones[8]).toBe(esperados[8]);
+  });
+
+  it("OL-TC-59 - conserva la ubicación del padre", () => {
+    expect(observaciones[9]).toBe(esperados[9]);
+  });
+
+  it("OL-TC-59 - encuentra el hijo final", () => {
+    expect(observaciones[10]).not.toBeNull();
+  });
+
+  it("OL-TC-59 - conserva la jerarquía", () => {
+    expect(observaciones[11]).toBe(esperados[11]);
+  });
+
+  it("OL-TC-59 - no anida el padre bajo el hijo", () => {
+    expect(observaciones[12]).not.toBe(esperados[12]);
   });
 });
