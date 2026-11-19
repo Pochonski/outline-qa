@@ -80,7 +80,7 @@ corepack yarn exec playwright test --list --reporter=list
 | [playwright-services.yml](tools/playwright-services.yml) | Servicio Redis de las pruebas. |
 | [seedPlaywright.ts](../../server/scripts/seedPlaywright.ts) | Workspace de pruebas y cinco usuarios ficticios. |
 
-Los archivos `*.qa.test.ts` conservan las pruebas de Vitest de C1. La exportación de `AUTOSAVE_DELAY` en `useDocumentSave.ts` permite comprobar el intervalo existente desde la prueba de C1. Su valor es 3000 ms.
+Los cuatro archivos Vitest de Joseph se refactorizaron el 18 de noviembre de 2026 para la rúbrica, sin cambiar sus verificaciones. La versión anterior está en el commit `bbc90af335`; los resultados y reportes de C1 son históricos. La exportación de `AUTOSAVE_DELAY` en `useDocumentSave.ts` permite comprobar el intervalo existente desde la prueba de C1. Su valor es 3000 ms.
 
 ## Trazabilidad de los veinte casos en C2
 

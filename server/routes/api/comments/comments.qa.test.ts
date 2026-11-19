@@ -1,3 +1,4 @@
+import { beforeEach, describe, expect, it } from "vitest";
 import {
   buildComment,
   buildDocument,
@@ -10,152 +11,103 @@ import { getTestServer } from "@server/test/support";
 const server = getTestServer();
 
 describe("QA HU-06 comments", () => {
-  it("CP-HU06-01", async () => {
-    // HU-06, CA-06.1: el autor actualiza su comentario y cambia el texto.
-    const team = await buildTeam();
-    const user = await buildUser({ teamId: team.id });
-    const document = await buildDocument({
-      userId: user.id,
-      teamId: user.teamId,
-    });
-    const comment = await buildComment({
-      userId: user.id,
-      documentId: document.id,
-    });
-    const res = await server.post("/api/comments.update", user, {
-      body: {
-        id: comment.id,
-        text: "Updated **text**",
-      },
-    });
-    const body = await res.json();
-    expect(body.data.data.content[0].content[0].text).toEqual("Updated ");
-  });
+  let author: Awaited<ReturnType<typeof buildUser>>;
+  let document: Awaited<ReturnType<typeof buildDocument>>;
 
-  it("CP-HU06-02", async () => {
-    // HU-06, CA-06.4: un usuario que no es el autor recibe 403.
+  beforeEach(async () => {
     const team = await buildTeam();
-    const author = await buildUser({ teamId: team.id });
-    const other = await buildUser({ teamId: team.id });
-    const document = await buildDocument({
+    author = await buildUser({ teamId: team.id });
+    document = await buildDocument({
       userId: author.id,
       teamId: author.teamId,
     });
-    const comment = await buildComment({
-      userId: author.id,
-      documentId: document.id,
-    });
-    const res = await server.post("/api/comments.update", other, {
-      body: {
-        id: comment.id,
-        text: "intento de edición ajena",
-      },
-    });
-    expect(res.status).toEqual(403);
   });
 
-  it("CP-HU06-03", async () => {
-    // HU-06, CA-06.2: el autor elimina su comentario (soft delete).
-    const team = await buildTeam();
-    const user = await buildUser({ teamId: team.id });
-    const document = await buildDocument({
-      userId: user.id,
-      teamId: user.teamId,
+  describe("comentario del autor", () => {
+    let comment: Awaited<ReturnType<typeof buildComment>>;
+
+    beforeEach(async () => {
+      comment = await buildComment({
+        userId: author.id,
+        documentId: document.id,
+      });
     });
-    const comment = await buildComment({
-      userId: user.id,
-      documentId: document.id,
+
+    it("OL-TC-18 / CP-HU06-01 - el autor edita su comentario", async () => {
+      const res = await server.post("/api/comments.update", author, {
+        body: { id: comment.id, text: "Updated **text**" },
+      });
+      const body = await res.json();
+      expect(body.data.data.content[0].content[0].text).toEqual("Updated ");
     });
-    const res = await server.post("/api/comments.delete", user, {
-      body: {
-        id: comment.id,
-      },
+
+    it("OL-TC-21 / CP-HU06-03 - el autor elimina su comentario", async () => {
+      const res = await server.post("/api/comments.delete", author, {
+        body: { id: comment.id },
+      });
+      const body = await res.json();
+      expect(body.success).toEqual(true);
     });
-    const body = await res.json();
-    expect(body.success).toEqual(true);
+
+    it("OL-TC-22 / CP-HU06-04 - resolver llena resolvedAt", async () => {
+      const res = await server.post("/api/comments.resolve", author, {
+        body: { id: comment.id },
+      });
+      const body = await res.json();
+      expect(body.data.resolvedAt).toBeTruthy();
+    });
+
+    it("OL-TC-40 / CP-HU06-06 - texto vacío responde 400", async () => {
+      const res = await server.post("/api/comments.update", author, {
+        body: { id: comment.id, text: "" },
+      });
+      expect(res.status).toEqual(400);
+    });
   });
 
-  it("CP-HU06-04", async () => {
-    // HU-06, CA-06.3: resolver puebla resolvedAt y pasa a Resuelto.
-    const team = await buildTeam();
-    const user = await buildUser({ teamId: team.id });
-    const document = await buildDocument({
-      userId: user.id,
-      teamId: user.teamId,
+  describe("acciones de otro usuario", () => {
+    let other: Awaited<ReturnType<typeof buildUser>>;
+    let comment: Awaited<ReturnType<typeof buildComment>>;
+
+    beforeEach(async () => {
+      other = await buildUser({ teamId: author.teamId });
+      comment = await buildComment({
+        userId: author.id,
+        documentId: document.id,
+      });
     });
-    const comment = await buildComment({
-      userId: user.id,
-      documentId: document.id,
+
+    it("OL-TC-19 / CP-HU06-02 - no autor no puede editar", async () => {
+      const res = await server.post("/api/comments.update", other, {
+        body: { id: comment.id, text: "intento de edición ajena" },
+      });
+      expect(res.status).toEqual(403);
     });
-    const res = await server.post("/api/comments.resolve", user, {
-      body: {
-        id: comment.id,
-      },
+
+    it("OL-TC-39 / CP-HU06-05 - no autor no puede eliminar", async () => {
+      const res = await server.post("/api/comments.delete", other, {
+        body: { id: comment.id },
+      });
+      expect(res.status).toEqual(403);
     });
-    const body = await res.json();
-    expect(body.data.resolvedAt).toBeTruthy();
   });
 
-  it("CP-HU06-05", async () => {
-    // HU-06: un usuario que no es el autor no puede eliminar (403).
-    const team = await buildTeam();
-    const author = await buildUser({ teamId: team.id });
-    const other = await buildUser({ teamId: team.id });
-    const document = await buildDocument({
-      userId: author.id,
-      teamId: author.teamId,
-    });
-    const comment = await buildComment({
-      userId: author.id,
-      documentId: document.id,
-    });
-    const res = await server.post("/api/comments.delete", other, {
-      body: {
-        id: comment.id,
-      },
-    });
-    expect(res.status).toEqual(403);
-  });
+  describe("comentario resuelto", () => {
+    let comment: Awaited<ReturnType<typeof buildResolvedComment>>;
 
-  it("CP-HU06-06", async () => {
-    // HU-06: editar con texto vacío responde 400 (se requiere data o text).
-    const team = await buildTeam();
-    const user = await buildUser({ teamId: team.id });
-    const document = await buildDocument({
-      userId: user.id,
-      teamId: user.teamId,
+    beforeEach(async () => {
+      comment = await buildResolvedComment(author, {
+        userId: author.id,
+        documentId: document.id,
+      });
     });
-    const comment = await buildComment({
-      userId: user.id,
-      documentId: document.id,
-    });
-    const res = await server.post("/api/comments.update", user, {
-      body: {
-        id: comment.id,
-        text: "",
-      },
-    });
-    expect(res.status).toEqual(400);
-  });
 
-  it("CP-HU06-07", async () => {
-    // HU-06: reabrir limpia resolvedAt y vuelve a activo.
-    const team = await buildTeam();
-    const user = await buildUser({ teamId: team.id });
-    const document = await buildDocument({
-      userId: user.id,
-      teamId: user.teamId,
+    it("OL-TC-41 / CP-HU06-07 - reabrir limpia resolvedAt", async () => {
+      const res = await server.post("/api/comments.unresolve", author, {
+        body: { id: comment.id },
+      });
+      const body = await res.json();
+      expect(body.data.resolvedAt).toEqual(null);
     });
-    const comment = await buildResolvedComment(user, {
-      userId: user.id,
-      documentId: document.id,
-    });
-    const res = await server.post("/api/comments.unresolve", user, {
-      body: {
-        id: comment.id,
-      },
-    });
-    const body = await res.json();
-    expect(body.data.resolvedAt).toEqual(null);
   });
 });

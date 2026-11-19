@@ -1,6 +1,6 @@
 # Entrega académica de QA — Joseph Fonseca
 
-Este repositorio reúne el proyecto Outline y las pruebas de HU-04 Crear documento, HU-05 Autoguardado y HU-06 Resolver y editar comentarios. La entrega conserva el código de Vitest de C1 y los veinte casos de Playwright de C2, con su reporter de ingesta para QAtlas.
+Este repositorio reúne el proyecto Outline y las pruebas de HU-04 Crear documento, HU-05 Autoguardado y HU-06 Resolver y editar comentarios. Los cuatro archivos Vitest se refactorizaron el 18 de noviembre de 2026 para la rúbrica, sin cambiar sus verificaciones; la versión anterior está en el commit `bbc90af335`. La entrega conserva los veinte casos de Playwright de C2 y su reporter de ingesta para QAtlas.
 
 El plan del equipo abarca sesenta casos, veinte por integrante. Rachel Monterrey cubre HU-01 a HU-03, Joseph Fonseca HU-04 a HU-06 y Yendri Obando HU-07 a HU-09. Los CSV incluidos reúnen los sesenta casos y los nueve requisitos del equipo. [Consultar el plan y su distribución](docs/proyecto/planes_HU_04_05_06.md).
 
