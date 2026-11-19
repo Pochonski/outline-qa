@@ -30,7 +30,7 @@ Los documentos del proyecto describen los [requisitos](docs/proyecto/requisitos_
 
 ## Pruebas de Rachel Monterrey (HU-01 a HU-03)
 
-Rachel Monterrey cubre HU-01 Publicar y compartir documento (OL-7), HU-02 Administrar miembros del equipo (OL-8) y HU-03 Configuración de notificaciones (OL-9). Sus veinte casos de prueba y sus resultados están en QAtlas, proyecto OL, y en su informe de pruebas. Las pruebas automáticas son de Vitest y están junto a las rutas de la API que prueban.
+Rachel Monterrey cubre HU-01 Publicar y compartir documento (OL-7), HU-02 Administrar miembros del equipo (OL-8) y HU-03 Configuración de notificaciones (OL-9). Sus veinte casos de prueba y sus resultados están en QAtlas, proyecto OL, y en su informe de pruebas. Las pruebas automáticas son de dos tipos: las de Vitest están junto a las rutas de la API que prueban, y las de Playwright están en la carpeta `playwright-rachel-hu01-03`.
 
 | Archivo | Historia | Casos de prueba | Casos de QAtlas |
 |---|---|---|---|
@@ -45,6 +45,14 @@ La ejecución conjunta del 17 de noviembre de 2026 dio 17 pruebas aprobadas y 1 
 
 ```sh
 yarn vitest run server/routes/api/users/users.qa-hu02.test.ts server/routes/api/shares/shares.qa-hu01.test.ts server/routes/api/notifications/notifications.qa-hu03.test.ts server/routes/api/subscriptions/subscriptions.qa-hu03.test.ts
+```
+
+Las pruebas de Playwright de la carpeta `playwright-rachel-hu01-03` llaman a la API de un Outline aislado (sin navegador) y son con las que se obtuvo la ejecución del ciclo 2 (OL-RUN-21): automatizan 18 de los 20 casos, con un archivo por historia (`hu01.spec.ts`, `hu02.spec.ts` y `hu03.spec.ts`). Cada caso tiene su bloque de pruebas con una sola verificación por prueba, la preparación en `beforeEach` y la etiqueta `@OL-TC-n` que lo vincula con QAtlas. CP-HU02-05 está parametrizada por rol. CP-HU01-01 (OL-TC-7) queda bloqueada por el defecto OL-BUG-1. La ejecución del 18 de noviembre de 2026 dio 66 pruebas aprobadas y 1 omitida, sin enviar nada a QAtlas. Las instrucciones para levantar el Outline aislado están en el README de esa carpeta, y se ejecutan desde ella.
+
+```sh
+cd playwright-rachel-hu01-03
+npm install
+npx playwright test
 ```
 
 ## Proyecto Outline
