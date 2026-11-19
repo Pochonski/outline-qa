@@ -30,7 +30,7 @@ Los documentos del proyecto describen los [requisitos](docs/proyecto/requisitos_
 
 ## Pruebas de Rachel Monterrey (HU-01 a HU-03)
 
-Rachel Monterrey cubre HU-01 Publicar y compartir documento (OL-7), HU-02 Administrar miembros del equipo (OL-8) y HU-03 Configuración de notificaciones (OL-9). Sus veinte casos de prueba y sus resultados están en QAtlas, proyecto OL, y en su informe de pruebas. Las pruebas automáticas son de dos tipos: las de Vitest están junto a las rutas de la API que prueban, y las de Playwright están en la carpeta `playwright-rachel-hu01-03`.
+Rachel Monterrey cubre HU-01 Publicar y compartir documento (OL-7), HU-02 Administrar miembros del equipo (OL-8) y HU-03 Configuración de notificaciones (OL-9). Sus veinte casos de prueba y sus resultados están en QAtlas, proyecto OL, y en su informe de pruebas. Las pruebas automáticas son de dos tipos: las de Vitest están junto a las rutas de la API que prueban, y las de Playwright están en la carpeta `playwright-rachel-hu01-03`. Las dos suites cubren los mismos 18 casos automatizados.
 
 | Archivo | Historia | Casos de prueba | Casos de QAtlas |
 |---|---|---|---|
