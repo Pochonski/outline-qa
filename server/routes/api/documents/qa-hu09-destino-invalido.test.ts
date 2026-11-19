@@ -1,8 +1,7 @@
-
 import fs from "node:fs";
 import path from "node:path";
 import { randomUUID } from "node:crypto";
-import { describe, it, expect } from "vitest";
+import { beforeEach, describe, it, expect } from "vitest";
 import { Document } from "@server/models";
 import {
   buildUser,
@@ -13,13 +12,15 @@ import { getTestServer } from "@server/test/support";
 
 const server = getTestServer();
 
-const carpeta = path.resolve(
-  process.cwd(),
-  "qa-tests/evidencias"
-);
+const carpeta = path.resolve(process.cwd(), "qa-tests/evidencias");
 
 describe("OL-TC-57 - Rechazar movimiento a destino invalido", () => {
-  it("rechaza un destino inexistente y conserva el documento", async () => {
+  let observaciones: unknown[];
+  let esperados: unknown[];
+
+  beforeEach(async () => {
+    observaciones = [];
+    esperados = [];
     fs.mkdirSync(carpeta, { recursive: true });
 
     const resultados: Record<string, unknown>[] = [];
@@ -36,7 +37,6 @@ describe("OL-TC-57 - Rechazar movimiento a destino invalido", () => {
         JSON.stringify(resultados, null, 2),
         "utf8"
       );
-
     }
 
     // PASO 1: Preparar documento de origen
@@ -57,7 +57,8 @@ describe("OL-TC-57 - Rechazar movimiento a destino invalido", () => {
     const coleccionOriginal = documento.collectionId;
     const padreOriginal = documento.parentDocumentId;
 
-    expect(coleccionOriginal).toBe(coleccion.id);
+    observaciones.push(coleccionOriginal);
+    esperados.push(coleccion.id);
 
     guardar(1, "Documento de origen preparado", {
       usuarioId: usuario.id,
@@ -71,23 +72,18 @@ describe("OL-TC-57 - Rechazar movimiento a destino invalido", () => {
 
     const destinoInexistente = randomUUID();
 
-    const destinoEnBase = await Document.findByPk(
-      destinoInexistente
-    );
+    const destinoEnBase = await Document.findByPk(destinoInexistente);
 
-    expect(destinoEnBase).toBeNull();
+    observaciones.push(destinoEnBase);
+    esperados.push(undefined);
 
-    const respuesta = await server.post(
-      "/api/documents.move",
-      usuario,
-      {
-        body: {
-          id: idDocumento,
-          collectionId: coleccion.id,
-          parentDocumentId: destinoInexistente,
-        },
-      }
-    );
+    const respuesta = await server.post("/api/documents.move", usuario, {
+      body: {
+        id: idDocumento,
+        collectionId: coleccion.id,
+        parentDocumentId: destinoInexistente,
+      },
+    });
 
     const cuerpo = await respuesta.json();
 
@@ -99,28 +95,31 @@ describe("OL-TC-57 - Rechazar movimiento a destino invalido", () => {
       solicitudRechazada: respuesta.status >= 400,
     });
 
-    expect(respuesta.status).toBeGreaterThanOrEqual(400);
-    expect(respuesta.status).toBeLessThan(500);
+    observaciones.push(respuesta.status);
+    esperados.push(400);
+    observaciones.push(respuesta.status);
+    esperados.push(500);
 
     // PASO 3: Verificar que no cambio la ubicacion
 
     const actualizado = await Document.findByPk(idDocumento);
 
-    expect(actualizado).not.toBeNull();
+    observaciones.push(actualizado);
+    esperados.push(undefined);
 
     guardar(3, "Ubicacion despues del rechazo", {
       coleccionAnterior: coleccionOriginal,
       coleccionActual: actualizado?.collectionId,
       padreAnterior: padreOriginal,
       padreActual: actualizado?.parentDocumentId,
-      coleccionSinCambios:
-        actualizado?.collectionId === coleccionOriginal,
-      padreSinCambios:
-        actualizado?.parentDocumentId === padreOriginal,
+      coleccionSinCambios: actualizado?.collectionId === coleccionOriginal,
+      padreSinCambios: actualizado?.parentDocumentId === padreOriginal,
     });
 
-    expect(actualizado?.collectionId).toBe(coleccionOriginal);
-    expect(actualizado?.parentDocumentId).toBe(padreOriginal);
+    observaciones.push(actualizado?.collectionId);
+    esperados.push(coleccionOriginal);
+    observaciones.push(actualizado?.parentDocumentId);
+    esperados.push(padreOriginal);
 
     // PASO 4: Confirmar permanencia en origen
 
@@ -144,12 +143,48 @@ describe("OL-TC-57 - Rechazar movimiento a destino invalido", () => {
       coleccionActual: actualizado?.collectionId,
       padreActual: actualizado?.parentDocumentId,
       estructuraCorrecta:
-        encontradoEnOrigen !== null &&
-        encontradoEnDestino === null,
+        encontradoEnOrigen !== null && encontradoEnDestino === null,
     });
 
-    expect(encontradoEnOrigen).not.toBeNull();
-    expect(encontradoEnDestino).toBeNull();
+    observaciones.push(encontradoEnOrigen);
+    esperados.push(undefined);
+    observaciones.push(encontradoEnDestino);
+    esperados.push(undefined);
+  });
 
+  it("OL-TC-57 - parte de la colección origen", () => {
+    expect(observaciones[0]).toBe(esperados[0]);
+  });
+
+  it("OL-TC-57 - el destino no existe", () => {
+    expect(observaciones[1]).toBeNull();
+  });
+
+  it("OL-TC-57 - responde con error HTTP", () => {
+    expect(observaciones[2]).toBeGreaterThanOrEqual(400);
+  });
+
+  it("OL-TC-57 - responde con error del cliente", () => {
+    expect(observaciones[3]).toBeLessThan(500);
+  });
+
+  it("OL-TC-57 - encuentra el documento final", () => {
+    expect(observaciones[4]).not.toBeNull();
+  });
+
+  it("OL-TC-57 - conserva la colección", () => {
+    expect(observaciones[5]).toBe(esperados[5]);
+  });
+
+  it("OL-TC-57 - conserva el padre", () => {
+    expect(observaciones[6]).toBe(esperados[6]);
+  });
+
+  it("OL-TC-57 - permanece en el origen", () => {
+    expect(observaciones[7]).not.toBeNull();
+  });
+
+  it("OL-TC-57 - no aparece en el destino", () => {
+    expect(observaciones[8]).toBeNull();
   });
 });

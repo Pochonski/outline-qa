@@ -1,10 +1,14 @@
-import { describe, expect, it } from "vitest";
+import { afterEach, beforeEach, describe, expect, it } from "vitest";
 import { doc, table, tr, td } from "@shared/test/editor";
 import { TableView } from "./TableView";
 import { EditorStyleHelper } from "../styles/EditorStyleHelper";
 
 describe("HU-07 - Tablas en dispositivos móviles", () => {
-  it.skipIf(typeof document === "undefined")("OL-TC-43 - La tabla se crea dentro de un contenedor desplazable", () => {
+  let tabla: ReturnType<typeof table>;
+  let vista: TableView;
+  let contenedor: Element | null;
+
+  beforeEach(() => {
     const documento = doc([
       table([
         tr([
@@ -17,18 +21,49 @@ describe("HU-07 - Tablas en dispositivos móviles", () => {
       ]),
     ]);
 
-    const tabla = documento.firstChild!;
-    const vista = new TableView(tabla, 100);
-    const contenedor = vista.dom.firstElementChild;
+    tabla = documento.firstChild!;
+    vista = new TableView(tabla, 100);
+    contenedor = vista.dom.firstElementChild;
+  });
 
-    expect(vista.dom.classList.contains(EditorStyleHelper.table)).toBe(true);
-    expect(contenedor).not.toBeNull();
-    expect(
-      contenedor?.classList.contains(EditorStyleHelper.tableScrollable)
-    ).toBe(true);
-    expect(contenedor?.contains(vista.table)).toBe(true);
-    expect(tabla.firstChild?.childCount).toBe(5);
-
+  afterEach(() => {
     vista.destroy();
   });
+
+  it.skipIf(typeof document === "undefined")(
+    "OL-TC-43 - aplica el estilo de tabla",
+    () => {
+      expect(vista.dom.classList.contains(EditorStyleHelper.table)).toBe(true);
+    }
+  );
+
+  it.skipIf(typeof document === "undefined")(
+    "OL-TC-43 - crea el contenedor desplazable",
+    () => {
+      expect(contenedor).not.toBeNull();
+    }
+  );
+
+  it.skipIf(typeof document === "undefined")(
+    "OL-TC-43 - aplica el estilo desplazable",
+    () => {
+      expect(
+        contenedor?.classList.contains(EditorStyleHelper.tableScrollable)
+      ).toBe(true);
+    }
+  );
+
+  it.skipIf(typeof document === "undefined")(
+    "OL-TC-43 - contiene la tabla",
+    () => {
+      expect(contenedor?.contains(vista.table)).toBe(true);
+    }
+  );
+
+  it.skipIf(typeof document === "undefined")(
+    "OL-TC-43 - conserva las cinco columnas",
+    () => {
+      expect(tabla.firstChild?.childCount).toBe(5);
+    }
+  );
 });
